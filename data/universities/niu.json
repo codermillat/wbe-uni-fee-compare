@@ -1,0 +1,1652 @@
+{
+  "id": "niu",
+  "name": "Noida International University",
+  "shortName": "NIU",
+  "location": "Greater Noida, Uttar Pradesh, India",
+  "established": 2010,
+  "profile": {
+    "rankings": {
+      "nirf": "201-250",
+      "naac": "A+",
+      "type": "Private University"
+    },
+    "highlights": [
+      "300+ acre green campus",
+      "Industry partnerships with TCS, IBM",
+      "100% placement assistance",
+      "Modern labs and infrastructure",
+      "International collaborations"
+    ],
+    "location_benefits": [
+      "1 hour from Delhi Airport",
+      "Well-connected by metro",
+      "Safe and secure campus",
+      "Close to IT hub"
+    ]
+  },
+  "scholarships": {
+    "type": "flat",
+    "bangladeshStudents": {
+      "percentage": 50,
+      "conditions": "No GPA requirement - All Bangladeshi students get 50% scholarship",
+      "gpaMin": 0,
+      "gpaMax": 5.0
+    }
+  },
+  "additionalFees": {
+    "oneTime": {
+      "amount": 36000,
+      "name": "One-Time Charge (First Year Only)",
+      "services": [
+        "Registration",
+        "Admission Letter",
+        "Visa Assistance Letter",
+        "Airport Pickup",
+        "FRRO Assistance",
+        "Unlimited Internet"
+      ]
+    }
+  },
+  "programs": [
+    {
+      "id": "btech-cse",
+      "name": "B.Tech in Computer Science & Engineering",
+      "specialization": "Computer Science & Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [206000, 206000, 206000, 206000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Industry-aligned curriculum",
+        "Coding labs with latest tools",
+        "IBM & TCS partnerships",
+        "100% placement assistance"
+      ]
+    },
+    {
+      "id": "btech-cse-aiml-tcs",
+      "name": "B.Tech CSE (AI&ML in collaboration with TCS)",
+      "specialization": "Artificial Intelligence & Machine Learning with TCS",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [246000, 246000, 246000, 246000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "TCS collaboration",
+        "Industry-partnered curriculum",
+        "AI/ML specialization",
+        "Direct industry exposure"
+      ]
+    },
+    {
+      "id": "btech-cse-drone",
+      "name": "B.Tech CSE (Drone Technology)",
+      "specialization": "Drone Technology",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [220000, 220000, 220000, 220000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Drone technology focus",
+        "UAV development",
+        "Modern drone labs",
+        "Aviation industry preparation"
+      ]
+    },
+    {
+      "id": "btech-cse-cyber-ibm",
+      "name": "B.Tech CSE (Cyber Security in collaboration with IBM)",
+      "specialization": "Cyber Security with IBM",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [306000, 306000, 306000, 306000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "IBM collaboration",
+        "Industry-partnered curriculum",
+        "Advanced cybersecurity",
+        "Premium specialization"
+      ]
+    },
+    {
+      "id": "btech-cse-ds",
+      "name": "B.Tech CSE (Data Science)",
+      "specialization": "Data Science",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [206000, 206000, 206000, 206000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Big Data analytics",
+        "Python & R programming",
+        "Industry-relevant projects",
+        "Analytics lab"
+      ]
+    },
+    {
+      "id": "btech-cse-aiml",
+      "name": "B.Tech CSE (AI&ML)",
+      "specialization": "Artificial Intelligence & Machine Learning",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [206000, 206000, 206000, 206000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AI/ML curriculum",
+        "Deep Learning labs",
+        "Industry projects",
+        "High demand specialization"
+      ]
+    },
+    {
+      "id": "btech-cse-cyber",
+      "name": "B.Tech CSE (Cyber Security)",
+      "specialization": "Cyber Security",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [206000, 206000, 206000, 206000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Network security focus",
+        "Ethical hacking labs",
+        "Cybersecurity certifications",
+        "Growing career field"
+      ]
+    },
+    {
+      "id": "btech-me-automobile",
+      "name": "B.Tech Mechanical Engineering (Automobile)",
+      "specialization": "Automobile Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [200000, 200000, 200000, 200000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Automotive focus",
+        "Vehicle design",
+        "Industry partnerships",
+        "Modern auto labs"
+      ]
+    },
+    {
+      "id": "btech-me-mechatronics",
+      "name": "B.Tech Mechanical Engineering (Mechatronics)",
+      "specialization": "Mechatronics",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [200000, 200000, 200000, 200000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Mechatronics systems",
+        "Automation & robotics",
+        "Control systems",
+        "Smart manufacturing"
+      ]
+    },
+    {
+      "id": "btech-me-ev",
+      "name": "B.Tech Mechanical Engineering (Electrical Vehicles)",
+      "specialization": "Electrical Vehicles",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [200000, 200000, 200000, 200000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Electric vehicle technology",
+        "Battery management",
+        "Sustainable transport",
+        "Future mobility"
+      ]
+    },
+    {
+      "id": "btech-ce",
+      "name": "B.Tech in Civil Engineering",
+      "specialization": "Civil Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [200000, 200000, 200000, 200000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Structural design labs",
+        "AutoCAD training",
+        "Construction management",
+        "Site visits"
+      ]
+    },
+    {
+      "id": "btech-ce-smart",
+      "name": "B.Tech Civil Engineering (Smart Cities)",
+      "specialization": "Smart Cities",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [200000, 200000, 200000, 200000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Smart city planning",
+        "Urban development",
+        "Sustainable infrastructure",
+        "Modern city solutions"
+      ]
+    },
+    {
+      "id": "btech-ce-green",
+      "name": "B.Tech Civil Engineering (Green Technology & Sustainability)",
+      "specialization": "Green Technology & Sustainability",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [200000, 200000, 200000, 200000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Green construction",
+        "Sustainable materials",
+        "Environmental engineering",
+        "Eco-friendly design"
+      ]
+    },
+    {
+      "id": "btech-ee",
+      "name": "B.Tech in Electrical Engineering",
+      "specialization": "Electrical Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [200000, 200000, 200000, 200000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Power systems lab",
+        "Control systems",
+        "Renewable energy",
+        "Industry partnerships"
+      ]
+    },
+    {
+      "id": "btech-biotech",
+      "name": "B.Tech in Biotechnology",
+      "specialization": "Biotechnology",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [200000, 200000, 200000, 200000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Genetic engineering",
+        "Biotech labs",
+        "Industry exposure",
+        "Research career path"
+      ]
+    },
+    {
+      "id": "btech-lateral-cse",
+      "name": "B.Tech Lateral Entry (CSE/AIML/Data Sciences)",
+      "specialization": "Computer Science & Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [240000, 240000, 240000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "Same curriculum as regular",
+        "Fast-track completion"
+      ]
+    },
+    {
+      "id": "btech-lateral-other",
+      "name": "B.Tech Lateral Entry (All Other Branches)",
+      "specialization": "Other Engineering Branches",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [220000, 220000, 220000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "Various specializations",
+        "Fast-track completion"
+      ]
+    },
+    {
+      "id": "mtech-me-industrial",
+      "name": "M.Tech Mechanical Engg. (Industrial & Production Engg.)",
+      "specialization": "Industrial & Production Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Industrial engineering",
+        "Production optimization",
+        "Manufacturing systems",
+        "Quality management"
+      ]
+    },
+    {
+      "id": "mtech-me-thermal",
+      "name": "M.Tech Mechanical Engg. (Thermal Engineering)",
+      "specialization": "Thermal Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Heat transfer",
+        "Energy systems",
+        "Thermal analysis",
+        "Power plant engineering"
+      ]
+    },
+    {
+      "id": "mtech-me-design",
+      "name": "M.Tech Mechanical Engg. (Engineering Design)",
+      "specialization": "Engineering Design",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Product design",
+        "CAD/CAE tools",
+        "Design optimization",
+        "Innovation focus"
+      ]
+    },
+    {
+      "id": "mtech-ce-construction",
+      "name": "M.Tech Civil Engg. (Building Construction Tech./Mgmt)",
+      "specialization": "Building Construction Technology/Management",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Construction technology",
+        "Project management",
+        "Building materials",
+        "Construction planning"
+      ]
+    },
+    {
+      "id": "mtech-ce-environmental",
+      "name": "M.Tech Civil Engg. (Environmental Engineering)",
+      "specialization": "Environmental Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Water treatment",
+        "Pollution control",
+        "Environmental impact",
+        "Sustainability"
+      ]
+    },
+    {
+      "id": "mtech-ce-structural",
+      "name": "M.Tech Civil Engg. (Structural Engineering)",
+      "specialization": "Structural Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Structural analysis",
+        "Earthquake engineering",
+        "Advanced materials",
+        "Design codes"
+      ]
+    },
+    {
+      "id": "mtech-biotech",
+      "name": "M.Tech Biotechnology",
+      "specialization": "Biotechnology",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced biotechnology",
+        "Research projects",
+        "Industrial applications",
+        "Bioprocess engineering"
+      ]
+    },
+    {
+      "id": "mtech-cse-software",
+      "name": "M.Tech Computer Science Engg. (Software Engineering)",
+      "specialization": "Software Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Software development",
+        "System design",
+        "Software architecture",
+        "Industry projects"
+      ]
+    },
+    {
+      "id": "diploma-ee",
+      "name": "Diploma in Electrical Engineering",
+      "specialization": "Electrical Engineering",
+      "degree": "Diploma",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [108000, 108000, 108000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Practical electrical training",
+        "Power systems basics",
+        "Workshop training",
+        "Industry skills"
+      ]
+    },
+    {
+      "id": "diploma-me",
+      "name": "Diploma in Mechanical Engineering",
+      "specialization": "Mechanical Engineering",
+      "degree": "Diploma",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [108000, 108000, 108000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Mechanical workshop",
+        "Manufacturing processes",
+        "Machine operations",
+        "Technical skills"
+      ]
+    },
+    {
+      "id": "diploma-ce",
+      "name": "Diploma in Civil Engineering",
+      "specialization": "Civil Engineering",
+      "degree": "Diploma",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [108000, 108000, 108000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Construction basics",
+        "Surveying training",
+        "Building materials",
+        "Site experience"
+      ]
+    },
+    {
+      "id": "diploma-cse",
+      "name": "Diploma in Computer Science & Engineering",
+      "specialization": "Computer Science & Engineering",
+      "degree": "Diploma",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [108000, 108000, 108000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Programming fundamentals",
+        "Software development",
+        "Computer applications",
+        "IT skills"
+      ]
+    },
+    {
+      "id": "dcma",
+      "name": "Diploma in Clinical Medical Assistance",
+      "specialization": "Clinical Medical Assistance",
+      "degree": "D-CMA",
+      "field": "Allied Health Sciences",
+      "duration": 3,
+      "annualFees": [166000, 166000, 166000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Clinical assistance",
+        "Medical procedures",
+        "Patient care",
+        "Healthcare support"
+      ]
+    },
+    {
+      "id": "bph",
+      "name": "Bachelor of Public Health",
+      "specialization": "Public Health",
+      "degree": "BPH",
+      "field": "Allied Health Sciences",
+      "duration": 3,
+      "annualFees": [166000, 166000, 166000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Community health",
+        "Epidemiology",
+        "Health promotion",
+        "Disease prevention"
+      ]
+    },
+    {
+      "id": "bpt",
+      "name": "Bachelor in Physiotherapy",
+      "specialization": "Physiotherapy",
+      "degree": "BPT",
+      "field": "Allied Health Sciences",
+      "duration": 4.5,
+      "annualFees": [190000, 190000, 190000, 190000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Rehabilitation therapy",
+        "Modern physio labs",
+        "Hospital internships",
+        "Sports physiotherapy"
+      ]
+    },
+    {
+      "id": "bsc-mlt",
+      "name": "B.Sc. Medical Laboratory Technology",
+      "specialization": "Medical Laboratory Technology",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [160000, 160000, 160000, 160000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Clinical lab training",
+        "Modern lab equipment",
+        "Hospital training",
+        "Diagnostic procedures"
+      ]
+    },
+    {
+      "id": "bsc-radiology",
+      "name": "B.Sc. Radiology & Imaging Technology",
+      "specialization": "Radiology & Imaging Technology",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [160000, 160000, 160000, 160000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "X-ray, CT, MRI training",
+        "Modern imaging equipment",
+        "Hospital exposure",
+        "Advanced imaging techniques"
+      ]
+    },
+    {
+      "id": "bsc-ott",
+      "name": "B.Sc. Operation Theatre Technology",
+      "specialization": "Operation Theatre Technology",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [146000, 146000, 146000, 146000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Surgical assistance",
+        "OT management",
+        "Sterile techniques",
+        "Critical care support"
+      ]
+    },
+    {
+      "id": "bsc-cardiac",
+      "name": "B.Sc. Cardiac Care Technology",
+      "specialization": "Cardiac Care Technology",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [150000, 150000, 150000, 150000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Heart care specialist",
+        "ECG, Echo training",
+        "Cardiac catheterization",
+        "Critical care focus"
+      ]
+    },
+    {
+      "id": "bsc-nutrition",
+      "name": "B.Sc. Nutrition & Dietetics",
+      "specialization": "Nutrition & Dietetics",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 3,
+      "annualFees": [154000, 154000, 154000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Clinical nutrition",
+        "Diet planning",
+        "Food science",
+        "Health promotion"
+      ]
+    },
+    {
+      "id": "bsc-optometry",
+      "name": "Bachelor of Optometry",
+      "specialization": "Optometry",
+      "degree": "B.OPTOM",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [154000, 154000, 154000, 154000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Eye care specialist",
+        "Vision testing",
+        "Optical equipment",
+        "Independent practice"
+      ]
+    },
+    {
+      "id": "mpt",
+      "name": "Master of Physiotherapy",
+      "specialization": "Physiotherapy (Multiple Specializations)",
+      "degree": "MPT",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [200000, 200000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced physiotherapy",
+        "Specialization areas",
+        "Research projects",
+        "Clinical expertise"
+      ]
+    },
+    {
+      "id": "msc-radiology",
+      "name": "M.Sc. Radiology and Imaging Technology",
+      "specialization": "Radiology and Imaging Technology",
+      "degree": "M.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [204000, 204000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced imaging",
+        "Research focus",
+        "Modern equipment",
+        "Specialized techniques"
+      ]
+    },
+    {
+      "id": "msc-mlt",
+      "name": "M.Sc. Medical Laboratory Technology",
+      "specialization": "Medical Laboratory Technology",
+      "degree": "M.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [204000, 204000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced lab techniques",
+        "Research methods",
+        "Quality control",
+        "Lab management"
+      ]
+    },
+    {
+      "id": "mph",
+      "name": "Master of Public Health",
+      "specialization": "Public Health",
+      "degree": "MPH",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [204000, 204000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Health policy",
+        "Community health",
+        "Epidemiology",
+        "Health management"
+      ]
+    },
+    {
+      "id": "pgdems",
+      "name": "Post Graduate Diploma in Emergency Medicine",
+      "specialization": "Emergency Medicine",
+      "degree": "PGDEMS",
+      "field": "Allied Health Sciences",
+      "duration": 1,
+      "annualFees": [240000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Emergency care",
+        "Trauma management",
+        "Critical procedures",
+        "Life-saving skills"
+      ]
+    },
+    {
+      "id": "bsc-nursing",
+      "name": "B.Sc. Nursing",
+      "specialization": "Nursing",
+      "degree": "B.Sc.",
+      "field": "Nursing",
+      "duration": 4,
+      "annualFees": [270000, 270000, 270000, 270000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "INC recognized",
+        "Hospital training",
+        "Modern nursing labs",
+        "Global opportunities"
+      ]
+    },
+    {
+      "id": "gnm",
+      "name": "General Nursing & Midwifery",
+      "specialization": "General Nursing",
+      "degree": "GNM",
+      "field": "Nursing",
+      "duration": 3,
+      "annualFees": [220000, 220000, 220000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "After 10+2 entry",
+        "Clinical training",
+        "INC approved",
+        "Quick nursing career"
+      ]
+    },
+    {
+      "id": "diploma-business",
+      "name": "Diploma in Business Administration",
+      "specialization": "Business Administration",
+      "degree": "Diploma",
+      "field": "Management",
+      "duration": 3,
+      "annualFees": [128000, 128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Business fundamentals",
+        "Management basics",
+        "Practical training",
+        "Industry exposure"
+      ]
+    },
+    {
+      "id": "bcom-hons-3year",
+      "name": "B.Com (Hons.) - 3 Year",
+      "specialization": "Commerce (Hons.)",
+      "degree": "B.Com",
+      "field": "Commerce",
+      "duration": 3,
+      "annualFees": [144000, 144000, 144000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "3-year degree program",
+        "Commerce specialization",
+        "Professional preparation",
+        "Career focused"
+      ]
+    },
+    {
+      "id": "bcom-hons-4year",
+      "name": "B.Com (Hons.) - 4 Year",
+      "specialization": "Commerce (Hons.)",
+      "degree": "B.Com",
+      "field": "Commerce",
+      "duration": 4,
+      "annualFees": [144000, 144000, 144000, 144000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced commerce",
+        "Higher education pathway"
+      ]
+    },
+    {
+      "id": "bba-general-3year",
+      "name": "BBA General - 3 Year",
+      "specialization": "General Management",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 3,
+      "annualFees": [158000, 158000, 158000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "3-year degree program",
+        "Management fundamentals",
+        "Business skills",
+        "Industry internships"
+      ]
+    },
+    {
+      "id": "bba-general-4year",
+      "name": "BBA General - 4 Year",
+      "specialization": "General Management",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [158000, 158000, 158000, 158000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "4-year honors program",
+        "Advanced management",
+        "Research component",
+        "Leadership development"
+      ]
+    },
+    {
+      "id": "bba-hospital-3year",
+      "name": "BBA Hospital & Health Management - 3 Year",
+      "specialization": "Hospital & Health Management",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 3,
+      "annualFees": [158000, 158000, 158000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Healthcare management",
+        "Hospital administration",
+        "Health sector focus",
+        "Industry exposure"
+      ]
+    },
+    {
+      "id": "bba-hospital-4year",
+      "name": "BBA Hospital & Health Management - 4 Year",
+      "specialization": "Hospital & Health Management",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [158000, 158000, 158000, 158000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "4-year healthcare management",
+        "Advanced hospital administration",
+        "Research in health management",
+        "Leadership in healthcare"
+      ]
+    },
+    {
+      "id": "bba-aviation-3year",
+      "name": "BBA Aviation - 3 Year",
+      "specialization": "Aviation Management",
+      "degree": "BBA-AV",
+      "field": "Management",
+      "duration": 3,
+      "annualFees": [158000, 158000, 158000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Aviation industry focus",
+        "Airport management",
+        "Airline operations",
+        "Aviation careers"
+      ]
+    },
+    {
+      "id": "bba-aviation-4year",
+      "name": "BBA Aviation - 4 Year",
+      "specialization": "Aviation Management",
+      "degree": "BBA-AV",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [158000, 158000, 158000, 158000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "4-year aviation management",
+        "Advanced aviation operations",
+        "Research in aviation",
+        "Leadership in aviation industry"
+      ]
+    },
+    {
+      "id": "mba-dual",
+      "name": "MBA (Dual Specialization)",
+      "specialization": "Marketing/Finance/HR/Retail/Int'l Marketing",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [250000, 250000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Two specializations",
+        "Comprehensive training",
+        "Corporate internships",
+        "Enhanced career prospects"
+      ]
+    },
+    {
+      "id": "mba-agri",
+      "name": "MBA Agri Business",
+      "specialization": "Agri Business",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [340700, 340700],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Agricultural business",
+        "Rural management",
+        "Agri-tech focus",
+        "Specialized career"
+      ]
+    },
+    {
+      "id": "mba-data-analytics",
+      "name": "MBA Data Analytics (with IBM)",
+      "specialization": "Data Analytics with IBM",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [446600, 446600],
+      "scholarshipEligible": true,
+      "highlights": [
+        "IBM partnership",
+        "Big data analytics",
+        "Industry certifications",
+        "Premium program"
+      ]
+    },
+    {
+      "id": "mba-pharma",
+      "name": "MBA Pharmaceuticals Management",
+      "specialization": "Pharmaceuticals Management",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [340700, 340700],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Pharmaceutical industry",
+        "Drug development",
+        "Regulatory affairs",
+        "Healthcare focus"
+      ]
+    },
+    {
+      "id": "mba-hhm",
+      "name": "MBA Hospital & Health Management",
+      "specialization": "Hospital & Health Management",
+      "degree": "MBA-HHM",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [340700, 340700],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Healthcare management",
+        "Hospital administration",
+        "Health policy",
+        "Healthcare leadership"
+      ]
+    },
+    {
+      "id": "mcom",
+      "name": "M.Com",
+      "specialization": "Commerce",
+      "degree": "M.Com",
+      "field": "Commerce",
+      "duration": 2,
+      "annualFees": [126000, 126000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced commerce",
+        "Research methodology",
+        "Professional development",
+        "Academic excellence"
+      ]
+    },
+    {
+      "id": "mba-elite",
+      "name": "MBA Elite",
+      "specialization": "Marketing/Digital Marketing/Finance/Analytics/HR/IB/IT",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [644000, 644000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Premium MBA program",
+        "Elite curriculum",
+        "Industry leadership",
+        "Executive training"
+      ]
+    },
+    {
+      "id": "bsc-biotech-3year",
+      "name": "B.Sc. Biotechnology - 3 Year",
+      "specialization": "Biotechnology",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [124000, 124000, 124000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Biotechnology fundamentals",
+        "Lab techniques",
+        "Research opportunities",
+        "Industry applications"
+      ]
+    },
+    {
+      "id": "bsc-biotech-4year",
+      "name": "B.Sc. Biotechnology - 4 Year",
+      "specialization": "Biotechnology",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [124000, 124000, 124000, 124000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "4-year honors program",
+        "Advanced biotechnology",
+        "Research component",
+        "PhD preparation"
+      ]
+    },
+    {
+      "id": "bsc-microbiology-3year",
+      "name": "B.Sc. Microbiology - 3 Year",
+      "specialization": "Microbiology",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [124000, 124000, 124000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Microbial studies",
+        "Laboratory techniques",
+        "Healthcare applications",
+        "Research opportunities"
+      ]
+    },
+    {
+      "id": "bsc-microbiology-4year",
+      "name": "B.Sc. Microbiology - 4 Year",
+      "specialization": "Microbiology",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [124000, 124000, 124000, 124000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "4-year honors program",
+        "Advanced microbiology",
+        "Research focus",
+        "Professional preparation"
+      ]
+    },
+    {
+      "id": "bsc-it-3year",
+      "name": "B.Sc. Information Technology - 3 Year",
+      "specialization": "Information Technology",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [124000, 124000, 124000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "IT fundamentals",
+        "Programming skills",
+        "System administration",
+        "Network management"
+      ]
+    },
+    {
+      "id": "bsc-it-4year",
+      "name": "B.Sc. Information Technology - 4 Year",
+      "specialization": "Information Technology",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [124000, 124000, 124000, 124000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "4-year honors program",
+        "Advanced IT concepts",
+        "Research component",
+        "Industry preparation"
+      ]
+    },
+    {
+      "id": "bsc-cs-3year",
+      "name": "B.Sc. Computer Science - 3 Year",
+      "specialization": "Computer Science",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [124000, 124000, 124000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Computer science fundamentals",
+        "Programming concepts",
+        "Software development",
+        "Algorithm design"
+      ]
+    },
+    {
+      "id": "bsc-cs-4year",
+      "name": "B.Sc. Computer Science - 4 Year",
+      "specialization": "Computer Science",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [124000, 124000, 124000, 124000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "4-year honors program",
+        "Advanced computer science",
+        "Research projects",
+        "Higher education pathway"
+      ]
+    },
+    {
+      "id": "bsc-forensic-3year",
+      "name": "B.Sc. Forensic Science - 3 Year",
+      "specialization": "Forensic Science",
+      "degree": "B.Sc-FS",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [124000, 124000, 124000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Crime investigation",
+        "Evidence analysis",
+        "Laboratory techniques",
+        "Legal applications"
+      ]
+    },
+    {
+      "id": "bsc-forensic-4year",
+      "name": "B.Sc. Forensic Science - 4 Year",
+      "specialization": "Forensic Science",
+      "degree": "B.Sc-FS",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [124000, 124000, 124000, 124000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "4-year honors program",
+        "Advanced forensic science",
+        "Research component",
+        "Professional preparation"
+      ]
+    },
+    {
+      "id": "bsc-agriculture",
+      "name": "B.Sc. Agriculture",
+      "specialization": "Agriculture",
+      "degree": "B.Sc-AG",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [124000, 124000, 124000, 124000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Agricultural science",
+        "Crop management",
+        "Soil science",
+        "Sustainable farming"
+      ]
+    },
+    {
+      "id": "msc-it",
+      "name": "M.Sc. Information Technology",
+      "specialization": "Information Technology",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [140000, 140000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced IT concepts",
+        "Research methodology",
+        "System design",
+        "Technology management"
+      ]
+    },
+    {
+      "id": "msc-sciences",
+      "name": "M.Sc. Computer Science/Biotechnology/Microbiology",
+      "specialization": "Multiple Sciences",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced scientific study",
+        "Research projects",
+        "Specialization options",
+        "PhD preparation"
+      ]
+    },
+    {
+      "id": "bca-3year",
+      "name": "BCA - 3 Year",
+      "specialization": "Computer Applications",
+      "degree": "BCA",
+      "field": "Computer Science",
+      "duration": 3,
+      "annualFees": [139000, 139000, 139000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Programming focus",
+        "Software development",
+        "IT career pathway",
+        "MCA preparation"
+      ]
+    },
+    {
+      "id": "bca-4year",
+      "name": "BCA - 4 Year",
+      "specialization": "Computer Applications",
+      "degree": "BCA",
+      "field": "Computer Science",
+      "duration": 4,
+      "annualFees": [139000, 139000, 139000, 139000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "4-year honors program",
+        "Advanced programming",
+        "Research component",
+        "Industry preparation"
+      ]
+    },
+    {
+      "id": "mca",
+      "name": "Master of Computer Applications",
+      "specialization": "Computer Applications",
+      "degree": "MCA",
+      "field": "Computer Science",
+      "duration": 2,
+      "annualFees": [198000, 198000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced programming",
+        "Software engineering",
+        "Industry projects",
+        "High-paying careers"
+      ]
+    },
+    {
+      "id": "bfa-painting",
+      "name": "BFA Painting/Sculpture & Applied Arts",
+      "specialization": "Painting/Sculpture & Applied Arts",
+      "degree": "BFA",
+      "field": "Fine Arts",
+      "duration": 4,
+      "annualFees": [128000, 128000, 128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Traditional & modern art",
+        "Studio facilities",
+        "Creative expression",
+        "Artistic career"
+      ]
+    },
+    {
+      "id": "bfa-animation",
+      "name": "BFA Animation and VFX Design",
+      "specialization": "Animation and VFX Design",
+      "degree": "BFA",
+      "field": "Fine Arts",
+      "duration": 4,
+      "annualFees": [128000, 128000, 128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Animation techniques",
+        "VFX technology",
+        "Digital art",
+        "Entertainment industry"
+      ]
+    },
+    {
+      "id": "mfa",
+      "name": "MFA Painting/Sculpture & Applied Arts",
+      "specialization": "Painting/Sculpture & Applied Arts",
+      "degree": "MFA",
+      "field": "Fine Arts",
+      "duration": 2,
+      "annualFees": [112000, 112000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced fine arts",
+        "Master level techniques",
+        "Creative research",
+        "Professional artistry"
+      ]
+    },
+    {
+      "id": "b-interior",
+      "name": "Bachelor of Interior Design",
+      "specialization": "Interior Design",
+      "degree": "B.Interior",
+      "field": "Fine Arts",
+      "duration": 4,
+      "annualFees": [170000, 170000, 170000, 170000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Space planning",
+        "Design software",
+        "Real projects",
+        "Architecture connection"
+      ]
+    },
+    {
+      "id": "bdes-game",
+      "name": "B.Des. Game Art/Film Art",
+      "specialization": "Game Art/Film Art",
+      "degree": "B.DES.",
+      "field": "Fine Arts",
+      "duration": 4,
+      "annualFees": [270000, 270000, 270000, 270000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Game design",
+        "Film production",
+        "Digital media",
+        "Entertainment industry"
+      ]
+    },
+    {
+      "id": "bpharm",
+      "name": "Bachelor of Pharmacy",
+      "specialization": "Pharmacy",
+      "degree": "B.Pharm",
+      "field": "Pharmacy",
+      "duration": 4,
+      "annualFees": [350000, 350000, 350000, 350000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "PCI approved",
+        "Modern pharma labs",
+        "Drug development",
+        "Hospital training"
+      ]
+    },
+    {
+      "id": "dpharm",
+      "name": "Diploma in Pharmacy",
+      "specialization": "Pharmacy",
+      "degree": "D.Pharm",
+      "field": "Pharmacy",
+      "duration": 2,
+      "annualFees": [270000, 270000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "PCI approved",
+        "Quick pharmacy career",
+        "Practical training",
+        "Retail pharmacy"
+      ]
+    },
+    {
+      "id": "bed",
+      "name": "Bachelor of Education",
+      "specialization": "Education",
+      "degree": "B.Ed",
+      "field": "Education",
+      "duration": 2,
+      "annualFees": [114000, 114000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Teaching certification",
+        "School internships",
+        "Pedagogy training",
+        "TET preparation"
+      ]
+    },
+    {
+      "id": "ma-education",
+      "name": "MA Education",
+      "specialization": "Education",
+      "degree": "MA",
+      "field": "Education",
+      "duration": 2,
+      "annualFees": [62000, 62000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Educational theory",
+        "Research methods",
+        "Teaching methodology",
+        "Academic advancement"
+      ]
+    },
+    {
+      "id": "ba-jmc-3year",
+      "name": "BA Journalism & Mass Communication - 3 Year",
+      "specialization": "Journalism & Mass Communication",
+      "degree": "BA-JMC",
+      "field": "Journalism",
+      "duration": 3,
+      "annualFees": [150000, 150000, 150000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Media production",
+        "News reporting",
+        "Digital journalism",
+        "Industry internships"
+      ]
+    },
+    {
+      "id": "ba-jmc-4year",
+      "name": "BA Journalism & Mass Communication - 4 Year",
+      "specialization": "Journalism & Mass Communication",
+      "degree": "BA-JMC",
+      "field": "Journalism",
+      "duration": 4,
+      "annualFees": [150000, 150000, 150000, 150000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "4-year honors program",
+        "Advanced journalism",
+        "Research component",
+        "Media leadership"
+      ]
+    },
+    {
+      "id": "ma-jmc",
+      "name": "MA Journalism & Mass Communication",
+      "specialization": "Journalism & Mass Communication",
+      "degree": "MA-JMC",
+      "field": "Journalism",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced journalism",
+        "Media management",
+        "Research projects",
+        "Industry leadership"
+      ]
+    },
+    {
+      "id": "bballb",
+      "name": "BBA LLB",
+      "specialization": "Business & Law",
+      "degree": "BBA LLB",
+      "field": "Law",
+      "duration": 5,
+      "annualFees": [165000, 165000, 165000, 165000, 165000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "5-year integrated",
+        "BCI approved",
+        "Business + Law",
+        "Corporate law focus"
+      ]
+    },
+    {
+      "id": "ballb",
+      "name": "BA LLB (Hons.)",
+      "specialization": "Arts & Law",
+      "degree": "BA LLB",
+      "field": "Law",
+      "duration": 5,
+      "annualFees": [165000, 165000, 165000, 165000, 165000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "5-year integrated",
+        "BCI approved",
+        "Arts + Law",
+        "Comprehensive training"
+      ]
+    },
+    {
+      "id": "llb",
+      "name": "Bachelor of Law",
+      "specialization": "Law",
+      "degree": "LLB",
+      "field": "Law",
+      "duration": 3,
+      "annualFees": [143000, 143000, 143000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "BCI approved",
+        "Moot court",
+        "Legal internships",
+        "Bar council exam prep"
+      ]
+    },
+    {
+      "id": "llm",
+      "name": "Master of Law",
+      "specialization": "Law",
+      "degree": "LLM",
+      "field": "Law",
+      "duration": 1,
+      "annualFees": [276000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced law",
+        "Specialization options",
+        "Research focus",
+        "Legal practice"
+      ]
+    },
+    {
+      "id": "ba-liberal-3year",
+      "name": "BA Liberal Arts - 3 Year",
+      "specialization": "Liberal Arts (Multiple Specializations)",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 3,
+      "annualFees": [120000, 120000, 120000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Liberal arts education",
+        "Critical thinking",
+        "Communication skills",
+        "Versatile career options"
+      ]
+    },
+    {
+      "id": "ba-liberal-4year",
+      "name": "BA Liberal Arts - 4 Year",
+      "specialization": "Liberal Arts (Multiple Specializations)",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 4,
+      "annualFees": [120000, 120000, 120000, 120000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "4-year honors program",
+        "Advanced liberal arts",
+        "Research component",
+        "Higher education pathway"
+      ]
+    },
+    {
+      "id": "ma-liberal",
+      "name": "MA Liberal Arts",
+      "specialization": "Liberal Arts (Multiple Specializations)",
+      "degree": "MA",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [112000, 112000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced liberal arts",
+        "Research focus",
+        "Specialization options",
+        "Academic excellence"
+      ]
+    },
+    {
+      "id": "phd-all",
+      "name": "Ph.D. (All Specializations)",
+      "specialization": "Multiple Specializations",
+      "degree": "Ph.D.",
+      "field": "Research",
+      "duration": 3,
+      "annualFees": [214000, 214000, 214000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Research degree",
+        "UGC approved",
+        "Multiple specializations",
+        "Academic career"
+      ]
+    },
+    {
+      "id": "english-cert-3month",
+      "name": "3 Months English Certificate",
+      "specialization": "English Language",
+      "degree": "Certificate",
+      "field": "Certifications",
+      "duration": 0.25,
+      "annualFees": [20000],
+      "scholarshipEligible": false,
+      "highlights": [
+        "Basic English skills",
+        "Communication improvement",
+        "Quick certification",
+        "Foundation course"
+      ]
+    },
+    {
+      "id": "english-cert-6month",
+      "name": "6 Months English Certificate",
+      "specialization": "English Language",
+      "degree": "Certificate",
+      "field": "Certifications",
+      "duration": 0.5,
+      "annualFees": [25000],
+      "scholarshipEligible": false,
+      "highlights": [
+        "Intermediate English",
+        "Enhanced communication",
+        "Professional development",
+        "Career preparation"
+      ]
+    },
+    {
+      "id": "english-cert-1year",
+      "name": "1 Year English Certificate",
+      "specialization": "English Language",
+      "degree": "Certificate",
+      "field": "Certifications",
+      "duration": 1,
+      "annualFees": [50000],
+      "scholarshipEligible": false,
+      "highlights": [
+        "Advanced English proficiency",
+        "Comprehensive training",
+        "Professional communication",
+        "Career advancement"
+      ]
+    }
+  ]
+}

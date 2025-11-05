@@ -1,0 +1,1861 @@
+{
+  "id": "sharda",
+  "name": "Sharda University",
+  "shortName": "Sharda",
+  "location": "Greater Noida, Uttar Pradesh, India",
+  "established": 2009,
+  "profile": {
+    "rankings": {
+      "nirf": "151-200",
+      "naac": "A",
+      "type": "Private University"
+    },
+    "highlights": [
+      "63-acre modern campus",
+      "Students from 95+ countries",
+      "Industry tie-ups with Microsoft, Oracle",
+      "State-of-the-art infrastructure",
+      "International curriculum standards"
+    ],
+    "location_benefits": [
+      "Close to Delhi-Noida expressway",
+      "Metro connectivity",
+      "International environment",
+      "Near major IT companies"
+    ]
+  },
+  "scholarships": {
+    "type": "category-based",
+    "bangladeshStudents": {
+      "categories": {
+        "category1": {
+          "name": "Category 1",
+          "description": "B.Tech, BBA, MBA, BCA, MCA, B.Com, B.Arch, B.Design, BA Film/TV, LLB, BJMC, MJMC, M.Advertising, B.Sc. (Radiology, BMLT, CVT, Forensic, Optometry, Nutrition, Dialysis), M.Sc. (Clinical Research, Forensic, Nutrition)",
+          "tiers": [
+            {
+              "name": "High Performance",
+              "percentage": 50,
+              "gpaMin": 3.5,
+              "gpaMax": 5,
+              "conditions": "GPA 3.5 and above"
+            },
+            {
+              "name": "Standard",
+              "percentage": 20,
+              "gpaMin": 3,
+              "gpaMax": 3.49,
+              "conditions": "GPA 3.0 - 3.49"
+            }
+          ],
+          "wbeEnhanced": {
+            "name": "WBE Enhanced Scholarship",
+            "description": "Enhanced scholarships available through WBE partnership after admission fee payment",
+            "tiers": [
+              {
+                "name": "WBE Premium (Enhanced 50%)",
+                "percentage": 50,
+                "gpaMin": 3,
+                "gpaMax": 5,
+                "conditions": "GPA 3.0+ through WBE partnership (After ₹52K admission fee)"
+              }
+            ]
+          }
+        },
+        "category2": {
+          "name": "Category 2",
+          "description": "B.Sc. Nursing",
+          "tiers": [
+            {
+              "name": "Nursing Scholarship",
+              "percentage": 25,
+              "gpaMin": 3,
+              "gpaMax": 5,
+              "conditions": "GPA 3.0 and above"
+            }
+          ]
+        },
+        "category3": {
+          "name": "Category 3",
+          "description": "Other B.Sc., B.A., M.Sc., M.A. programs",
+          "tiers": [
+            {
+              "name": "Standard Scholarship",
+              "percentage": 20,
+              "gpaMin": 3,
+              "gpaMax": 5,
+              "conditions": "GPA 3.0 and above (30% available on special request)"
+            }
+          ],
+          "wbeEnhanced": {
+            "name": "WBE Enhanced Category 3",
+            "description": "Enhanced 30% scholarship available through WBE special request after admission fee payment",
+            "tiers": [
+              {
+                "name": "WBE Enhanced (30%)",
+                "percentage": 30,
+                "gpaMin": 3,
+                "gpaMax": 5,
+                "conditions": "GPA 3.0+ through WBE special request (After ₹52K admission fee)"
+              }
+            ]
+          }
+        },
+        "category4": {
+          "name": "Category 4",
+          "description": "Medical and Pharmacy programs",
+          "tiers": []
+        }
+      }
+    }
+  },
+  "additionalFees": {
+    "oneTime": {
+      "amount": 30000,
+      "name": "Admission Fee (One Time & Non-Refundable)",
+      "services": [
+        "Registration Fee",
+        "Admission Processing",
+        "Visa Support Documents",
+        "Airport Reception",
+        "FRRO Registration Help",
+        "Student ID Card",
+        "Library Card",
+        "WiFi Access"
+      ]
+    },
+    "wbeAdditionalFees": {
+      "amount": 52000,
+      "name": "WBE Comprehensive Package (Non-Refundable)",
+      "breakdown": [
+        {
+          "item": "Admission Fee",
+          "amount": 30000,
+          "note": "First year only"
+        },
+        {
+          "item": "Medical Check-up & Insurance (Annually)",
+          "amount": 10000,
+          "note": "Second year onwards Rs.5,000"
+        },
+        {
+          "item": "Registration Fee (from 2nd year onwards)",
+          "amount": 15000,
+          "note": "Annual"
+        },
+        {
+          "item": "Examination Fee (Annually)",
+          "amount": 12000,
+          "note": "Per year"
+        }
+      ],
+      "wbeServices": [
+        "Free Visa Slot Arrangement (Worth 12,000-20,000 BDT)",
+        "Free Accommodation Assistance",
+        "Enhanced Scholarship Processing",
+        "Official Partnership Benefits"
+      ]
+    },
+    "recurring": {
+      "examination": {
+        "amount": 12000,
+        "frequency": "Annually",
+        "description": "Examination Fee"
+      },
+      "registration": {
+        "amount": 15000,
+        "frequency": "Annually from Second Year",
+        "description": "Registration Fee"
+      },
+      "medical": {
+        "amount": 5000,
+        "frequency": "Annually from Second Year",
+        "description": "Medical Check-up & Insurance (Reduced Rate)"
+      },
+      "alumni": {
+        "amount": 1500,
+        "frequency": "One-time in Final Year",
+        "description": "Alumni Association Contribution"
+      }
+    },
+    "wbeRecurring": {
+      "totalAnnual": 32000,
+      "description": "WBE Annual Fees from 2nd Year Onwards",
+      "breakdown": [
+        {
+          "item": "Medical Check-up & Insurance",
+          "amount": 5000,
+          "note": "Reduced rate from 2nd year"
+        },
+        {
+          "item": "Registration Fee",
+          "amount": 15000,
+          "note": "Annual from 2nd year"
+        },
+        {
+          "item": "Examination Fee",
+          "amount": 12000,
+          "note": "Annual"
+        }
+      ]
+    }
+  },
+  "programs": [
+    {
+      "id": "btech-cse",
+      "name": "B.Tech in Computer Science & Engineering",
+      "specialization": "Computer Science & Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [270000, 278100, 286443, 295036],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "AICTE approved",
+        "Microsoft partnership",
+        "Advanced computing labs",
+        "Industry-oriented curriculum"
+      ]
+    },
+    {
+      "id": "btech-cse-blockchain",
+      "name": "B.Tech CSE (Block Chain Technology)",
+      "specialization": "Block Chain Technology",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [280000, 288400, 297052, 305964],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Blockchain focused curriculum",
+        "Cryptocurrency & DeFi",
+        "Smart contracts",
+        "Industry certifications"
+      ]
+    },
+    {
+      "id": "btech-cse-aiml",
+      "name": "B.Tech CSE (Artificial Intelligence & Machine Learning)",
+      "specialization": "Artificial Intelligence & Machine Learning",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [280000, 288400, 297052, 305964],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "AI/ML focused curriculum",
+        "Deep learning projects",
+        "GPU-powered labs",
+        "Industry certifications"
+      ]
+    },
+    {
+      "id": "btech-cse-arvr",
+      "name": "B.Tech CSE (Augmented & Virtual Reality)",
+      "specialization": "Augmented & Virtual Reality",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [280000, 288400, 297052, 305964],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "AR/VR development",
+        "3D modeling & animation",
+        "Immersive technology labs",
+        "Gaming industry focus"
+      ]
+    },
+    {
+      "id": "btech-cse-cyber",
+      "name": "B.Tech CSE (Cyber Security & Forensics)",
+      "specialization": "Cyber Security & Forensics",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [280000, 288400, 297052, 305964],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "EC-Council partnership",
+        "Ethical hacking",
+        "Digital forensics",
+        "CEH preparation"
+      ]
+    },
+    {
+      "id": "btech-cse-iot",
+      "name": "B.Tech CSE (AI for IoT Applications)",
+      "specialization": "AI for IoT Applications",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [280000, 288400, 297052, 305964],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "AERIS partnership",
+        "Smart devices programming",
+        "IoT lab with sensors",
+        "Industry 4.0 ready"
+      ]
+    },
+    {
+      "id": "btech-cse-cloud",
+      "name": "B.Tech CSE (Cloud Technology & Virtualization)",
+      "specialization": "Cloud Technology & Virtualization",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [280000, 288400, 297052, 305964],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "AWS partnership",
+        "Cloud architecture",
+        "DevOps practices",
+        "Industry certifications"
+      ]
+    },
+    {
+      "id": "btech-cse-ds",
+      "name": "B.Tech CSE (Data Science & Analytics)",
+      "specialization": "Data Science & Analytics",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [300000, 309000, 318270, 327818],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Oracle partnership",
+        "Big Data analytics",
+        "Python & R expertise",
+        "Industry projects"
+      ]
+    },
+    {
+      "id": "btech-cse-fullstack",
+      "name": "B.Tech CSE (Full Stack Development)",
+      "specialization": "Full Stack Development",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [300000, 309000, 318270, 327818],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Xebia partnership",
+        "Frontend & backend development",
+        "Modern web technologies",
+        "Industry-ready skills"
+      ]
+    },
+    {
+      "id": "btech-it",
+      "name": "B.Tech in Information Technology",
+      "specialization": "Information Technology",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [212000, 218360, 224911, 231658],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "IT infrastructure focus",
+        "Network management",
+        "Database systems",
+        "Industry exposure"
+      ]
+    },
+    {
+      "id": "btech-eee-ev",
+      "name": "B.Tech EEE (Electric Vehicle Technology)",
+      "specialization": "Electric Vehicle Technology",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [185400, 190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "EV technology focus",
+        "Battery management systems",
+        "Charging infrastructure",
+        "Sustainable transport"
+      ]
+    },
+    {
+      "id": "btech-eee-renewable",
+      "name": "B.Tech EEE (Renewable Energy Systems)",
+      "specialization": "Renewable Energy Systems",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [185400, 190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Solar & wind energy",
+        "Smart grid technology",
+        "Energy storage systems",
+        "Green technology"
+      ]
+    },
+    {
+      "id": "btech-ece-robotics",
+      "name": "B.Tech ECE (Robotics and Automation)",
+      "specialization": "Robotics and Automation",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [185400, 190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Robotics & automation",
+        "Industrial automation",
+        "AI-powered robots",
+        "Modern robotics labs"
+      ]
+    },
+    {
+      "id": "btech-ece-vlsi",
+      "name": "B.Tech ECE (VLSI Design and Technology)",
+      "specialization": "VLSI Design and Technology",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [185400, 190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "VLSI design",
+        "Chip design & verification",
+        "Semiconductor focus",
+        "Advanced tools"
+      ]
+    },
+    {
+      "id": "btech-ece-iot",
+      "name": "B.Tech Electronics & Computer Engg. (IoT)",
+      "specialization": "IoT Applications",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [185400, 190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "IoT applications",
+        "Embedded systems",
+        "Sensor networks",
+        "Smart devices"
+      ]
+    },
+    {
+      "id": "btech-ece-aiml",
+      "name": "B.Tech Electronics & Computer Engg. (AI and ML)",
+      "specialization": "AI and ML",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [185400, 190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "AI & ML integration",
+        "Embedded AI systems",
+        "Machine learning hardware",
+        "Intelligent systems"
+      ]
+    },
+    {
+      "id": "btech-me-ev",
+      "name": "B.Tech ME (Automotive Electrical Vehicles)",
+      "specialization": "Automotive Electrical Vehicles",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [185400, 190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Electric vehicle design",
+        "Automotive engineering",
+        "EV manufacturing",
+        "Sustainable mobility"
+      ]
+    },
+    {
+      "id": "btech-me-mechatronics",
+      "name": "B.Tech ME (Mechatronics)",
+      "specialization": "Mechatronics",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [185400, 190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Mechatronics systems",
+        "Automation & control",
+        "Robotics integration",
+        "Smart manufacturing"
+      ]
+    },
+    {
+      "id": "btech-ce",
+      "name": "B.Tech in Civil Engineering",
+      "specialization": "Civil Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [185400, 190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Structural engineering",
+        "Modern survey equipment",
+        "Construction management",
+        "BIM technology"
+      ]
+    },
+    {
+      "id": "btech-biotech-stem",
+      "name": "B.Tech Biotechnology (Stem Cell & Tissue Engg.)",
+      "specialization": "Stem Cell & Tissue Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [206000, 212180, 218545, 225102],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Stem cell research",
+        "Tissue engineering",
+        "Regenerative medicine",
+        "Biomedical applications"
+      ]
+    },
+    {
+      "id": "btech-biotech-genetic",
+      "name": "B.Tech Biotechnology (Genetic Engineering)",
+      "specialization": "Genetic Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [206000, 212180, 218545, 225102],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Genetic engineering",
+        "Gene therapy",
+        "CRISPR technology",
+        "Biotechnology research"
+      ]
+    },
+    {
+      "id": "bca-aiml",
+      "name": "BCA (AI and Machine Learning)",
+      "specialization": "AI and Machine Learning",
+      "degree": "BCA",
+      "field": "Computer Science",
+      "duration": 3,
+      "annualFees": [180000, 185400, 190962],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "AI/ML programming",
+        "Data science basics",
+        "Python & R",
+        "Machine learning projects"
+      ]
+    },
+    {
+      "id": "bca-cloud",
+      "name": "BCA (Cloud Computing and IoT)",
+      "specialization": "Cloud Computing and IoT",
+      "degree": "BCA",
+      "field": "Computer Science",
+      "duration": 3,
+      "annualFees": [180000, 185400, 190962],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Cloud computing",
+        "IoT applications",
+        "Distributed systems",
+        "Modern tech stack"
+      ]
+    },
+    {
+      "id": "bsc-cs-aiml",
+      "name": "B.Sc. Computer Science (AI and Machine Learning)",
+      "specialization": "AI and Machine Learning",
+      "degree": "B.Sc.",
+      "field": "Computer Science",
+      "duration": 3,
+      "annualFees": [116000, 119480, 123064],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Computer science fundamentals",
+        "AI/ML concepts",
+        "Programming skills",
+        "Research opportunities"
+      ]
+    },
+    {
+      "id": "bsc-cs-cloud",
+      "name": "B.Sc. Computer Science (Cloud Computing and IoT)",
+      "specialization": "Cloud Computing and IoT",
+      "degree": "B.Sc.",
+      "field": "Computer Science",
+      "duration": 3,
+      "annualFees": [116000, 119480, 123064],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Computer science fundamentals",
+        "Cloud technologies",
+        "IoT development",
+        "Modern computing"
+      ]
+    },
+    {
+      "id": "bsc-it",
+      "name": "B.Sc. Information Technology",
+      "specialization": "Information Technology",
+      "degree": "B.Sc.",
+      "field": "Computer Science",
+      "duration": 3,
+      "annualFees": [116000, 119480, 123064],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "IT infrastructure",
+        "Network management",
+        "Database systems",
+        "System administration"
+      ]
+    },
+    {
+      "id": "mca",
+      "name": "Master of Computer Applications",
+      "specialization": "Computer Applications",
+      "degree": "MCA",
+      "field": "Computer Science",
+      "duration": 2,
+      "annualFees": [180000, 185400],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced programming",
+        "Software engineering",
+        "Industry projects",
+        "High-paying careers"
+      ]
+    },
+    {
+      "id": "msc-cs",
+      "name": "M.Sc. Computer Science",
+      "specialization": "Computer Science",
+      "degree": "M.Sc.",
+      "field": "Computer Science",
+      "duration": 2,
+      "annualFees": [122000, 125660],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Advanced computer science",
+        "Research methodology",
+        "Specialization options",
+        "PhD preparation"
+      ]
+    },
+    {
+      "id": "msc-genetic",
+      "name": "M.Sc. Genetic Engineering",
+      "specialization": "Genetic Engineering",
+      "degree": "M.Sc.",
+      "field": "Biotechnology",
+      "duration": 2,
+      "annualFees": [118450, 122004],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Advanced genetics",
+        "Gene therapy research",
+        "Biotechnology applications",
+        "Research focus"
+      ]
+    },
+    {
+      "id": "mtech-biotech",
+      "name": "M.Tech. Biotechnology",
+      "specialization": "Biotechnology (Multiple Specializations)",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [113000, 116390],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced biotechnology",
+        "Research projects",
+        "Industry collaborations",
+        "Specialization options"
+      ]
+    },
+    {
+      "id": "mtech-food",
+      "name": "M.Tech. Food Process Technology",
+      "specialization": "Food Process Technology",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [113000, 116390],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Food processing",
+        "Quality control",
+        "Food safety",
+        "Industry exposure"
+      ]
+    },
+    {
+      "id": "mtech-civil",
+      "name": "M.Tech. Civil Engineering",
+      "specialization": "Civil Engineering (Multiple Specializations)",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [113000, 116390],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced civil engineering",
+        "Specialization options",
+        "Research projects",
+        "Industry applications"
+      ]
+    },
+    {
+      "id": "mtech-cse",
+      "name": "M.Tech. CSE",
+      "specialization": "Computer Science & Engineering (Multiple Specializations)",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [113000, 116390],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced computing",
+        "Research opportunities",
+        "Industry projects",
+        "Specialization options"
+      ]
+    },
+    {
+      "id": "mtech-eee",
+      "name": "M.Tech. EEE",
+      "specialization": "Electrical & Electronics Engineering (Multiple Specializations)",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [113000, 116390],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced electrical engineering",
+        "Power systems",
+        "Automation & control",
+        "Research focus"
+      ]
+    },
+    {
+      "id": "mtech-ece",
+      "name": "M.Tech. ECE",
+      "specialization": "Electronics & Communication Engineering (Multiple Specializations)",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [113000, 116390],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced electronics",
+        "Communication systems",
+        "VLSI design",
+        "Research projects"
+      ]
+    },
+    {
+      "id": "mtech-me",
+      "name": "M.Tech. Mechanical Engineering",
+      "specialization": "Mechanical Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [113000, 116390],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced mechanical engineering",
+        "Design & manufacturing",
+        "Research focus",
+        "Industry applications"
+      ]
+    },
+    {
+      "id": "bcom",
+      "name": "B.Com.",
+      "specialization": "Commerce",
+      "degree": "B.Com",
+      "field": "Commerce",
+      "duration": 3,
+      "annualFees": [175000, 180250, 185658],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Commerce fundamentals",
+        "Accounting & finance",
+        "Business studies",
+        "Professional preparation"
+      ]
+    },
+    {
+      "id": "bcom-hons",
+      "name": "B.Com. (Hons./Research)",
+      "specialization": "Commerce (Hons./Research)",
+      "degree": "B.Com",
+      "field": "Commerce",
+      "duration": 4,
+      "annualFees": [175000, 180250, 185658, 191227],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced commerce",
+        "Higher education pathway"
+      ]
+    },
+    {
+      "id": "bcom-ica",
+      "name": "B.Com. (Finance & Accounting with ICA)",
+      "specialization": "Finance & Accounting with ICA",
+      "degree": "B.Com",
+      "field": "Commerce",
+      "duration": 3,
+      "annualFees": [200000, 206000, 212180],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "ICA partnership",
+        "Professional accounting",
+        "Industry certification",
+        "Career-focused"
+      ]
+    },
+    {
+      "id": "bcom-international",
+      "name": "B.Com. (International Accounting & Finance)",
+      "specialization": "International Accounting & Finance",
+      "degree": "B.Com",
+      "field": "Commerce",
+      "duration": 3,
+      "annualFees": [215000, 221450, 228094],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "ACCA, UK partnership",
+        "International focus",
+        "Global accounting standards",
+        "International career opportunities"
+      ]
+    },
+    {
+      "id": "bba",
+      "name": "Bachelor of Business Administration",
+      "specialization": "Business Administration",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 3,
+      "annualFees": [231000, 237930, 245068],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Management fundamentals",
+        "Industry exposure",
+        "Business labs",
+        "Entrepreneurship cell"
+      ]
+    },
+    {
+      "id": "bba-hons",
+      "name": "BBA (Hons./Research)",
+      "specialization": "Business Administration (Hons./Research)",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [231000, 237930, 245068, 252420],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced management",
+        "Leadership development"
+      ]
+    },
+    {
+      "id": "bba-finance",
+      "name": "BBA (Finance & Accounting)",
+      "specialization": "Finance & Accounting",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 3,
+      "annualFees": [271000, 279130, 287504],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "ACCA, UK partnership",
+        "Financial management",
+        "International certification",
+        "Global career opportunities"
+      ]
+    },
+    {
+      "id": "mcom",
+      "name": "M.Com.",
+      "specialization": "Commerce",
+      "degree": "M.Com",
+      "field": "Commerce",
+      "duration": 2,
+      "annualFees": [120000, 123600],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced commerce",
+        "Research methodology",
+        "Specialization options",
+        "Professional development"
+      ]
+    },
+    {
+      "id": "mba",
+      "name": "Master of Business Administration",
+      "specialization": "Business Administration",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [396550, 408447],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "AICTE approved",
+        "Corporate internships",
+        "Case study methodology",
+        "Leadership development"
+      ]
+    },
+    {
+      "id": "mba-dual",
+      "name": "MBA (Dual Specialization)",
+      "specialization": "Dual Specialization",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [450000, 463500],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Two specializations",
+        "Comprehensive training",
+        "Enhanced career prospects",
+        "Industry exposure"
+      ]
+    },
+    {
+      "id": "executive-mba",
+      "name": "Executive MBA",
+      "specialization": "Executive Management",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [50000, 41000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "For working professionals",
+        "Weekend classes",
+        "Executive education",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "bballb",
+      "name": "BBA LLB (Hons.) Integrated",
+      "specialization": "Business & Law",
+      "degree": "BBA LLB",
+      "field": "Law",
+      "duration": 5,
+      "annualFees": [232000, 238960, 246129, 253513, 261118],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "5-year integrated",
+        "BCI approved",
+        "Business + Law combination",
+        "Corporate law focus"
+      ]
+    },
+    {
+      "id": "ballb",
+      "name": "BA LLB (Hons.) Integrated",
+      "specialization": "Arts & Law",
+      "degree": "BA LLB",
+      "field": "Law",
+      "duration": 5,
+      "annualFees": [232000, 238960, 246129, 253513, 261118],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "5-year integrated",
+        "BCI approved",
+        "Arts + Law combination",
+        "Comprehensive legal training"
+      ]
+    },
+    {
+      "id": "llm",
+      "name": "LL.M.",
+      "specialization": "Law (Multiple Specializations)",
+      "degree": "LLM",
+      "field": "Law",
+      "duration": 1,
+      "annualFees": [176000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced law",
+        "Specialization areas",
+        "Research emphasis",
+        "Legal practice"
+      ]
+    },
+    {
+      "id": "ba",
+      "name": "B.A.",
+      "specialization": "Liberal Arts (Multiple Specializations)",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 3,
+      "annualFees": [125000, 128750, 132613],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Liberal arts education",
+        "Multiple specializations",
+        "Critical thinking",
+        "Versatile career options"
+      ]
+    },
+    {
+      "id": "ba-hons",
+      "name": "B.A. (Hons./Research)",
+      "specialization": "Liberal Arts (Hons./Research)",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 4,
+      "annualFees": [125000, 128750, 132613, 136591],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced liberal arts",
+        "Higher education pathway"
+      ]
+    },
+    {
+      "id": "ba-psychology",
+      "name": "B.A. Psychology",
+      "specialization": "Psychology",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 3,
+      "annualFees": [132000, 135960, 140039],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Behavioral science",
+        "Counseling basics",
+        "Research methods",
+        "Clinical psychology pathway"
+      ]
+    },
+    {
+      "id": "ba-psychology-hons",
+      "name": "B.A. (Hons./Research) Psychology",
+      "specialization": "Psychology (Hons./Research)",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 4,
+      "annualFees": [132000, 135960, 140039, 144240],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year psychology honors",
+        "Research component",
+        "Advanced psychology",
+        "Professional preparation"
+      ]
+    },
+    {
+      "id": "ba-economics",
+      "name": "B.A. Economics",
+      "specialization": "Economics",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 3,
+      "annualFees": [115000, 118450, 122004],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Economic theory",
+        "Policy analysis",
+        "Quantitative methods",
+        "Business applications"
+      ]
+    },
+    {
+      "id": "ba-economics-hons",
+      "name": "B.A. (Hons./Research) Economics",
+      "specialization": "Economics (Hons./Research)",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 4,
+      "annualFees": [115000, 118450, 122004, 125664],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year economics honors",
+        "Research component",
+        "Advanced economics",
+        "Policy analysis"
+      ]
+    },
+    {
+      "id": "ma",
+      "name": "M.A.",
+      "specialization": "Liberal Arts (Multiple Specializations)",
+      "degree": "MA",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [100000, 103000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Advanced liberal arts",
+        "Research focus",
+        "Specialization options",
+        "PhD preparation"
+      ]
+    },
+    {
+      "id": "ma-economics",
+      "name": "M.A. Economics",
+      "specialization": "Economics",
+      "degree": "MA",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [130000, 133900],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Advanced economics",
+        "Policy analysis",
+        "Research methods",
+        "Professional opportunities"
+      ]
+    },
+    {
+      "id": "bsc-basic",
+      "name": "B.Sc.",
+      "specialization": "Basic Sciences (Physics/Chemistry/Maths/Zoology)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [110000, 113300, 116699],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Pure sciences",
+        "Research foundation",
+        "Laboratory work",
+        "Higher studies pathway"
+      ]
+    },
+    {
+      "id": "bsc-basic-hons",
+      "name": "B.Sc. (Hons./Research)",
+      "specialization": "Basic Sciences (Hons./Research)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [110000, 113300, 116699, 120200],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced sciences",
+        "PhD preparation"
+      ]
+    },
+    {
+      "id": "bsc-bio",
+      "name": "B.Sc. (Bio Sciences)",
+      "specialization": "Bio Sciences (Biochemistry/Biotech/Microbiology/Food Science)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [140000, 144200, 148526],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Biological sciences",
+        "Modern labs",
+        "Research opportunities",
+        "Industry applications"
+      ]
+    },
+    {
+      "id": "bsc-bio-hons",
+      "name": "B.Sc. (Hons./Research) Bio Sciences",
+      "specialization": "Bio Sciences (Hons./Research)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [140000, 144200, 148526, 152982],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year bio sciences honors",
+        "Research component",
+        "Advanced biology",
+        "Career preparation"
+      ]
+    },
+    {
+      "id": "msc-general",
+      "name": "M.Sc.",
+      "specialization": "Sciences (Multiple Specializations)",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [130000, 133900],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Advanced sciences",
+        "Research projects",
+        "Specialization options",
+        "PhD pathway"
+      ]
+    },
+    {
+      "id": "barch",
+      "name": "Bachelor of Architecture",
+      "specialization": "Architecture",
+      "degree": "B.Arch",
+      "field": "Architecture",
+      "duration": 5,
+      "annualFees": [180000, 180000, 180000, 180000, 180000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "COA approved",
+        "Design studios",
+        "3D modeling",
+        "Sustainable architecture"
+      ]
+    },
+    {
+      "id": "bpt",
+      "name": "Bachelor of Physiotherapy",
+      "specialization": "Physiotherapy",
+      "degree": "BPT",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [225000, 231750, 238703, 245864],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category4",
+      "highlights": [
+        "Rehabilitation focus",
+        "Modern physio labs",
+        "Hospital internships",
+        "Sports physio"
+      ]
+    },
+    {
+      "id": "bjmc",
+      "name": "BA (Journalism & Mass Communication)",
+      "specialization": "Journalism & Mass Communication",
+      "degree": "BJMC",
+      "field": "Journalism",
+      "duration": 3,
+      "annualFees": [185000, 190550, 196267],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Media studio",
+        "News production",
+        "Digital media",
+        "Industry internships"
+      ]
+    },
+    {
+      "id": "bsc-nursing",
+      "name": "B.Sc. Nursing",
+      "specialization": "Nursing",
+      "degree": "B.Sc.",
+      "field": "Nursing",
+      "duration": 4,
+      "annualFees": [140000, 140000, 140000, 140000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category2",
+      "highlights": [
+        "INC recognized",
+        "Sharda Hospital training",
+        "International standards",
+        "Global career opportunities"
+      ]
+    },
+    {
+      "id": "bpharm",
+      "name": "Bachelor of Pharmacy",
+      "specialization": "Pharmacy",
+      "degree": "B.Pharm",
+      "field": "Pharmacy",
+      "duration": 4,
+      "annualFees": [140000, 140000, 140000, 140000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category4",
+      "highlights": [
+        "PCI approved",
+        "Pharmaceutical labs",
+        "Drug development",
+        "Hospital training"
+      ]
+    },
+    {
+      "id": "dpharm",
+      "name": "Diploma in Pharmacy",
+      "specialization": "Pharmacy",
+      "degree": "D.Pharm",
+      "field": "Pharmacy",
+      "duration": 2,
+      "annualFees": [124000, 127720],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category4",
+      "highlights": [
+        "PCI approved",
+        "Quick pharmacy career",
+        "Practical training",
+        "Retail pharmacy"
+      ]
+    },
+    {
+      "id": "mbbs",
+      "name": "Bachelor of Medicine & Bachelor of Surgery",
+      "specialization": "Medicine",
+      "degree": "MBBS",
+      "field": "Medical Sciences",
+      "duration": 5,
+      "annualFees": [650000, 650000, 650000, 650000, 650000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category4",
+      "highlights": [
+        "NMC recognized",
+        "Sharda Hospital",
+        "International exposure",
+        "Clinical excellence"
+      ]
+    },
+    {
+      "id": "bds",
+      "name": "Bachelor of Dental Surgery",
+      "specialization": "Dentistry",
+      "degree": "BDS",
+      "field": "Medical Sciences",
+      "duration": 5,
+      "annualFees": [365000, 365000, 365000, 365000, 365000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category4",
+      "highlights": [
+        "DCI approved",
+        "Modern dental hospital",
+        "Latest equipment",
+        "Clinical training"
+      ]
+    },
+    {
+      "id": "phd-engineering",
+      "name": "Ph.D. in Engineering",
+      "specialization": "Engineering",
+      "degree": "Ph.D.",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [75000, 75000, 75000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Research degree",
+        "UGC approved",
+        "Advanced facilities",
+        "Academic career"
+      ]
+    },
+    {
+      "id": "phd-sciences",
+      "name": "Ph.D. in Sciences",
+      "specialization": "Sciences",
+      "degree": "Ph.D.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [75000, 75000, 75000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Research degree",
+        "UGC approved",
+        "Research labs",
+        "Academic career"
+      ]
+    },
+    {
+      "id": "phd-management",
+      "name": "Ph.D. in Management",
+      "specialization": "Management",
+      "degree": "Ph.D.",
+      "field": "Management",
+      "duration": 3,
+      "annualFees": [75000, 75000, 75000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Research degree",
+        "UGC approved",
+        "Business research",
+        "Academic/industry career"
+      ]
+    },
+    {
+      "id": "btech-cse-lateral",
+      "name": "B.Tech Lateral Entry - Computer Science & Engineering",
+      "specialization": "Computer Science & Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [278100, 286443, 295036],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "AICTE approved",
+        "Microsoft partnership",
+        "Advanced computing labs",
+        "Industry-oriented curriculum"
+      ]
+    },
+    {
+      "id": "btech-cse-blockchain-lateral",
+      "name": "B.Tech Lateral Entry - CSE (Block Chain Technology)",
+      "specialization": "Block Chain Technology",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [288400, 297052, 305964],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "Blockchain focused curriculum",
+        "Cryptocurrency & DeFi",
+        "Smart contracts",
+        "Industry certifications"
+      ]
+    },
+    {
+      "id": "btech-cse-aiml-lateral",
+      "name": "B.Tech Lateral Entry - CSE (Artificial Intelligence & Machine Learning)",
+      "specialization": "Artificial Intelligence & Machine Learning",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [288400, 297052, 305964],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "AI/ML focused curriculum",
+        "Deep learning projects",
+        "GPU-powered labs",
+        "Industry certifications"
+      ]
+    },
+    {
+      "id": "btech-cse-arvr-lateral",
+      "name": "B.Tech Lateral Entry - CSE (Augmented & Virtual Reality)",
+      "specialization": "Augmented & Virtual Reality",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [288400, 297052, 305964],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "AR/VR development",
+        "3D modeling & animation",
+        "Immersive technology labs",
+        "Gaming industry focus"
+      ]
+    },
+    {
+      "id": "btech-cse-cyber-lateral",
+      "name": "B.Tech Lateral Entry - CSE (Cyber Security & Forensics)",
+      "specialization": "Cyber Security & Forensics",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [288400, 297052, 305964],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "EC-Council partnership",
+        "Ethical hacking",
+        "Digital forensics",
+        "CEH preparation"
+      ]
+    },
+    {
+      "id": "btech-cse-iot-lateral",
+      "name": "B.Tech Lateral Entry - CSE (AI for IoT Applications)",
+      "specialization": "AI for IoT Applications",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [288400, 297052, 305964],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "AERIS partnership",
+        "Smart devices programming",
+        "IoT lab with sensors",
+        "Industry 4.0 ready"
+      ]
+    },
+    {
+      "id": "btech-cse-cloud-lateral",
+      "name": "B.Tech Lateral Entry - CSE (Cloud Technology & Virtualization)",
+      "specialization": "Cloud Technology & Virtualization",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [288400, 297052, 305964],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "AWS partnership",
+        "Cloud architecture",
+        "DevOps practices",
+        "Industry certifications"
+      ]
+    },
+    {
+      "id": "btech-cse-ds-lateral",
+      "name": "B.Tech Lateral Entry - CSE (Data Science & Analytics)",
+      "specialization": "Data Science & Analytics",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [309000, 318270, 327818],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "Oracle partnership",
+        "Big Data analytics",
+        "Python & R expertise",
+        "Industry projects"
+      ]
+    },
+    {
+      "id": "btech-cse-fullstack-lateral",
+      "name": "B.Tech Lateral Entry - CSE (Full Stack Development)",
+      "specialization": "Full Stack Development",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [309000, 318270, 327818],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "Xebia partnership",
+        "Frontend & backend development",
+        "Modern web technologies",
+        "Industry-ready skills"
+      ]
+    },
+    {
+      "id": "btech-it-lateral",
+      "name": "B.Tech Lateral Entry - Information Technology",
+      "specialization": "Information Technology",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [218360, 224911, 231658],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "IT infrastructure focus",
+        "Network management",
+        "Database systems",
+        "Industry exposure"
+      ]
+    },
+    {
+      "id": "btech-eee-ev-lateral",
+      "name": "B.Tech Lateral Entry - EEE (Electric Vehicle Technology)",
+      "specialization": "Electric Vehicle Technology",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "EV technology focus",
+        "Battery management systems",
+        "Charging infrastructure",
+        "Sustainable transport"
+      ]
+    },
+    {
+      "id": "btech-eee-renewable-lateral",
+      "name": "B.Tech Lateral Entry - EEE (Renewable Energy Systems)",
+      "specialization": "Renewable Energy Systems",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "Solar & wind energy",
+        "Smart grid technology",
+        "Energy storage systems",
+        "Green technology"
+      ]
+    },
+    {
+      "id": "btech-ece-robotics-lateral",
+      "name": "B.Tech Lateral Entry - ECE (Robotics and Automation)",
+      "specialization": "Robotics and Automation",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "Robotics & automation",
+        "Industrial automation",
+        "AI-powered robots",
+        "Modern robotics labs"
+      ]
+    },
+    {
+      "id": "btech-ece-vlsi-lateral",
+      "name": "B.Tech Lateral Entry - ECE (VLSI Design and Technology)",
+      "specialization": "VLSI Design and Technology",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "VLSI design",
+        "Chip design & verification",
+        "Semiconductor focus",
+        "Advanced tools"
+      ]
+    },
+    {
+      "id": "btech-ece-iot-lateral",
+      "name": "B.Tech Lateral Entry - Electronics & Computer Engg. (IoT)",
+      "specialization": "IoT Applications",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "IoT applications",
+        "Embedded systems",
+        "Sensor networks",
+        "Smart devices"
+      ]
+    },
+    {
+      "id": "btech-ece-aiml-lateral",
+      "name": "B.Tech Lateral Entry - Electronics & Computer Engg. (AI and ML)",
+      "specialization": "AI and ML",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "AI & ML integration",
+        "Embedded AI systems",
+        "Machine learning hardware",
+        "Intelligent systems"
+      ]
+    },
+    {
+      "id": "btech-me-ev-lateral",
+      "name": "B.Tech Lateral Entry - ME (Automotive Electrical Vehicles)",
+      "specialization": "Automotive Electrical Vehicles",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "Electric vehicle design",
+        "Automotive engineering",
+        "EV manufacturing",
+        "Sustainable mobility"
+      ]
+    },
+    {
+      "id": "btech-me-mechatronics-lateral",
+      "name": "B.Tech Lateral Entry - ME (Mechatronics)",
+      "specialization": "Mechatronics",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "Mechatronics systems",
+        "Automation & control",
+        "Robotics integration",
+        "Smart manufacturing"
+      ]
+    },
+    {
+      "id": "btech-ce-lateral",
+      "name": "B.Tech Lateral Entry - Civil Engineering",
+      "specialization": "Civil Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "Structural engineering",
+        "Modern survey equipment",
+        "Construction management",
+        "BIM technology"
+      ]
+    },
+    {
+      "id": "btech-biotech-stem-lateral",
+      "name": "B.Tech Lateral Entry - Biotechnology (Stem Cell & Tissue Engg.)",
+      "specialization": "Stem Cell & Tissue Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [212180, 218545, 225102],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "Stem cell research",
+        "Tissue engineering",
+        "Regenerative medicine",
+        "Biomedical applications"
+      ]
+    },
+    {
+      "id": "btech-biotech-genetic-lateral",
+      "name": "B.Tech Lateral Entry - Biotechnology (Genetic Engineering)",
+      "specialization": "Genetic Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [212180, 218545, 225102],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Direct 2nd year entry",
+        "For diploma holders",
+        "Genetic engineering",
+        "Gene therapy",
+        "CRISPR technology",
+        "Biotechnology research"
+      ]
+    }
+  ]
+}

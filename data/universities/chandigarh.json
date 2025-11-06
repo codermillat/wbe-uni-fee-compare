@@ -1,0 +1,502 @@
+{
+  "id": "chandigarh",
+  "name": "Chandigarh University",
+  "shortName": "CU",
+  "location": "Mohali, Punjab, India",
+  "established": 2012,
+  "profile": {
+    "rankings": {
+      "nirf": "101-150",
+      "naac": "A+",
+      "type": "Private University"
+    },
+    "highlights": [
+      "200+ acre smart campus",
+      "Students from 40+ countries",
+      "Industry partnerships with Google, Microsoft, Amazon",
+      "Modern infrastructure with smart classrooms",
+      "Strong placement record"
+    ],
+    "location_benefits": [
+      "Close to Chandigarh",
+      "International airport connectivity",
+      "Safe and green environment",
+      "Near IT hubs"
+    ]
+  },
+  "scholarships": {
+    "type": "gpa-tiered",
+    "bangladeshStudents": {
+      "tiers": [
+        {
+          "name": "High Performance",
+          "percentage": 50,
+          "gpaMin": 3.5,
+          "gpaMax": 5,
+          "conditions": "GPA 3.5 and above"
+        },
+        {
+          "name": "Standard",
+          "percentage": 35,
+          "gpaMin": 0,
+          "gpaMax": 3.49,
+          "conditions": "GPA below 3.5"
+        }
+      ]
+    }
+  },
+  "additionalFees": {
+    "oneTime": {
+      "amount": 25000,
+      "name": "Admission Fee (One Time & Non-Refundable)",
+      "services": [
+        "Registration Fee",
+        "Admission Processing",
+        "Student ID Card",
+        "Library Card",
+        "WiFi Access"
+      ]
+    },
+    "recurring": {
+      "examination": {
+        "amount": 10000,
+        "frequency": "Annually",
+        "description": "Examination Fee"
+      }
+    }
+  },
+  "programs": [
+    {
+      "id": "btech-cse",
+      "name": "B.Tech in Computer Science & Engineering",
+      "specialization": "Computer Science & Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [130000, 130000, 130000, 130000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AICTE approved",
+        "Industry-oriented curriculum",
+        "Modern computing labs",
+        "Strong placement support"
+      ]
+    },
+    {
+      "id": "btech-cse-aiml",
+      "name": "B.Tech CSE (Artificial Intelligence & Machine Learning)",
+      "specialization": "Artificial Intelligence & Machine Learning",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [160000, 160000, 160000, 160000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AI/ML focused curriculum",
+        "Industry partnerships",
+        "Advanced labs",
+        "Research opportunities"
+      ]
+    },
+    {
+      "id": "btech-cse-ds",
+      "name": "B.Tech CSE (Data Science)",
+      "specialization": "Data Science",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [160000, 160000, 160000, 160000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Data science specialization",
+        "Big data analytics",
+        "Industry projects",
+        "Career-focused"
+      ]
+    },
+    {
+      "id": "btech-cse-cyber",
+      "name": "B.Tech CSE (Cyber Security)",
+      "specialization": "Cyber Security",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [160000, 160000, 160000, 160000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Cybersecurity focus",
+        "Ethical hacking",
+        "Industry certifications",
+        "Security labs"
+      ]
+    },
+    {
+      "id": "btech-cse-cloud",
+      "name": "B.Tech CSE (Cloud Computing)",
+      "specialization": "Cloud Computing",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [160000, 160000, 160000, 160000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Cloud technologies",
+        "AWS/Azure training",
+        "Industry partnerships",
+        "DevOps focus"
+      ]
+    },
+    {
+      "id": "btech-cse-iot",
+      "name": "B.Tech CSE (Internet of Things)",
+      "specialization": "Internet of Things",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [160000, 160000, 160000, 160000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "IoT specialization",
+        "Smart devices",
+        "Embedded systems",
+        "Industry 4.0"
+      ]
+    },
+    {
+      "id": "btech-ece",
+      "name": "B.Tech in Electronics & Communication Engineering",
+      "specialization": "Electronics & Communication Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [130000, 130000, 130000, 130000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AICTE approved",
+        "Modern labs",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "btech-me",
+      "name": "B.Tech in Mechanical Engineering",
+      "specialization": "Mechanical Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [130000, 130000, 130000, 130000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AICTE approved",
+        "Advanced workshops",
+        "Industry training",
+        "Strong placements"
+      ]
+    },
+    {
+      "id": "btech-ce",
+      "name": "B.Tech in Civil Engineering",
+      "specialization": "Civil Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [130000, 130000, 130000, 130000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AICTE approved",
+        "Modern labs",
+        "Construction management",
+        "Industry projects"
+      ]
+    },
+    {
+      "id": "btech-eee",
+      "name": "B.Tech in Electrical & Electronics Engineering",
+      "specialization": "Electrical & Electronics Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [130000, 130000, 130000, 130000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AICTE approved",
+        "Power systems",
+        "Automation",
+        "Career support"
+      ]
+    },
+    {
+      "id": "bca",
+      "name": "Bachelor of Computer Applications",
+      "specialization": "Computer Applications",
+      "degree": "BCA",
+      "field": "Computer Science",
+      "duration": 3,
+      "annualFees": [80000, 80000, 80000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Programming focus",
+        "Software development",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bsc-cs",
+      "name": "B.Sc. in Computer Science",
+      "specialization": "Computer Science",
+      "degree": "B.Sc.",
+      "field": "Computer Science",
+      "duration": 3,
+      "annualFees": [70000, 70000, 70000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "CS fundamentals",
+        "Programming skills",
+        "Research focus",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "mtech-cse",
+      "name": "M.Tech in Computer Science & Engineering",
+      "specialization": "Computer Science & Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [140000, 140000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced computing",
+        "Research focus",
+        "Industry projects",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "mca",
+      "name": "Master of Computer Applications",
+      "specialization": "Computer Applications",
+      "degree": "MCA",
+      "field": "Computer Science",
+      "duration": 2,
+      "annualFees": [120000, 120000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced programming",
+        "Software engineering",
+        "Industry focus",
+        "High-paying careers"
+      ]
+    },
+    {
+      "id": "bba",
+      "name": "Bachelor of Business Administration",
+      "specialization": "Business Administration",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 3,
+      "annualFees": [90000, 90000, 90000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Management skills",
+        "Industry exposure",
+        "Entrepreneurship",
+        "Career support"
+      ]
+    },
+    {
+      "id": "mba",
+      "name": "Master of Business Administration",
+      "specialization": "Business Administration",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [180000, 180000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Leadership development",
+        "Case studies",
+        "Corporate internships",
+        "Excellent placements"
+      ]
+    },
+    {
+      "id": "bcom",
+      "name": "B.Com",
+      "specialization": "Commerce",
+      "degree": "B.Com",
+      "field": "Commerce",
+      "duration": 3,
+      "annualFees": [70000, 70000, 70000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Commerce fundamentals",
+        "Accounting & finance",
+        "Professional preparation",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "barch",
+      "name": "Bachelor of Architecture",
+      "specialization": "Architecture",
+      "degree": "B.Arch",
+      "field": "Architecture",
+      "duration": 5,
+      "annualFees": [150000, 150000, 150000, 150000, 150000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "COA approved",
+        "Design studios",
+        "Sustainable architecture",
+        "Industry projects"
+      ]
+    },
+    {
+      "id": "bpharm",
+      "name": "Bachelor of Pharmacy",
+      "specialization": "Pharmacy",
+      "degree": "B.Pharm",
+      "field": "Pharmacy",
+      "duration": 4,
+      "annualFees": [130000, 130000, 130000, 130000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "PCI approved",
+        "Pharmaceutical labs",
+        "Hospital training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bsc-nursing",
+      "name": "B.Sc. Nursing",
+      "specialization": "Nursing",
+      "degree": "B.Sc.",
+      "field": "Nursing",
+      "duration": 4,
+      "annualFees": [120000, 120000, 120000, 120000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "INC recognized",
+        "Hospital training",
+        "International standards",
+        "Global opportunities"
+      ]
+    },
+    {
+      "id": "llb",
+      "name": "Bachelor of Laws",
+      "specialization": "Law",
+      "degree": "LLB",
+      "field": "Law",
+      "duration": 3,
+      "annualFees": [100000, 100000, 100000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "BCI approved",
+        "Legal training",
+        "Moot courts",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "ballb",
+      "name": "BA LLB (Hons.)",
+      "specialization": "Arts & Law",
+      "degree": "BA LLB",
+      "field": "Law",
+      "duration": 5,
+      "annualFees": [110000, 110000, 110000, 110000, 110000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "5-year integrated",
+        "BCI approved",
+        "Comprehensive legal training",
+        "Career support"
+      ]
+    },
+    {
+      "id": "bballb",
+      "name": "BBA LLB (Hons.)",
+      "specialization": "Business & Law",
+      "degree": "BBA LLB",
+      "field": "Law",
+      "duration": 5,
+      "annualFees": [110000, 110000, 110000, 110000, 110000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "5-year integrated",
+        "BCI approved",
+        "Business + Law",
+        "Corporate focus"
+      ]
+    },
+    {
+      "id": "ba",
+      "name": "Bachelor of Arts",
+      "specialization": "Liberal Arts",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 3,
+      "annualFees": [60000, 60000, 60000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Liberal arts education",
+        "Multiple specializations",
+        "Critical thinking",
+        "Career options"
+      ]
+    },
+    {
+      "id": "bsc",
+      "name": "Bachelor of Science",
+      "specialization": "Sciences",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [65000, 65000, 65000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Science education",
+        "Lab facilities",
+        "Research focus",
+        "Higher studies pathway"
+      ]
+    },
+    {
+      "id": "bpt",
+      "name": "Bachelor of Physiotherapy",
+      "specialization": "Physiotherapy",
+      "degree": "BPT",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [140000, 140000, 140000, 140000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Rehabilitation focus",
+        "Modern facilities",
+        "Hospital training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bjmc",
+      "name": "BA (Journalism & Mass Communication)",
+      "specialization": "Journalism & Mass Communication",
+      "degree": "BJMC",
+      "field": "Journalism",
+      "duration": 3,
+      "annualFees": [90000, 90000, 90000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Media training",
+        "Digital journalism",
+        "Industry exposure",
+        "Career support"
+      ]
+    }
+  ]
+}

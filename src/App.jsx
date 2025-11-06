@@ -1,21 +1,24 @@
 import { useState, useEffect } from 'react'
 import niuData from '../data/universities/niu.json'
 import shardaData from '../data/universities/sharda.json'
+import chandigarhData from '../data/universities/chandigarh.json'
 
 function App() {
   const [selectedDegree, setSelectedDegree] = useState('')
   const [selectedField, setSelectedField] = useState('')
   const [niuPrograms, setNiuPrograms] = useState([])
   const [shardaPrograms, setShardaPrograms] = useState([])
+  const [chandigarhPrograms, setChandigarhPrograms] = useState([])
   const [comparisonData, setComparisonData] = useState(null)
   const [studentGPA, setStudentGPA] = useState('')
   const [studentName, setStudentName] = useState('')
   const [selectedNiuProgram, setSelectedNiuProgram] = useState(null)
   const [selectedShardaProgram, setSelectedShardaProgram] = useState(null)
+  const [selectedChandigarhProgram, setSelectedChandigarhProgram] = useState(null)
   const [matchQuality, setMatchQuality] = useState(null)
 
   // All programs combined for filtering
-  const allPrograms = [...niuData.programs, ...shardaData.programs]
+  const allPrograms = [...niuData.programs, ...shardaData.programs, ...chandigarhData.programs]
 
   // Degree level mapping - map existing degree types to hierarchical categories
   const degreeLevelMapping = {
@@ -99,21 +102,25 @@ function App() {
   useEffect(() => {
     let niuFiltered = niuData.programs
     let shardaFiltered = shardaData.programs
+    let chandigarhFiltered = chandigarhData.programs
 
     if (selectedDegree) {
       // Filter by degree level
       niuFiltered = niuFiltered.filter(p => getDegreeLevel(p) === selectedDegree)
       shardaFiltered = shardaFiltered.filter(p => getDegreeLevel(p) === selectedDegree)
+      chandigarhFiltered = chandigarhFiltered.filter(p => getDegreeLevel(p) === selectedDegree)
     }
 
     if (selectedField) {
       // Filter by field
       niuFiltered = niuFiltered.filter(p => p.field === selectedField)
       shardaFiltered = shardaFiltered.filter(p => p.field === selectedField)
+      chandigarhFiltered = chandigarhFiltered.filter(p => p.field === selectedField)
     }
 
     setNiuPrograms(niuFiltered)
     setShardaPrograms(shardaFiltered)
+    setChandigarhPrograms(chandigarhFiltered)
   }, [selectedDegree, selectedField])
 
   // Clear all filters
@@ -206,73 +213,89 @@ function App() {
     return null
   }
 
-  // Enhanced program comparison with smart matching
+  // Enhanced program comparison with smart matching (Three Universities)
   const handleProgramSelection = (selectedProgram, fromUniversity) => {
-    let matchingProgram = null
-    let matchInfo = null
-
     if (fromUniversity === 'niu') {
       setSelectedNiuProgram(selectedProgram)
       
-      if (shardaPrograms.length > 0) {
-        // Find best match in Sharda programs
-        const matchResult = findBestMatch(selectedProgram, shardaPrograms, 'sharda')
-        
-        if (matchResult) {
-          matchingProgram = matchResult.program
-          matchInfo = matchResult
-          setSelectedShardaProgram(matchingProgram)
-          setMatchQuality(matchInfo)
-          comparePrograms(selectedProgram, matchingProgram)
-        } else {
-          // No reasonable match found
-          setSelectedShardaProgram(null)
-          setMatchQuality({
-            quality: 'no-match',
-            reason: `No comparable programs found at Sharda University for ${selectedProgram.name}`
-          })
-          comparePrograms(selectedProgram, null)
-        }
+      // Find matches in Sharda and Chandigarh
+      const shardaMatch = shardaPrograms.length > 0 ? findBestMatch(selectedProgram, shardaPrograms, 'sharda') : null
+      const chandigarhMatch = chandigarhPrograms.length > 0 ? findBestMatch(selectedProgram, chandigarhPrograms, 'chandigarh') : null
+      
+      setSelectedShardaProgram(shardaMatch?.program || null)
+      setSelectedChandigarhProgram(chandigarhMatch?.program || null)
+      
+      // Set match quality based on best available match
+      if (shardaMatch || chandigarhMatch) {
+        const bestMatch = shardaMatch?.quality === 'perfect' ? shardaMatch : 
+                         chandigarhMatch?.quality === 'perfect' ? chandigarhMatch :
+                         shardaMatch?.quality === 'good' ? shardaMatch :
+                         chandigarhMatch?.quality === 'good' ? chandigarhMatch :
+                         shardaMatch || chandigarhMatch
+        setMatchQuality(bestMatch)
       } else {
-        // No Sharda programs available - show NIU only comparison
-        setSelectedShardaProgram(null)
         setMatchQuality({
           quality: 'no-match',
-          reason: 'No equivalent programs available at Sharda University for this degree level'
+          reason: `No comparable programs found at other universities for ${selectedProgram.name}`
         })
-        comparePrograms(selectedProgram, null)
       }
-    } else {
+      
+      comparePrograms(selectedProgram, shardaMatch?.program || null, chandigarhMatch?.program || null)
+      
+    } else if (fromUniversity === 'sharda') {
       setSelectedShardaProgram(selectedProgram)
       
-      if (niuPrograms.length > 0) {
-        // Find best match in NIU programs
-        const matchResult = findBestMatch(selectedProgram, niuPrograms, 'niu')
-        
-        if (matchResult) {
-          matchingProgram = matchResult.program
-          matchInfo = matchResult
-          setSelectedNiuProgram(matchingProgram)
-          setMatchQuality(matchInfo)
-          comparePrograms(matchingProgram, selectedProgram)
-        } else {
-          // No reasonable match found
-          setSelectedNiuProgram(null)
-          setMatchQuality({
-            quality: 'no-match',
-            reason: `No comparable programs found at NIU for ${selectedProgram.name}`
-          })
-          comparePrograms(null, selectedProgram)
-        }
+      // Find matches in NIU and Chandigarh
+      const niuMatch = niuPrograms.length > 0 ? findBestMatch(selectedProgram, niuPrograms, 'niu') : null
+      const chandigarhMatch = chandigarhPrograms.length > 0 ? findBestMatch(selectedProgram, chandigarhPrograms, 'chandigarh') : null
+      
+      setSelectedNiuProgram(niuMatch?.program || null)
+      setSelectedChandigarhProgram(chandigarhMatch?.program || null)
+      
+      // Set match quality
+      if (niuMatch || chandigarhMatch) {
+        const bestMatch = niuMatch?.quality === 'perfect' ? niuMatch : 
+                         chandigarhMatch?.quality === 'perfect' ? chandigarhMatch :
+                         niuMatch?.quality === 'good' ? niuMatch :
+                         chandigarhMatch?.quality === 'good' ? chandigarhMatch :
+                         niuMatch || chandigarhMatch
+        setMatchQuality(bestMatch)
       } else {
-        // No NIU programs available - show Sharda only comparison
-        setSelectedNiuProgram(null)
         setMatchQuality({
           quality: 'no-match',
-          reason: 'No equivalent programs available at NIU for this degree level'
+          reason: `No comparable programs found at other universities for ${selectedProgram.name}`
         })
-        comparePrograms(null, selectedProgram)
       }
+      
+      comparePrograms(niuMatch?.program || null, selectedProgram, chandigarhMatch?.program || null)
+      
+    } else {
+      // fromUniversity === 'chandigarh'
+      setSelectedChandigarhProgram(selectedProgram)
+      
+      // Find matches in NIU and Sharda
+      const niuMatch = niuPrograms.length > 0 ? findBestMatch(selectedProgram, niuPrograms, 'niu') : null
+      const shardaMatch = shardaPrograms.length > 0 ? findBestMatch(selectedProgram, shardaPrograms, 'sharda') : null
+      
+      setSelectedNiuProgram(niuMatch?.program || null)
+      setSelectedShardaProgram(shardaMatch?.program || null)
+      
+      // Set match quality
+      if (niuMatch || shardaMatch) {
+        const bestMatch = niuMatch?.quality === 'perfect' ? niuMatch : 
+                         shardaMatch?.quality === 'perfect' ? shardaMatch :
+                         niuMatch?.quality === 'good' ? niuMatch :
+                         shardaMatch?.quality === 'good' ? shardaMatch :
+                         niuMatch || shardaMatch
+        setMatchQuality(bestMatch)
+      } else {
+        setMatchQuality({
+          quality: 'no-match',
+          reason: `No comparable programs found at other universities for ${selectedProgram.name}`
+        })
+      }
+      
+      comparePrograms(niuMatch?.program || null, shardaMatch?.program || null, selectedProgram)
     }
   }
 
@@ -399,6 +422,34 @@ function App() {
       }
     }
 
+    // Chandigarh has GPA-tiered scholarships
+    if (university.id === 'chandigarh') {
+      const tiers = university.scholarships.bangladeshStudents.tiers.map(tier => {
+        const discountedAnnual = program.annualFees.map(fee => fee * (1 - (tier.percentage / 100)))
+        const totalDiscounted = discountedAnnual.reduce((sum, fee) => sum + fee, 0)
+        return {
+          name: tier.name,
+          percentage: tier.percentage,
+          gpaRange: `${tier.gpaMin} - ${tier.gpaMax}`,
+          gpaMin: tier.gpaMin,
+          gpaMax: tier.gpaMax,
+          conditions: tier.conditions,
+          yearlyFees: discountedAnnual,
+          totalFees: totalDiscounted + totalAdditionalFees,
+          savings: totalAnnualFees - totalDiscounted,
+          type: 'gpa-tiered'
+        }
+      })
+
+      return {
+        tiers,
+        oneTimeFee,
+        additionalFees,
+        originalTotal: totalAnnualFees + totalAdditionalFees,
+        scholarshipType: 'gpa-tiered'
+      }
+    }
+
     // NIU has flat 50% for all
     const discountPercentage = university.scholarships.bangladeshStudents.percentage
     const discountedAnnual = program.annualFees.map(fee => fee * (1 - (discountPercentage / 100)))
@@ -417,9 +468,10 @@ function App() {
     }
   }
 
-  const comparePrograms = (niuProgram, shardaProgram) => {
+  const comparePrograms = (niuProgram, shardaProgram, chandigarhProgram) => {
     const niuCalc = niuProgram ? calculateFees(niuProgram, niuData) : null
     const shardaCalc = shardaProgram ? calculateFees(shardaProgram, shardaData) : null
+    const chandigarhCalc = chandigarhProgram ? calculateFees(chandigarhProgram, chandigarhData) : null
 
     setComparisonData({
       niu: niuProgram ? {
@@ -431,6 +483,11 @@ function App() {
         program: shardaProgram,
         university: shardaData,
         calculations: shardaCalc
+      } : null,
+      chandigarh: chandigarhProgram ? {
+        program: chandigarhProgram,
+        university: chandigarhData,
+        calculations: chandigarhCalc
       } : null
     })
   }
@@ -444,6 +501,18 @@ function App() {
     if (isNaN(gpa)) return tiersToCheck || []
 
     return tiersToCheck.filter(tier => 
+      gpa >= tier.gpaMin && gpa <= tier.gpaMax
+    )
+  }
+
+  // Filter Chandigarh scholarships based on student GPA
+  const getEligibleChandigarhScholarships = (calculations) => {
+    if (!studentGPA || !calculations.tiers) return calculations.tiers || []
+
+    const gpa = parseFloat(studentGPA)
+    if (isNaN(gpa)) return calculations.tiers || []
+
+    return calculations.tiers.filter(tier => 
       gpa >= tier.gpaMin && gpa <= tier.gpaMax
     )
   }
@@ -885,7 +954,7 @@ WBE Education Consultancy
             University Fee Comparison Tool
           </h1>
           <p className="text-lg text-gray-600">
-            For WBE Counselors - Compare NIU & Sharda Programs
+            For WBE Counselors - Compare NIU, Sharda & Chandigarh Programs
           </p>
           <p className="text-sm text-gray-500 mt-2">
             Reference Tool - All scholarship tiers displayed for transparency
@@ -987,8 +1056,8 @@ WBE Education Consultancy
                       {selectedDegree && selectedField && <span className="mx-2">•</span>}
                       {selectedField && <span><strong>Field:</strong> {selectedField}</span>}
                       <span className="ml-3 text-sm">
-                        → {niuPrograms.length + shardaPrograms.length} programs found 
-                        ({niuPrograms.length} NIU, {shardaPrograms.length} Sharda)
+                        → {niuPrograms.length + shardaPrograms.length + chandigarhPrograms.length} programs found 
+                        ({niuPrograms.length} NIU, {shardaPrograms.length} Sharda, {chandigarhPrograms.length} Chandigarh)
                       </span>
                     </div>
                   </div>
@@ -1026,7 +1095,7 @@ WBE Education Consultancy
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 <span className="flex items-center gap-2">
-                  Student GPA (for Sharda Scholarship Filtering)
+                  Student GPA (for Scholarship Filtering)
                   {studentGPA && (
                     <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
                       Active: {studentGPA}
@@ -1064,8 +1133,8 @@ WBE Education Consultancy
           </div>
         </div>
 
-        {/* Program Selection */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        {/* Program Selection - Three Universities */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
           {/* NIU Programs */}
           <div className="bg-white rounded-lg shadow-md p-6">
             <div className="flex items-center justify-between mb-4">
@@ -1073,7 +1142,7 @@ WBE Education Consultancy
                 NIU Programs ({niuPrograms.length})
               </h2>
               <span className="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full">
-                Flat 50% Scholarship
+                Flat 50%
               </span>
             </div>
             <div className="space-y-2 max-h-96 overflow-y-auto">
@@ -1084,7 +1153,7 @@ WBE Education Consultancy
                   className={`w-full text-left p-3 border rounded-lg transition-colors ${
                     selectedNiuProgram?.id === program.id
                       ? 'border-green-500 bg-green-50 ring-2 ring-green-200'
-                      : 'border-gray-200 hover:border-blue-500 hover:bg-blue-50'
+                      : 'border-gray-200 hover:border-green-500 hover:bg-green-50'
                   }`}
                 >
                   <div className="font-medium text-gray-900">{program.name}</div>
@@ -1103,7 +1172,7 @@ WBE Education Consultancy
                 Sharda Programs ({shardaPrograms.length})
               </h2>
               <span className="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full">
-                Tiered Scholarships
+                GPA Tiers
               </span>
             </div>
             <div className="space-y-2 max-h-96 overflow-y-auto">
@@ -1115,6 +1184,36 @@ WBE Education Consultancy
                     selectedShardaProgram?.id === program.id
                       ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-200'
                       : 'border-gray-200 hover:border-blue-500 hover:bg-blue-50'
+                  }`}
+                >
+                  <div className="font-medium text-gray-900">{program.name}</div>
+                  <div className="text-sm text-gray-600">
+                    {program.duration} years • {formatCurrency(program.annualFees[0])} per year
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Chandigarh Programs */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-semibold text-gray-900">
+                Chandigarh Programs ({chandigarhPrograms.length})
+              </h2>
+              <span className="text-sm bg-purple-100 text-purple-800 px-3 py-1 rounded-full">
+                GPA 50%/35%
+              </span>
+            </div>
+            <div className="space-y-2 max-h-96 overflow-y-auto">
+              {chandigarhPrograms.map(program => (
+                <button
+                  key={program.id}
+                  onClick={() => handleProgramSelection(program, 'chandigarh')}
+                  className={`w-full text-left p-3 border rounded-lg transition-colors ${
+                    selectedChandigarhProgram?.id === program.id
+                      ? 'border-purple-500 bg-purple-50 ring-2 ring-purple-200'
+                      : 'border-gray-200 hover:border-purple-500 hover:bg-purple-50'
                   }`}
                 >
                   <div className="font-medium text-gray-900">{program.name}</div>
@@ -1226,7 +1325,10 @@ WBE Education Consultancy
               </div>
             </div>
 
-            <div className={`grid grid-cols-1 ${comparisonData.niu && comparisonData.sharda ? 'lg:grid-cols-2' : ''} gap-6`}>
+            <div className={`grid grid-cols-1 ${
+              (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh) ? 'lg:grid-cols-3' : 
+              ((comparisonData.niu && comparisonData.sharda) || (comparisonData.niu && comparisonData.chandigarh) || (comparisonData.sharda && comparisonData.chandigarh)) ? 'lg:grid-cols-2' : ''
+            } gap-6`}>
               {/* NIU Details */}
               {comparisonData.niu && (
                 <div className="border-2 border-green-200 rounded-lg p-6 bg-green-50">
@@ -1450,6 +1552,116 @@ WBE Education Consultancy
                       {comparisonData.sharda.program.highlights.map((highlight, index) => (
                         <li key={index} className="flex items-start">
                           <span className="text-blue-600 mr-2">✓</span>
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                </div>
+              )}
+
+              {/* Chandigarh Details */}
+              {comparisonData.chandigarh && (
+                <div className="border-2 border-purple-200 rounded-lg p-6 bg-purple-50">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {comparisonData.chandigarh.university.name}
+                  </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">
+                      {comparisonData.chandigarh.program.name}
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      Duration: {comparisonData.chandigarh.program.duration} years
+                    </p>
+                  </div>
+
+                  <div className="bg-white rounded-lg p-4">
+                    <h5 className="font-semibold text-gray-900 mb-2">Original Fees</h5>
+                    {comparisonData.chandigarh.program.annualFees.map((fee, index) => (
+                      <div key={index} className="flex justify-between text-sm mb-1">
+                        <span>Year {index + 1}:</span>
+                        <span className="font-medium">{formatCurrency(fee)}</span>
+                      </div>
+                    ))}
+                    <div className="flex justify-between text-sm mb-1 pt-2 border-t">
+                      <span>One-Time Fee:</span>
+                      <span className="font-medium">{formatCurrency(comparisonData.chandigarh.calculations.oneTimeFee)}</span>
+                    </div>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span>Annual Examination Fee:</span>
+                      <span className="font-medium">₹10,000 per year</span>
+                    </div>
+                    <div className="flex justify-between font-bold pt-2 border-t">
+                      <span>Total Original:</span>
+                      <span>{formatCurrency(comparisonData.chandigarh.calculations.originalTotal)}</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <h5 className="font-semibold text-purple-900 mb-3">
+                      GPA-Based Scholarship Tiers
+                    </h5>
+                    <p className="text-xs text-purple-700 mb-3">
+                      Scholarship percentage depends on your academic GPA
+                    </p>
+                    {getEligibleChandigarhScholarships(comparisonData.chandigarh.calculations).map((tier, index) => (
+                      <div key={index} className="bg-purple-100 border border-purple-200 rounded-lg p-4 mb-3 hover:bg-purple-200 transition-colors cursor-pointer">
+                        <div className="flex items-center justify-between mb-3">
+                          <h6 className="font-semibold text-purple-900">{tier.name}</h6>
+                          <span className="text-lg font-bold text-purple-900">{tier.percentage}%</span>
+                        </div>
+                        <p className="text-xs text-purple-700 mb-3">
+                          GPA Range: {tier.gpaRange} • {tier.conditions}
+                        </p>
+                        
+                        {/* Year-by-year breakdown */}
+                        <div className="bg-white rounded-lg p-3 mb-3">
+                          <h7 className="text-xs font-semibold text-purple-900 mb-2 block">Yearly Fees After {tier.percentage}% Scholarship:</h7>
+                          {tier.yearlyFees.map((fee, yearIndex) => (
+                            <div key={yearIndex} className="flex justify-between text-xs mb-1">
+                              <span>Year {yearIndex + 1}:</span>
+                              <div className="text-right">
+                                <span className="line-through text-gray-500 mr-2">
+                                  {formatCurrency(comparisonData.chandigarh.program.annualFees[yearIndex])}
+                                </span>
+                                <span className="font-medium text-purple-900">{formatCurrency(fee)}</span>
+                              </div>
+                            </div>
+                          ))}
+                          <div className="pt-2 border-t border-purple-200">
+                            <div className="flex justify-between text-xs mb-1">
+                              <span>One-Time Fee (Year 1):</span>
+                              <span className="font-medium text-purple-900">{formatCurrency(comparisonData.chandigarh.calculations.oneTimeFee)}</span>
+                            </div>
+                            <div className="flex justify-between text-xs mb-1">
+                              <span>Annual Examination Fee:</span>
+                              <span className="font-medium text-purple-900">₹10,000 per year</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="space-y-2 text-sm">
+                          <div className="flex justify-between items-center bg-purple-50 rounded-lg p-2">
+                            <span className="font-medium">Total After Scholarship:</span>
+                            <span className="font-bold text-purple-900">{formatCurrency(tier.totalFees)}</span>
+                          </div>
+                          <div className="flex justify-between items-center bg-green-50 rounded-lg p-2">
+                            <span className="font-medium text-green-700">You Save:</span>
+                            <span className="font-bold text-green-700">{formatCurrency(tier.savings)}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="bg-white rounded-lg p-4">
+                    <h5 className="font-semibold text-gray-900 mb-2">Program Highlights</h5>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      {comparisonData.chandigarh.program.highlights.map((highlight, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="text-purple-600 mr-2">✓</span>
                           {highlight}
                         </li>
                       ))}

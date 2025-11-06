@@ -27,10 +27,11 @@ This tool is designed as a **reference and learning tool** for counselors to:
 
 ### Technical Features
 - 100% Frontend (No backend, no database)
-- React 18 + Vite for fast performance
+- React 19 + Vite 7 for fast performance
 - Tailwind CSS for responsive design
 - LocalStorage for temporary data only
 - JSON-based university data
+- Vercel-ready with `vercel.json` (build, output, and SPA rewrites)
 
 ## 📊 Data Structure
 
@@ -180,11 +181,38 @@ The comparison shows:
 npm run build
 ```
 
-### Deployment Options
-- **Vercel**: Connect GitHub repo for automatic deployments
-- **Netlify**: Drag & drop `dist` folder
-- **GitHub Pages**: Use `gh-pages` for hosting
-- **Any static hosting**: Upload `dist` folder
+### Deploy on Vercel (Recommended)
+This project includes a `vercel.json` so Vercel can auto-detect the build and serve the SPA correctly.
+
+1. Push this repository to GitHub.
+2. Go to Vercel and select “Import Project”.
+3. Choose this GitHub repo.
+4. Settings (Vercel usually auto-detects):
+   - Framework Preset: Vite
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+5. Deploy.
+
+`vercel.json` contents:
+```
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
+```
+
+Notes:
+- The rewrite ensures all client-side routes fall back to `index.html`.
+- No environment variables are required.
+
+### Other Options
+- **Netlify**: Drag & drop `dist` folder or set build to `npm run build` and publish directory to `dist`.
+- **GitHub Pages**: Use a static export from `dist` (configure SPA fallback to `index.html`).
+- **Any static hosting**: Upload the `dist` folder.
 
 ### Environment Variables
 None required - fully static application

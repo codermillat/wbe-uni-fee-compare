@@ -1,4 +1,8 @@
-# University Fee Comparison Tool
+# WBE Uni Fee Compare
+ 
+Built for Western Bangla Education (WBE): [About WBE](https://www.westernbanglaedu.co.in/p/about-us.html)
+
+Repository name: `wbe-uni-fee-compare`
 
 A mobile-first, offline-capable web application for Western Bangla Education (WBE) counselors to compare university programs and fees between NIU (Noida International University) and Sharda University for Bangladeshi students.
 

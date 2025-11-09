@@ -47,7 +47,7 @@
   },
   "additionalFees": {
     "oneTime": {
-      "amount": 25000,
+      "amount": 10000,
       "name": "Admission Fee (One Time & Non-Refundable)",
       "services": [
         "Registration Fee",
@@ -59,21 +59,26 @@
     },
     "recurring": {
       "examination": {
-        "amount": 10000,
+        "amount": 5000,
         "frequency": "Annually",
-        "description": "Examination Fee"
+        "description": "Examination Fee (₹2,500 per semester)"
+      },
+      "healthInsurance": {
+        "amount": 3000,
+        "frequency": "Annually",
+        "description": "Health Insurance (Per Year)"
       }
     }
   },
   "programs": [
     {
-      "id": "btech-cse",
-      "name": "B.Tech in Computer Science & Engineering",
+      "id": "be-cse",
+      "name": "B.E. - Computer Science & Engineering (CSE)",
       "specialization": "Computer Science & Engineering",
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [130000, 130000, 130000, 130000],
+      "annualFees": [298000, 298000, 298000, 298000],
       "scholarshipEligible": true,
       "highlights": [
         "AICTE approved",
@@ -83,93 +88,45 @@
       ]
     },
     {
-      "id": "btech-cse-aiml",
-      "name": "B.Tech CSE (Artificial Intelligence & Machine Learning)",
-      "specialization": "Artificial Intelligence & Machine Learning",
+      "id": "be-che",
+      "name": "B.E. - Chemical Engineering (CHE)",
+      "specialization": "Chemical Engineering",
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [160000, 160000, 160000, 160000],
+      "annualFees": [238000, 238000, 238000, 238000],
       "scholarshipEligible": true,
       "highlights": [
-        "AI/ML focused curriculum",
-        "Industry partnerships",
-        "Advanced labs",
-        "Research opportunities"
+        "AICTE approved",
+        "Chemical process engineering",
+        "Modern labs",
+        "Industry exposure"
       ]
     },
     {
-      "id": "btech-cse-ds",
-      "name": "B.Tech CSE (Data Science)",
-      "specialization": "Data Science",
+      "id": "be-it",
+      "name": "B.E. - Information Technology (IT)",
+      "specialization": "Information Technology",
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [160000, 160000, 160000, 160000],
+      "annualFees": [278000, 278000, 278000, 278000],
       "scholarshipEligible": true,
       "highlights": [
-        "Data science specialization",
-        "Big data analytics",
-        "Industry projects",
-        "Career-focused"
+        "AICTE approved",
+        "IT infrastructure focus",
+        "Software development",
+        "Career opportunities"
       ]
     },
     {
-      "id": "btech-cse-cyber",
-      "name": "B.Tech CSE (Cyber Security)",
-      "specialization": "Cyber Security",
-      "degree": "B.Tech",
-      "field": "Engineering",
-      "duration": 4,
-      "annualFees": [160000, 160000, 160000, 160000],
-      "scholarshipEligible": true,
-      "highlights": [
-        "Cybersecurity focus",
-        "Ethical hacking",
-        "Industry certifications",
-        "Security labs"
-      ]
-    },
-    {
-      "id": "btech-cse-cloud",
-      "name": "B.Tech CSE (Cloud Computing)",
-      "specialization": "Cloud Computing",
-      "degree": "B.Tech",
-      "field": "Engineering",
-      "duration": 4,
-      "annualFees": [160000, 160000, 160000, 160000],
-      "scholarshipEligible": true,
-      "highlights": [
-        "Cloud technologies",
-        "AWS/Azure training",
-        "Industry partnerships",
-        "DevOps focus"
-      ]
-    },
-    {
-      "id": "btech-cse-iot",
-      "name": "B.Tech CSE (Internet of Things)",
-      "specialization": "Internet of Things",
-      "degree": "B.Tech",
-      "field": "Engineering",
-      "duration": 4,
-      "annualFees": [160000, 160000, 160000, 160000],
-      "scholarshipEligible": true,
-      "highlights": [
-        "IoT specialization",
-        "Smart devices",
-        "Embedded systems",
-        "Industry 4.0"
-      ]
-    },
-    {
-      "id": "btech-ece",
-      "name": "B.Tech in Electronics & Communication Engineering",
+      "id": "be-ece",
+      "name": "B.E. - Electronics & Communication Engg. (ECE)",
       "specialization": "Electronics & Communication Engineering",
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [130000, 130000, 130000, 130000],
+      "annualFees": [278000, 278000, 278000, 278000],
       "scholarshipEligible": true,
       "highlights": [
         "AICTE approved",
@@ -179,45 +136,13 @@
       ]
     },
     {
-      "id": "btech-me",
-      "name": "B.Tech in Mechanical Engineering",
-      "specialization": "Mechanical Engineering",
+      "id": "be-ee",
+      "name": "B.E. - Electrical Engineering (EE)",
+      "specialization": "Electrical Engineering",
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [130000, 130000, 130000, 130000],
-      "scholarshipEligible": true,
-      "highlights": [
-        "AICTE approved",
-        "Advanced workshops",
-        "Industry training",
-        "Strong placements"
-      ]
-    },
-    {
-      "id": "btech-ce",
-      "name": "B.Tech in Civil Engineering",
-      "specialization": "Civil Engineering",
-      "degree": "B.Tech",
-      "field": "Engineering",
-      "duration": 4,
-      "annualFees": [130000, 130000, 130000, 130000],
-      "scholarshipEligible": true,
-      "highlights": [
-        "AICTE approved",
-        "Modern labs",
-        "Construction management",
-        "Industry projects"
-      ]
-    },
-    {
-      "id": "btech-eee",
-      "name": "B.Tech in Electrical & Electronics Engineering",
-      "specialization": "Electrical & Electronics Engineering",
-      "degree": "B.Tech",
-      "field": "Engineering",
-      "duration": 4,
-      "annualFees": [130000, 130000, 130000, 130000],
+      "annualFees": [278000, 278000, 278000, 278000],
       "scholarshipEligible": true,
       "highlights": [
         "AICTE approved",
@@ -227,109 +152,429 @@
       ]
     },
     {
-      "id": "bca",
-      "name": "Bachelor of Computer Applications",
-      "specialization": "Computer Applications",
-      "degree": "BCA",
-      "field": "Computer Science",
-      "duration": 3,
-      "annualFees": [80000, 80000, 80000],
+      "id": "be-ce",
+      "name": "B.E. - Civil Engineering (CE)",
+      "specialization": "Civil Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [278000, 278000, 278000, 278000],
       "scholarshipEligible": true,
       "highlights": [
-        "Programming focus",
-        "Software development",
+        "AICTE approved",
+        "Modern labs",
+        "Construction management",
+        "Industry projects"
+      ]
+    },
+    {
+      "id": "be-me",
+      "name": "B.E. - Mechanical Engineering (ME)",
+      "specialization": "Mechanical Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [278000, 278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AICTE approved",
+        "Advanced workshops",
+        "Industry training",
+        "Strong placements"
+      ]
+    },
+    {
+      "id": "be-ae",
+      "name": "B.E. - Aerospace Engineering (AE)",
+      "specialization": "Aerospace Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [278000, 278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AICTE approved",
+        "Aerospace systems",
+        "Modern facilities",
+        "Industry partnerships"
+      ]
+    },
+    {
+      "id": "be-ame",
+      "name": "B.E. - Automobile Engineering (AME)",
+      "specialization": "Automobile Engineering",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [278000, 278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AICTE approved",
+        "Automotive technology",
         "Industry exposure",
         "Career opportunities"
       ]
     },
     {
-      "id": "bsc-cs",
-      "name": "B.Sc. in Computer Science",
-      "specialization": "Computer Science",
-      "degree": "B.Sc.",
-      "field": "Computer Science",
-      "duration": 3,
-      "annualFees": [70000, 70000, 70000],
-      "scholarshipEligible": true,
-      "highlights": [
-        "CS fundamentals",
-        "Programming skills",
-        "Research focus",
-        "Career pathways"
-      ]
-    },
-    {
-      "id": "mtech-cse",
-      "name": "M.Tech in Computer Science & Engineering",
-      "specialization": "Computer Science & Engineering",
-      "degree": "M.Tech",
+      "id": "be-mechatronics",
+      "name": "B.E. - Mechatronics Engineering",
+      "specialization": "Mechatronics Engineering",
+      "degree": "B.Tech",
       "field": "Engineering",
-      "duration": 2,
-      "annualFees": [140000, 140000],
+      "duration": 4,
+      "annualFees": [278000, 278000, 278000, 278000],
       "scholarshipEligible": true,
       "highlights": [
-        "Advanced computing",
+        "AICTE approved",
+        "Robotics & automation",
+        "Modern labs",
+        "Industry focus"
+      ]
+    },
+    {
+      "id": "be-ft",
+      "name": "B.E. - Food Technology (FT)",
+      "specialization": "Food Technology",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [278000, 278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AICTE approved",
+        "Food processing",
+        "Quality control",
+        "Industry exposure"
+      ]
+    },
+    {
+      "id": "be-bt",
+      "name": "B.E. - Biotechnology (BT)",
+      "specialization": "Biotechnology",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [278000, 278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AICTE approved",
+        "Biotech labs",
         "Research focus",
-        "Industry projects",
-        "Career advancement"
+        "Career opportunities"
       ]
     },
     {
-      "id": "mca",
-      "name": "Master of Computer Applications",
-      "specialization": "Computer Applications",
-      "degree": "MCA",
-      "field": "Computer Science",
-      "duration": 2,
-      "annualFees": [120000, 120000],
+      "id": "be-cse-fsd",
+      "name": "B.E. - CSE (Full Stack Development)",
+      "specialization": "Full Stack Development",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [328000, 328000, 328000, 328000],
       "scholarshipEligible": true,
       "highlights": [
-        "Advanced programming",
-        "Software engineering",
-        "Industry focus",
-        "High-paying careers"
+        "Full stack development",
+        "Modern web technologies",
+        "Industry projects",
+        "Career-focused"
       ]
     },
     {
-      "id": "bba",
-      "name": "Bachelor of Business Administration",
+      "id": "be-cse-cloud-ibm",
+      "name": "B.E. CSE - Cloud Computing (With IBM)",
+      "specialization": "Cloud Computing",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [328000, 328000, 328000, 328000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Industry collaboration with IBM",
+        "Cloud technologies",
+        "AWS/Azure training",
+        "Industry partnerships"
+      ]
+    },
+    {
+      "id": "be-cse-cyber-ibm",
+      "name": "B.E. CSE - Cyber Security (With IBM)",
+      "specialization": "Cyber Security",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [328000, 328000, 328000, 328000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Industry collaboration with IBM",
+        "Cybersecurity focus",
+        "Ethical hacking",
+        "Industry certifications"
+      ]
+    },
+    {
+      "id": "be-cse-ds-ibm",
+      "name": "B.E. CSE - Data Science (With IBM)",
+      "specialization": "Data Science",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [328000, 328000, 328000, 328000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Industry collaboration with IBM",
+        "Data science specialization",
+        "Big data analytics",
+        "Industry projects"
+      ]
+    },
+    {
+      "id": "be-cse-tcs",
+      "name": "B.E. Computer Science & Business System - TCS",
+      "specialization": "Computer Science & Business System",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [328000, 328000, 328000, 328000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Industry collaboration with TCS",
+        "Business systems integration",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "be-cse-iot-ai",
+      "name": "B.E. CSE - Internet of Things & Artificial Intelligence",
+      "specialization": "Internet of Things & Artificial Intelligence",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [328000, 328000, 328000, 328000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "IoT & AI integration",
+        "Smart devices",
+        "Embedded systems",
+        "Industry 4.0"
+      ]
+    },
+    {
+      "id": "be-cse-aiml-ibm",
+      "name": "B.E. CSE - Artificial Intelligence & Machine Learning (With IBM)",
+      "specialization": "Artificial Intelligence & Machine Learning",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [350000, 350000, 350000, 350000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Industry collaboration with IBM",
+        "AI/ML focused curriculum",
+        "Advanced labs",
+        "Research opportunities"
+      ]
+    },
+    {
+      "id": "bba-general",
+      "name": "BBA (Hons.) - General",
       "specialization": "Business Administration",
       "degree": "BBA",
       "field": "Management",
-      "duration": 3,
-      "annualFees": [90000, 90000, 90000],
+      "duration": 4,
+      "annualFees": [168000, 168000, 168000, 168000],
       "scholarshipEligible": true,
       "highlights": [
-        "Management skills",
+        "Management fundamentals",
         "Industry exposure",
         "Entrepreneurship",
         "Career support"
       ]
     },
     {
-      "id": "mba",
-      "name": "Master of Business Administration",
-      "specialization": "Business Administration",
-      "degree": "MBA",
+      "id": "bba-advertising",
+      "name": "BBA (Hons.) - Advertising & Marketing",
+      "specialization": "Advertising & Marketing",
+      "degree": "BBA",
       "field": "Management",
-      "duration": 2,
-      "annualFees": [180000, 180000],
+      "duration": 4,
+      "annualFees": [168000, 168000, 168000, 168000],
       "scholarshipEligible": true,
       "highlights": [
-        "Leadership development",
-        "Case studies",
-        "Corporate internships",
-        "Excellent placements"
+        "Marketing specialization",
+        "Advertising campaigns",
+        "Industry exposure",
+        "Career opportunities"
       ]
     },
     {
-      "id": "bcom",
-      "name": "B.Com",
+      "id": "bba-tourism",
+      "name": "BBA (Hons.) - Tourism & Event Management",
+      "specialization": "Tourism & Event Management",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [168000, 168000, 168000, 168000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Tourism industry focus",
+        "Event management",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bba-forex",
+      "name": "BBA (Hons.) - Forex Management",
+      "specialization": "Forex Management",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [168000, 168000, 168000, 168000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Forex trading",
+        "Financial markets",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bba-healthcare",
+      "name": "BBA (Hons.) - Health Care Management",
+      "specialization": "Health Care Management",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [168000, 168000, 168000, 168000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Healthcare administration",
+        "Hospital management",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bba-hr",
+      "name": "BBA (Hons.) - Strategic HR",
+      "specialization": "Strategic Human Resources",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [188000, 188000, 188000, 188000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "HR specialization",
+        "Strategic management",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bba-logistics",
+      "name": "BBA (Hons.) - Logistics and Supply Chain Management",
+      "specialization": "Logistics and Supply Chain Management",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [208000, 208000, 208000, 208000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Supply chain management",
+        "Logistics operations",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bba-fintech",
+      "name": "BBA (Hons.) - Fintech",
+      "specialization": "Financial Technology",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [208000, 208000, 208000, 208000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Financial technology",
+        "Digital banking",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bba-acca",
+      "name": "BBA (Hons.) - ACCA",
+      "specialization": "ACCA",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [208000, 208000, 208000, 208000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "ACCA certification",
+        "Accounting & finance",
+        "International recognition",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bba-analytics",
+      "name": "BBA (Hons.) - Business Analytics",
+      "specialization": "Business Analytics",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [208000, 208000, 208000, 208000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Business analytics",
+        "Data-driven decisions",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bba-digital-marketing",
+      "name": "BBA (Hons.) - Digital Marketing",
+      "specialization": "Digital Marketing",
+      "degree": "BBA",
+      "field": "Management",
+      "duration": 4,
+      "annualFees": [208000, 208000, 208000, 208000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Digital marketing",
+        "Social media marketing",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "ba-economics",
+      "name": "B.A. (Hons.) - Economics",
+      "specialization": "Economics",
+      "degree": "B.A.",
+      "field": "Commerce",
+      "duration": 4,
+      "annualFees": [138000, 138000, 138000, 138000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Economics fundamentals",
+        "Economic analysis",
+        "Research focus",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bcom-general",
+      "name": "B.Com (Hons.) - General",
       "specialization": "Commerce",
       "degree": "B.Com",
       "field": "Commerce",
-      "duration": 3,
-      "annualFees": [70000, 70000, 70000],
+      "duration": 4,
+      "annualFees": [168000, 168000, 168000, 168000],
       "scholarshipEligible": true,
       "highlights": [
         "Commerce fundamentals",
@@ -339,29 +584,189 @@
       ]
     },
     {
-      "id": "barch",
-      "name": "Bachelor of Architecture",
-      "specialization": "Architecture",
-      "degree": "B.Arch",
-      "field": "Architecture",
-      "duration": 5,
-      "annualFees": [150000, 150000, 150000, 150000, 150000],
+      "id": "bcom-acca",
+      "name": "B.Com (Hons.) in association with ACCA",
+      "specialization": "Commerce with ACCA",
+      "degree": "B.Com",
+      "field": "Commerce",
+      "duration": 4,
+      "annualFees": [208000, 208000, 208000, 208000],
       "scholarshipEligible": true,
       "highlights": [
-        "COA approved",
-        "Design studios",
-        "Sustainable architecture",
-        "Industry projects"
+        "ACCA certification",
+        "Accounting & finance",
+        "International recognition",
+        "Career opportunities"
       ]
     },
     {
-      "id": "bpharm",
-      "name": "Bachelor of Pharmacy",
+      "id": "bcom-capital",
+      "name": "B.Com (Hons.) - Capital Markets",
+      "specialization": "Capital Markets",
+      "degree": "B.Com",
+      "field": "Commerce",
+      "duration": 4,
+      "annualFees": [208000, 208000, 208000, 208000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Capital markets",
+        "Financial markets",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bsc-cs-hons",
+      "name": "B.Sc (Hons.) - Computer Science",
+      "specialization": "Computer Science",
+      "degree": "B.Sc.",
+      "field": "Computer Science",
+      "duration": 4,
+      "annualFees": [168000, 168000, 168000, 168000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "CS fundamentals",
+        "Programming skills",
+        "Research focus",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "bca-hons",
+      "name": "BCA (Hons.) - Bachelor of Computer Applications",
+      "specialization": "Computer Applications",
+      "degree": "BCA",
+      "field": "Computer Science",
+      "duration": 4,
+      "annualFees": [168000, 168000, 168000, 168000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Programming focus",
+        "Software development",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bca-arvr",
+      "name": "BCA (Hons.) - Augmented Reality and Virtual Reality (AR&VR)",
+      "specialization": "AR & VR",
+      "degree": "BCA",
+      "field": "Computer Science",
+      "duration": 4,
+      "annualFees": [188000, 188000, 188000, 188000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AR/VR technologies",
+        "Immersive experiences",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bca-uiux",
+      "name": "BCA (Hons.) - UI/UX Design",
+      "specialization": "UI/UX Design",
+      "degree": "BCA",
+      "field": "Computer Science",
+      "duration": 4,
+      "annualFees": [188000, 188000, 188000, 188000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "UI/UX design",
+        "User experience",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bca-ds",
+      "name": "BCA (Hons.) - Data Science",
+      "specialization": "Data Science",
+      "degree": "BCA",
+      "field": "Computer Science",
+      "duration": 4,
+      "annualFees": [188000, 188000, 188000, 188000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Data science",
+        "Big data analytics",
+        "Industry projects",
+        "Career-focused"
+      ]
+    },
+    {
+      "id": "bsc-airlines",
+      "name": "B.Sc. (Hons.) - Airlines & Airport Management",
+      "specialization": "Airlines & Airport Management",
+      "degree": "B.Sc.",
+      "field": "Tourism & Hospitality",
+      "duration": 4,
+      "annualFees": [148000, 148000, 148000, 148000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Aviation industry",
+        "Airport operations",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bsc-tourism",
+      "name": "B.Sc. (Hons.) - Travel & Tourism Management",
+      "specialization": "Travel & Tourism Management",
+      "degree": "B.Sc.",
+      "field": "Tourism & Hospitality",
+      "duration": 4,
+      "annualFees": [148000, 148000, 148000, 148000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Tourism management",
+        "Travel industry",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bsc-hotel",
+      "name": "B.Sc. (Hons.) - Hotel & Hospitality Management",
+      "specialization": "Hotel & Hospitality Management",
+      "degree": "B.Sc.",
+      "field": "Tourism & Hospitality",
+      "duration": 4,
+      "annualFees": [168000, 168000, 168000, 168000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Hotel management",
+        "Hospitality industry",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bsc-culinary",
+      "name": "B.Sc. (Hons.) - Culinary Sciences",
+      "specialization": "Culinary Sciences",
+      "degree": "B.Sc.",
+      "field": "Tourism & Hospitality",
+      "duration": 4,
+      "annualFees": [278000, 278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Culinary arts",
+        "Food science",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bpharm-4yr",
+      "name": "Bachelor of Pharmacy (4 Years)",
       "specialization": "Pharmacy",
       "degree": "B.Pharm",
       "field": "Pharmacy",
       "duration": 4,
-      "annualFees": [130000, 130000, 130000, 130000],
+      "annualFees": [298000, 298000, 298000, 298000],
       "scholarshipEligible": true,
       "highlights": [
         "PCI approved",
@@ -371,45 +776,45 @@
       ]
     },
     {
-      "id": "bsc-nursing",
-      "name": "B.Sc. Nursing",
-      "specialization": "Nursing",
-      "degree": "B.Sc.",
-      "field": "Nursing",
-      "duration": 4,
-      "annualFees": [120000, 120000, 120000, 120000],
+      "id": "pharmd-6yr",
+      "name": "Pharm. D - Doctor of Pharmacy (6 Years)",
+      "specialization": "Pharmacy",
+      "degree": "Pharm.D",
+      "field": "Pharmacy",
+      "duration": 6,
+      "annualFees": [348000, 348000, 348000, 348000, 348000, 348000],
       "scholarshipEligible": true,
       "highlights": [
-        "INC recognized",
+        "Doctor of Pharmacy",
+        "Clinical pharmacy",
         "Hospital training",
-        "International standards",
-        "Global opportunities"
-      ]
-    },
-    {
-      "id": "llb",
-      "name": "Bachelor of Laws",
-      "specialization": "Law",
-      "degree": "LLB",
-      "field": "Law",
-      "duration": 3,
-      "annualFees": [100000, 100000, 100000],
-      "scholarshipEligible": true,
-      "highlights": [
-        "BCI approved",
-        "Legal training",
-        "Moot courts",
         "Career opportunities"
       ]
     },
     {
-      "id": "ballb",
-      "name": "BA LLB (Hons.)",
+      "id": "pharmd-pb",
+      "name": "Pharm. D - Post Baccalaureate - PB (3 Years)",
+      "specialization": "Pharmacy",
+      "degree": "Pharm.D",
+      "field": "Pharmacy",
+      "duration": 3,
+      "annualFees": [348000, 348000, 348000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Post-baccalaureate Pharm.D",
+        "Clinical pharmacy",
+        "Hospital training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "ballb-hons",
+      "name": "B.A. + LLB (Hons.) - Integrated (5 Years)",
       "specialization": "Arts & Law",
       "degree": "BA LLB",
       "field": "Law",
       "duration": 5,
-      "annualFees": [110000, 110000, 110000, 110000, 110000],
+      "annualFees": [248000, 248000, 248000, 248000, 248000],
       "scholarshipEligible": true,
       "highlights": [
         "5-year integrated",
@@ -419,13 +824,13 @@
       ]
     },
     {
-      "id": "bballb",
-      "name": "BBA LLB (Hons.)",
+      "id": "bballb-hons",
+      "name": "B.B.A. + LLB (Hons.) - Integrated (5 Years)",
       "specialization": "Business & Law",
       "degree": "BBA LLB",
       "field": "Law",
       "duration": 5,
-      "annualFees": [110000, 110000, 110000, 110000, 110000],
+      "annualFees": [248000, 248000, 248000, 248000, 248000],
       "scholarshipEligible": true,
       "highlights": [
         "5-year integrated",
@@ -435,13 +840,365 @@
       ]
     },
     {
-      "id": "ba",
-      "name": "Bachelor of Arts",
-      "specialization": "Liberal Arts",
-      "degree": "BA",
-      "field": "Liberal Arts",
+      "id": "bcomllb-hons",
+      "name": "B.Com. + LLB (Hons.) - Integrated (5 Years)",
+      "specialization": "Commerce & Law",
+      "degree": "B.Com LLB",
+      "field": "Law",
+      "duration": 5,
+      "annualFees": [248000, 248000, 248000, 248000, 248000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "5-year integrated",
+        "BCI approved",
+        "Commerce + Law",
+        "Corporate focus"
+      ]
+    },
+    {
+      "id": "llb-3yr",
+      "name": "LLB - (After Graduation) (3 Years)",
+      "specialization": "Law",
+      "degree": "LLB",
+      "field": "Law",
       "duration": 3,
-      "annualFees": [60000, 60000, 60000],
+      "annualFees": [178000, 178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "BCI approved",
+        "Legal training",
+        "Moot courts",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "boptom",
+      "name": "B.Optom. - Bachelor of Optometry (4 Years)",
+      "specialization": "Optometry",
+      "degree": "B.Optom",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [178000, 178000, 178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Optometry",
+        "Eye care",
+        "Clinical training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bpt-4.5yr",
+      "name": "BPT - Bachelor of Physiotherapy (4.5 Years)",
+      "specialization": "Physiotherapy",
+      "degree": "BPT",
+      "field": "Allied Health Sciences",
+      "duration": 5,
+      "annualFees": [178000, 178000, 178000, 178000, 89000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Physiotherapy",
+        "Rehabilitation",
+        "Clinical training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bsc-forensic",
+      "name": "B.Sc. (Hons.) - Forensic Science (4 Years)",
+      "specialization": "Forensic Science",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [168000, 168000, 168000, 168000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Forensic science",
+        "Crime investigation",
+        "Lab facilities",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bsc-mlt",
+      "name": "B.Sc. (Hons.) - Medical Lab Technology (4 Years)",
+      "specialization": "Medical Lab Technology",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [178000, 178000, 178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Medical lab technology",
+        "Lab diagnostics",
+        "Clinical training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bsc-nutrition",
+      "name": "B.Sc. (Hons.) - Nutrition & Dietetics (4 Years)",
+      "specialization": "Nutrition & Dietetics",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [178000, 178000, 178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Nutrition science",
+        "Dietetics",
+        "Clinical training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bsc-medical",
+      "name": "B.Sc. (Hons.) - Medical",
+      "specialization": "Medical Sciences",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [148000, 148000, 148000, 148000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Medical sciences",
+        "Pre-medical preparation",
+        "Lab facilities",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "bsc-microbiology",
+      "name": "B.Sc. (Hons.) - Microbiology",
+      "specialization": "Microbiology",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [148000, 148000, 148000, 148000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Microbiology",
+        "Research focus",
+        "Lab facilities",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "bsc-csm",
+      "name": "B.Sc. (Hons.) - Computer Science, Statistics & Mathematics",
+      "specialization": "Computer Science, Statistics & Mathematics",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [148000, 148000, 148000, 148000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Computer science",
+        "Statistics",
+        "Mathematics",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "bsc-physics",
+      "name": "B.Sc. (Hons.) - Physics",
+      "specialization": "Physics",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [148000, 148000, 148000, 148000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Physics",
+        "Research focus",
+        "Lab facilities",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "bsc-chemistry",
+      "name": "B.Sc. (Hons.) - Chemistry",
+      "specialization": "Chemistry",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [148000, 148000, 148000, 148000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Chemistry",
+        "Research focus",
+        "Lab facilities",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "bsc-mathematics",
+      "name": "B.Sc. (Hons.) - Mathematics",
+      "specialization": "Mathematics",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [148000, 148000, 148000, 148000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Mathematics",
+        "Research focus",
+        "Analytical skills",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "bsc-bt",
+      "name": "B.Sc. (Hons.) - Biotechnology",
+      "specialization": "Biotechnology",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [158000, 158000, 158000, 158000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Biotechnology",
+        "Research focus",
+        "Lab facilities",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "bsc-animation",
+      "name": "B.Sc. (Hons.) - Animation, VFX and Gaming",
+      "specialization": "Animation, VFX and Gaming",
+      "degree": "B.Sc.",
+      "field": "Design",
+      "duration": 4,
+      "annualFees": [218000, 218000, 218000, 218000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Animation",
+        "VFX",
+        "Gaming",
+        "Industry exposure"
+      ]
+    },
+    {
+      "id": "barch",
+      "name": "B.Arch. - Bachelor of Architecture (NATA Required)",
+      "specialization": "Architecture",
+      "degree": "B.Arch",
+      "field": "Architecture",
+      "duration": 5,
+      "annualFees": [308000, 308000, 308000, 308000, 308000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "COA approved",
+        "Design studios",
+        "Sustainable architecture",
+        "Industry projects"
+      ]
+    },
+    {
+      "id": "ba-journalism",
+      "name": "B.A. (Hons.) - Journalism and Mass Communication",
+      "specialization": "Journalism and Mass Communication",
+      "degree": "B.A.",
+      "field": "Journalism",
+      "duration": 4,
+      "annualFees": [188000, 188000, 188000, 188000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Journalism",
+        "Mass communication",
+        "Media training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bfa",
+      "name": "Bachelor of Fine Arts",
+      "specialization": "Fine Arts",
+      "degree": "BFA",
+      "field": "Design",
+      "duration": 4,
+      "annualFees": [151800, 151800, 151800, 151800],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Fine arts",
+        "Creative expression",
+        "Studio facilities",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bdes-fashion",
+      "name": "Bachelor of Design - Fashion",
+      "specialization": "Fashion Design",
+      "degree": "B.Des",
+      "field": "Design",
+      "duration": 4,
+      "annualFees": [208000, 208000, 208000, 208000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Fashion design",
+        "Creative design",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bdes-interior",
+      "name": "Bachelor of Design - Interior",
+      "specialization": "Interior Design",
+      "degree": "B.Des",
+      "field": "Design",
+      "duration": 4,
+      "annualFees": [208000, 208000, 208000, 208000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Interior design",
+        "Space planning",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "bdes-product",
+      "name": "Bachelor of Design - Product and Industrial Design",
+      "specialization": "Product and Industrial Design",
+      "degree": "B.Des",
+      "field": "Design",
+      "duration": 4,
+      "annualFees": [238000, 238000, 238000, 238000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Product design",
+        "Industrial design",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "ba-social-work",
+      "name": "B.A. (Hons.) - Social Work",
+      "specialization": "Social Work",
+      "degree": "B.A.",
+      "field": "Liberal Arts",
+      "duration": 4,
+      "annualFees": [148000, 148000, 148000, 148000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Social work",
+        "Community service",
+        "Field work",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "ba-liberal-arts",
+      "name": "B.A. (Hons.) - Liberal Arts",
+      "specialization": "Liberal Arts",
+      "degree": "B.A.",
+      "field": "Liberal Arts",
+      "duration": 4,
+      "annualFees": [148000, 148000, 148000, 148000],
       "scholarshipEligible": true,
       "highlights": [
         "Liberal arts education",
@@ -451,51 +1208,1139 @@
       ]
     },
     {
-      "id": "bsc",
-      "name": "Bachelor of Science",
-      "specialization": "Sciences",
-      "degree": "B.Sc.",
-      "field": "Sciences",
-      "duration": 3,
-      "annualFees": [65000, 65000, 65000],
-      "scholarshipEligible": true,
-      "highlights": [
-        "Science education",
-        "Lab facilities",
-        "Research focus",
-        "Higher studies pathway"
-      ]
-    },
-    {
-      "id": "bpt",
-      "name": "Bachelor of Physiotherapy",
-      "specialization": "Physiotherapy",
-      "degree": "BPT",
-      "field": "Allied Health Sciences",
+      "id": "ba-psychology",
+      "name": "B.A. (Hons.) - Psychology",
+      "specialization": "Psychology",
+      "degree": "B.A.",
+      "field": "Liberal Arts",
       "duration": 4,
-      "annualFees": [140000, 140000, 140000, 140000],
+      "annualFees": [158000, 158000, 158000, 158000],
       "scholarshipEligible": true,
       "highlights": [
-        "Rehabilitation focus",
-        "Modern facilities",
-        "Hospital training",
+        "Psychology",
+        "Human behavior",
+        "Research focus",
         "Career opportunities"
       ]
     },
     {
-      "id": "bjmc",
-      "name": "BA (Journalism & Mass Communication)",
-      "specialization": "Journalism & Mass Communication",
-      "degree": "BJMC",
-      "field": "Journalism",
+      "id": "be-che-lateral",
+      "name": "B.E. - Chemical Engineering (CHE) - Lateral Entry",
+      "specialization": "Chemical Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
       "duration": 3,
-      "annualFees": [90000, 90000, 90000],
+      "annualFees": [238000, 238000, 238000],
       "scholarshipEligible": true,
       "highlights": [
-        "Media training",
-        "Digital journalism",
-        "Industry exposure",
+        "Lateral entry program",
+        "AICTE approved",
+        "Chemical process engineering",
+        "Industry exposure"
+      ]
+    },
+    {
+      "id": "be-it-lateral",
+      "name": "B.E. - Information Technology (IT) - Lateral Entry",
+      "specialization": "Information Technology",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "AICTE approved",
+        "IT infrastructure focus",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "be-ece-lateral",
+      "name": "B.E. - Electronics & Communication Engg. (ECE) - Lateral Entry",
+      "specialization": "Electronics & Communication Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "AICTE approved",
+        "Modern labs",
+        "Industry exposure"
+      ]
+    },
+    {
+      "id": "be-ee-lateral",
+      "name": "B.E. - Electrical Engineering (EE) - Lateral Entry",
+      "specialization": "Electrical Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "AICTE approved",
+        "Power systems",
         "Career support"
+      ]
+    },
+    {
+      "id": "be-ce-lateral",
+      "name": "B.E. - Civil Engineering (CE) - Lateral Entry",
+      "specialization": "Civil Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "AICTE approved",
+        "Modern labs",
+        "Industry projects"
+      ]
+    },
+    {
+      "id": "be-me-lateral",
+      "name": "B.E. - Mechanical Engineering (ME) - Lateral Entry",
+      "specialization": "Mechanical Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "AICTE approved",
+        "Advanced workshops",
+        "Strong placements"
+      ]
+    },
+    {
+      "id": "be-ae-lateral",
+      "name": "B.E. - Aerospace Engineering (AE) - Lateral Entry",
+      "specialization": "Aerospace Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "AICTE approved",
+        "Aerospace systems",
+        "Industry partnerships"
+      ]
+    },
+    {
+      "id": "be-ame-lateral",
+      "name": "B.E. - Automobile Engineering (AME) - Lateral Entry",
+      "specialization": "Automobile Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "AICTE approved",
+        "Automotive technology",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "be-mechatronics-lateral",
+      "name": "B.E. - Mechatronics Engineering - Lateral Entry",
+      "specialization": "Mechatronics Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "AICTE approved",
+        "Robotics & automation",
+        "Industry focus"
+      ]
+    },
+    {
+      "id": "be-ft-lateral",
+      "name": "B.E. - Food Technology (FT) - Lateral Entry",
+      "specialization": "Food Technology",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "AICTE approved",
+        "Food processing",
+        "Industry exposure"
+      ]
+    },
+    {
+      "id": "be-bt-lateral",
+      "name": "B.E. - Biotechnology (BT) - Lateral Entry",
+      "specialization": "Biotechnology",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [278000, 278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "AICTE approved",
+        "Biotech labs",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "be-cse-lateral",
+      "name": "B.E. - Computer Science & Engineering (CSE) - Lateral Entry",
+      "specialization": "Computer Science & Engineering",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [298000, 298000, 298000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "AICTE approved",
+        "Industry-oriented curriculum",
+        "Strong placement support"
+      ]
+    },
+    {
+      "id": "be-cse-cloud-lateral",
+      "name": "B.E. CSE - Cloud Computing - Lateral Entry",
+      "specialization": "Cloud Computing",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [328000, 328000, 328000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "Cloud technologies",
+        "AWS/Azure training",
+        "Industry partnerships"
+      ]
+    },
+    {
+      "id": "be-cse-cyber-lateral",
+      "name": "B.E. CSE - Cyber Security - Lateral Entry",
+      "specialization": "Cyber Security",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [328000, 328000, 328000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "Cybersecurity focus",
+        "Ethical hacking",
+        "Industry certifications"
+      ]
+    },
+    {
+      "id": "be-cse-ds-lateral",
+      "name": "B.E. CSE - Data Science - Lateral Entry",
+      "specialization": "Data Science",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [328000, 328000, 328000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "Data science specialization",
+        "Big data analytics",
+        "Industry projects"
+      ]
+    },
+    {
+      "id": "be-cse-tcs-lateral",
+      "name": "B.E. Computer Science & Business system - TCS - Lateral Entry",
+      "specialization": "Computer Science & Business System",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [328000, 328000, 328000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "Industry collaboration with TCS",
+        "Business systems integration",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "be-cse-aiml-lateral",
+      "name": "B.E. CSE - Artificial Intelligence & Machine Learning - Lateral Entry",
+      "specialization": "Artificial Intelligence & Machine Learning",
+      "degree": "B.Tech Lateral",
+      "field": "Engineering",
+      "duration": 3,
+      "annualFees": [350000, 350000, 350000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "AI/ML focused curriculum",
+        "Advanced labs",
+        "Research opportunities"
+      ]
+    },
+    {
+      "id": "bpharm-lateral",
+      "name": "Bachelor of Pharmacy - Lateral Entry",
+      "specialization": "Pharmacy",
+      "degree": "B.Pharm",
+      "field": "Pharmacy",
+      "duration": 3,
+      "annualFees": [298000, 298000, 298000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "PCI approved",
+        "Pharmaceutical labs",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "boptom-lateral",
+      "name": "B.Optom. - Bachelor of Optometry - Lateral Entry",
+      "specialization": "Optometry",
+      "degree": "B.Optom",
+      "field": "Allied Health Sciences",
+      "duration": 3,
+      "annualFees": [178000, 178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "Optometry",
+        "Eye care",
+        "Clinical training"
+      ]
+    },
+    {
+      "id": "bsc-mlt-lateral",
+      "name": "B.Sc. (Hons.) - Medical Lab Technology - Lateral Entry",
+      "specialization": "Medical Lab Technology",
+      "degree": "B.Sc. Lateral",
+      "field": "Allied Health Sciences",
+      "duration": 3,
+      "annualFees": [178000, 178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Lateral entry program",
+        "Medical lab technology",
+        "Lab diagnostics",
+        "Clinical training"
+      ]
+    },
+    {
+      "id": "me-cse",
+      "name": "M.E. - Computer Science & Engineering (CSE)",
+      "specialization": "Computer Science & Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced computing",
+        "Research focus",
+        "Industry projects",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-robotics",
+      "name": "M.E. - Robotics & Automation",
+      "specialization": "Robotics & Automation",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Robotics",
+        "Automation",
+        "Research focus",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-me",
+      "name": "M.E. - Mechanical Engineering (ME)",
+      "specialization": "Mechanical Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Mechanical engineering",
+        "Advanced workshops",
+        "Research focus",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-ame",
+      "name": "M.E. - Automobile Engineering (AME)",
+      "specialization": "Automobile Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Automobile engineering",
+        "Advanced technology",
+        "Research focus",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-ece",
+      "name": "M.E. - Electronics & Communication Engineering (ECE)",
+      "specialization": "Electronics & Communication Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Electronics & Communication",
+        "Advanced labs",
+        "Research focus",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-ee",
+      "name": "M.E. - Electrical Engineering (EE)",
+      "specialization": "Electrical Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Electrical engineering",
+        "Power systems",
+        "Research focus",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-ee-ev",
+      "name": "M.E. - Electrical Engineering (Electrical Vehicle)",
+      "specialization": "Electrical Vehicle Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Electric vehicles",
+        "Sustainable technology",
+        "Research focus",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-cse-aiml",
+      "name": "M.E. - CSE (Artificial Intelligence & Machine Learning)",
+      "specialization": "Artificial Intelligence & Machine Learning",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [188000, 188000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AI/ML specialization",
+        "Advanced research",
+        "Industry projects",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-cse-cloud",
+      "name": "M.E. - CSE Cloud Computing (in collaboration with Virtusa)",
+      "specialization": "Cloud Computing",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [188000, 188000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Cloud computing",
+        "Industry collaboration",
+        "Advanced research",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-cse-ai",
+      "name": "M.E. - CSE Artificial Intelligence (Al)",
+      "specialization": "Artificial Intelligence",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [188000, 188000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Artificial Intelligence",
+        "Advanced research",
+        "Industry projects",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-cse-ds",
+      "name": "M.E. - CSE (Data Science)",
+      "specialization": "Data Science",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [188000, 188000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Data science",
+        "Big data analytics",
+        "Advanced research",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-ce",
+      "name": "M.E. - Civil Engineering (All specializations)",
+      "specialization": "Civil Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Civil engineering",
+        "Advanced research",
+        "Industry projects",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "mba-general",
+      "name": "MBA - HR/Finance/Mark./International Business/ Entrepreneurship",
+      "specialization": "Business Administration",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [328000, 328000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Leadership development",
+        "Case studies",
+        "Corporate internships",
+        "Excellent placements"
+      ]
+    },
+    {
+      "id": "mba-tourism",
+      "name": "MBA - Tourism & Hospitality Management",
+      "specialization": "Tourism & Hospitality Management",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [278000, 278000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Tourism management",
+        "Hospitality industry",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mba-logistics",
+      "name": "MBA - Logistics and Supply Chain Management",
+      "specialization": "Logistics and Supply Chain Management",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [338000, 338000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Supply chain management",
+        "Logistics operations",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mba-digital-marketing",
+      "name": "MBA - Digital Marketing",
+      "specialization": "Digital Marketing",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [338000, 338000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Digital marketing",
+        "Social media marketing",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mba-healthcare",
+      "name": "MBA - Healthcare & Hospital Management",
+      "specialization": "Healthcare & Hospital Management",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [338000, 338000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Healthcare management",
+        "Hospital administration",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mba-banking",
+      "name": "MBA - Banking and Financial Engineering (with SBI and Tally)",
+      "specialization": "Banking and Financial Engineering",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [348000, 348000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Banking & finance",
+        "Industry collaboration",
+        "Financial engineering",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mba-ds-ai",
+      "name": "MBA - Data Science & Artificial Intelligence",
+      "specialization": "Data Science & Artificial Intelligence",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [348000, 348000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Data science & AI",
+        "Business analytics",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mba-analytics",
+      "name": "MBA - Business Analytics (with IBM)",
+      "specialization": "Business Analytics",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [358000, 358000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Business analytics",
+        "Industry collaboration",
+        "Data-driven decisions",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mba-strategic-hr",
+      "name": "MBA - Strategic-HR",
+      "specialization": "Strategic Human Resources",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [358000, 358000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Strategic HR",
+        "Human resources",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mba-media",
+      "name": "MBA - Media & Entertainment Management",
+      "specialization": "Media & Entertainment Management",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [358000, 358000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Media management",
+        "Entertainment industry",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mba-capital",
+      "name": "MBA - Capital Market",
+      "specialization": "Capital Market",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [368000, 368000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Capital markets",
+        "Financial markets",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mba-applied-finance",
+      "name": "MBA - Applied Finance",
+      "specialization": "Applied Finance",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [378000, 378000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Applied finance",
+        "Financial management",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mba-global",
+      "name": "MBA - Global Business Management",
+      "specialization": "Global Business Management",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [378000, 378000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Global business",
+        "International management",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mba-fintech",
+      "name": "MBA - FinTech",
+      "specialization": "Financial Technology",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [438000, 438000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Financial technology",
+        "Digital banking",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "ma-economics",
+      "name": "M.A. - Economics",
+      "specialization": "Economics",
+      "degree": "M.A.",
+      "field": "Commerce",
+      "duration": 2,
+      "annualFees": [158000, 158000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Economics",
+        "Economic analysis",
+        "Research focus",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mcom-acca",
+      "name": "M.Com (ACCA)",
+      "specialization": "Commerce with ACCA",
+      "degree": "M.Com",
+      "field": "Commerce",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "ACCA certification",
+        "Accounting & finance",
+        "International recognition",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mca-ds",
+      "name": "MCA - Data Science",
+      "specialization": "Data Science",
+      "degree": "MCA",
+      "field": "Computer Science",
+      "duration": 2,
+      "annualFees": [188000, 188000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Data science",
+        "Big data analytics",
+        "Industry focus",
+        "High-paying careers"
+      ]
+    },
+    {
+      "id": "mca",
+      "name": "MCA - Master of Computer Applications",
+      "specialization": "Computer Applications",
+      "degree": "MCA",
+      "field": "Computer Science",
+      "duration": 2,
+      "annualFees": [198000, 198000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced programming",
+        "Software engineering",
+        "Industry focus",
+        "High-paying careers"
+      ]
+    },
+    {
+      "id": "mca-aiml",
+      "name": "MCA - Artificial Intelligence & Machine Learning",
+      "specialization": "Artificial Intelligence & Machine Learning",
+      "degree": "MCA",
+      "field": "Computer Science",
+      "duration": 2,
+      "annualFees": [208000, 208000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "AI/ML specialization",
+        "Advanced programming",
+        "Industry focus",
+        "High-paying careers"
+      ]
+    },
+    {
+      "id": "mca-cloud-devops",
+      "name": "MCA - Cloud Computing & DevOps",
+      "specialization": "Cloud Computing & DevOps",
+      "degree": "MCA",
+      "field": "Computer Science",
+      "duration": 2,
+      "annualFees": [208000, 208000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Cloud computing",
+        "DevOps",
+        "Industry focus",
+        "High-paying careers"
+      ]
+    },
+    {
+      "id": "llm",
+      "name": "LLM - Master of Law (1 Year) (After LLB)",
+      "specialization": "Law",
+      "degree": "LLM",
+      "field": "Law",
+      "duration": 1,
+      "annualFees": [239800],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Master of Law",
+        "Legal specialization",
+        "Advanced legal training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "march",
+      "name": "M.Arch. - Masters of Architecture",
+      "specialization": "Architecture",
+      "degree": "M.Arch",
+      "field": "Architecture",
+      "duration": 2,
+      "annualFees": [238000, 238000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced architecture",
+        "Design studios",
+        "Research focus",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "mpharm-pharmacology",
+      "name": "M. Pharm - Pharmacology / Industrial Pharmacy / Pharmaceutical Chemistry",
+      "specialization": "Pharmacy",
+      "degree": "M.Pharm",
+      "field": "Pharmacy",
+      "duration": 2,
+      "annualFees": [218000, 218000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Pharmacy specialization",
+        "Advanced research",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mpharm-pharmaceutics",
+      "name": "M. Pharm - Pharmaceutics",
+      "specialization": "Pharmaceutics",
+      "degree": "M.Pharm",
+      "field": "Pharmacy",
+      "duration": 2,
+      "annualFees": [238000, 238000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Pharmaceutics",
+        "Advanced research",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "moptom",
+      "name": "M.Optom - Master of Optometry",
+      "specialization": "Optometry",
+      "degree": "M.Optom",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced optometry",
+        "Eye care",
+        "Clinical training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mpt",
+      "name": "MPT - Specialization in Sports / Ortho",
+      "specialization": "Physiotherapy",
+      "degree": "MPT",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [148000, 148000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Physiotherapy specialization",
+        "Sports/Ortho focus",
+        "Clinical training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "msc-nutrition",
+      "name": "M.Sc. - Nutrition and Dietetics",
+      "specialization": "Nutrition and Dietetics",
+      "degree": "M.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Nutrition science",
+        "Dietetics",
+        "Clinical training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "msc-mlt",
+      "name": "M.Sc - Medical Lab Technology (Clinical Microbiology / Biochemistry)",
+      "specialization": "Medical Lab Technology",
+      "degree": "M.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Medical lab technology",
+        "Lab diagnostics",
+        "Clinical training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "msc-forensic",
+      "name": "M.Sc. - Forensic Science",
+      "specialization": "Forensic Science",
+      "degree": "M.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [188000, 188000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Forensic science",
+        "Crime investigation",
+        "Lab facilities",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "msc-mathematics",
+      "name": "M.Sc. - Mathematics",
+      "specialization": "Mathematics",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Mathematics",
+        "Advanced research",
+        "Analytical skills",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "msc-general",
+      "name": "M.Sc. - Chemistry / Physics / Botany / Data Sciences / Zoology",
+      "specialization": "Sciences",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [138000, 138000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Sciences",
+        "Advanced research",
+        "Lab facilities",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "msc-industrial",
+      "name": "M.Sc. - Industrial Chemistry / Microbiology / Biotechnology",
+      "specialization": "Sciences",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Industrial sciences",
+        "Advanced research",
+        "Lab facilities",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "ma-journalism",
+      "name": "MA - Journalism & Mass Communication",
+      "specialization": "Journalism and Mass Communication",
+      "degree": "M.A.",
+      "field": "Journalism",
+      "duration": 2,
+      "annualFees": [168000, 168000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Journalism",
+        "Mass communication",
+        "Media training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "msc-animation",
+      "name": "M.Sc. - Animation & Multimedia Technology",
+      "specialization": "Animation & Multimedia Technology",
+      "degree": "M.Sc.",
+      "field": "Design",
+      "duration": 2,
+      "annualFees": [158000, 158000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Animation",
+        "Multimedia technology",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "ma-liberal-arts",
+      "name": "M.A. - Liberal Arts",
+      "specialization": "Liberal Arts",
+      "degree": "M.A.",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [118000, 118000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Liberal arts",
+        "Advanced research",
+        "Critical thinking",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "ma-english",
+      "name": "M.A. - English / Psychology",
+      "specialization": "English / Psychology",
+      "degree": "M.A.",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "English / Psychology",
+        "Advanced research",
+        "Critical thinking",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "ma-clinical-psychology",
+      "name": "M.A. - Clinical Psychology",
+      "specialization": "Clinical Psychology",
+      "degree": "M.A.",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [168000, 168000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Clinical psychology",
+        "Advanced research",
+        "Clinical training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "phd",
+      "name": "Ph.D. (Minimum 3 Years)",
+      "specialization": "Research",
+      "degree": "Ph.D.",
+      "field": "Research",
+      "duration": 3,
+      "annualFees": [218000, 218000, 218000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Doctoral research",
+        "Multiple specializations available",
+        "Research focus",
+        "Academic career"
       ]
     }
   ]

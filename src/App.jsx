@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import niuData from '../data/universities/niu.json'
 import shardaData from '../data/universities/sharda.json'
 import chandigarhData from '../data/universities/chandigarh.json'
+import galgotiasData from '../data/universities/galgotias.json'
 
 function App() {
   const [selectedDegree, setSelectedDegree] = useState('')
@@ -9,16 +10,18 @@ function App() {
   const [niuPrograms, setNiuPrograms] = useState([])
   const [shardaPrograms, setShardaPrograms] = useState([])
   const [chandigarhPrograms, setChandigarhPrograms] = useState([])
+  const [galgotiasPrograms, setGalgotiasPrograms] = useState([])
   const [comparisonData, setComparisonData] = useState(null)
   const [studentGPA, setStudentGPA] = useState('')
   const [studentName, setStudentName] = useState('')
   const [selectedNiuProgram, setSelectedNiuProgram] = useState(null)
   const [selectedShardaProgram, setSelectedShardaProgram] = useState(null)
   const [selectedChandigarhProgram, setSelectedChandigarhProgram] = useState(null)
+  const [selectedGalgotiasProgram, setSelectedGalgotiasProgram] = useState(null)
   const [matchQuality, setMatchQuality] = useState(null)
 
   // All programs combined for filtering
-  const allPrograms = [...niuData.programs, ...shardaData.programs, ...chandigarhData.programs]
+  const allPrograms = [...niuData.programs, ...shardaData.programs, ...chandigarhData.programs, ...galgotiasData.programs]
 
   // Degree level mapping - map existing degree types to hierarchical categories
   const degreeLevelMapping = {
@@ -103,12 +106,14 @@ function App() {
     let niuFiltered = niuData.programs
     let shardaFiltered = shardaData.programs
     let chandigarhFiltered = chandigarhData.programs
+    let galgotiasFiltered = galgotiasData.programs
 
     if (selectedDegree) {
       // Filter by degree level
       niuFiltered = niuFiltered.filter(p => getDegreeLevel(p) === selectedDegree)
       shardaFiltered = shardaFiltered.filter(p => getDegreeLevel(p) === selectedDegree)
       chandigarhFiltered = chandigarhFiltered.filter(p => getDegreeLevel(p) === selectedDegree)
+      galgotiasFiltered = galgotiasFiltered.filter(p => getDegreeLevel(p) === selectedDegree)
     }
 
     if (selectedField) {
@@ -116,11 +121,13 @@ function App() {
       niuFiltered = niuFiltered.filter(p => p.field === selectedField)
       shardaFiltered = shardaFiltered.filter(p => p.field === selectedField)
       chandigarhFiltered = chandigarhFiltered.filter(p => p.field === selectedField)
+      galgotiasFiltered = galgotiasFiltered.filter(p => p.field === selectedField)
     }
 
     setNiuPrograms(niuFiltered)
     setShardaPrograms(shardaFiltered)
     setChandigarhPrograms(chandigarhFiltered)
+    setGalgotiasPrograms(galgotiasFiltered)
   }, [selectedDegree, selectedField])
 
   // Clear all filters
@@ -213,25 +220,26 @@ function App() {
     return null
   }
 
-  // Enhanced program comparison with smart matching (Three Universities)
+  // Enhanced program comparison with smart matching (Four Universities)
   const handleProgramSelection = (selectedProgram, fromUniversity) => {
     if (fromUniversity === 'niu') {
       setSelectedNiuProgram(selectedProgram)
       
-      // Find matches in Sharda and Chandigarh
+      // Find matches in Sharda, Chandigarh, and Galgotias
       const shardaMatch = shardaPrograms.length > 0 ? findBestMatch(selectedProgram, shardaPrograms, 'sharda') : null
       const chandigarhMatch = chandigarhPrograms.length > 0 ? findBestMatch(selectedProgram, chandigarhPrograms, 'chandigarh') : null
+      const galgotiasMatch = galgotiasPrograms.length > 0 ? findBestMatch(selectedProgram, galgotiasPrograms, 'galgotias') : null
       
       setSelectedShardaProgram(shardaMatch?.program || null)
       setSelectedChandigarhProgram(chandigarhMatch?.program || null)
+      setSelectedGalgotiasProgram(galgotiasMatch?.program || null)
       
       // Set match quality based on best available match
-      if (shardaMatch || chandigarhMatch) {
-        const bestMatch = shardaMatch?.quality === 'perfect' ? shardaMatch : 
-                         chandigarhMatch?.quality === 'perfect' ? chandigarhMatch :
-                         shardaMatch?.quality === 'good' ? shardaMatch :
-                         chandigarhMatch?.quality === 'good' ? chandigarhMatch :
-                         shardaMatch || chandigarhMatch
+      const matches = [shardaMatch, chandigarhMatch, galgotiasMatch].filter(m => m)
+      if (matches.length > 0) {
+        const bestMatch = matches.find(m => m.quality === 'perfect') || 
+                         matches.find(m => m.quality === 'good') || 
+                         matches[0]
         setMatchQuality(bestMatch)
       } else {
         setMatchQuality({
@@ -240,25 +248,26 @@ function App() {
         })
       }
       
-      comparePrograms(selectedProgram, shardaMatch?.program || null, chandigarhMatch?.program || null)
+      comparePrograms(selectedProgram, shardaMatch?.program || null, chandigarhMatch?.program || null, galgotiasMatch?.program || null)
       
     } else if (fromUniversity === 'sharda') {
       setSelectedShardaProgram(selectedProgram)
       
-      // Find matches in NIU and Chandigarh
+      // Find matches in NIU, Chandigarh, and Galgotias
       const niuMatch = niuPrograms.length > 0 ? findBestMatch(selectedProgram, niuPrograms, 'niu') : null
       const chandigarhMatch = chandigarhPrograms.length > 0 ? findBestMatch(selectedProgram, chandigarhPrograms, 'chandigarh') : null
+      const galgotiasMatch = galgotiasPrograms.length > 0 ? findBestMatch(selectedProgram, galgotiasPrograms, 'galgotias') : null
       
       setSelectedNiuProgram(niuMatch?.program || null)
       setSelectedChandigarhProgram(chandigarhMatch?.program || null)
+      setSelectedGalgotiasProgram(galgotiasMatch?.program || null)
       
       // Set match quality
-      if (niuMatch || chandigarhMatch) {
-        const bestMatch = niuMatch?.quality === 'perfect' ? niuMatch : 
-                         chandigarhMatch?.quality === 'perfect' ? chandigarhMatch :
-                         niuMatch?.quality === 'good' ? niuMatch :
-                         chandigarhMatch?.quality === 'good' ? chandigarhMatch :
-                         niuMatch || chandigarhMatch
+      const matches = [niuMatch, chandigarhMatch, galgotiasMatch].filter(m => m)
+      if (matches.length > 0) {
+        const bestMatch = matches.find(m => m.quality === 'perfect') || 
+                         matches.find(m => m.quality === 'good') || 
+                         matches[0]
         setMatchQuality(bestMatch)
       } else {
         setMatchQuality({
@@ -267,26 +276,26 @@ function App() {
         })
       }
       
-      comparePrograms(niuMatch?.program || null, selectedProgram, chandigarhMatch?.program || null)
+      comparePrograms(niuMatch?.program || null, selectedProgram, chandigarhMatch?.program || null, galgotiasMatch?.program || null)
       
-    } else {
-      // fromUniversity === 'chandigarh'
+    } else if (fromUniversity === 'chandigarh') {
       setSelectedChandigarhProgram(selectedProgram)
       
-      // Find matches in NIU and Sharda
+      // Find matches in NIU, Sharda, and Galgotias
       const niuMatch = niuPrograms.length > 0 ? findBestMatch(selectedProgram, niuPrograms, 'niu') : null
       const shardaMatch = shardaPrograms.length > 0 ? findBestMatch(selectedProgram, shardaPrograms, 'sharda') : null
+      const galgotiasMatch = galgotiasPrograms.length > 0 ? findBestMatch(selectedProgram, galgotiasPrograms, 'galgotias') : null
       
       setSelectedNiuProgram(niuMatch?.program || null)
       setSelectedShardaProgram(shardaMatch?.program || null)
+      setSelectedGalgotiasProgram(galgotiasMatch?.program || null)
       
       // Set match quality
-      if (niuMatch || shardaMatch) {
-        const bestMatch = niuMatch?.quality === 'perfect' ? niuMatch : 
-                         shardaMatch?.quality === 'perfect' ? shardaMatch :
-                         niuMatch?.quality === 'good' ? niuMatch :
-                         shardaMatch?.quality === 'good' ? shardaMatch :
-                         niuMatch || shardaMatch
+      const matches = [niuMatch, shardaMatch, galgotiasMatch].filter(m => m)
+      if (matches.length > 0) {
+        const bestMatch = matches.find(m => m.quality === 'perfect') || 
+                         matches.find(m => m.quality === 'good') || 
+                         matches[0]
         setMatchQuality(bestMatch)
       } else {
         setMatchQuality({
@@ -295,7 +304,36 @@ function App() {
         })
       }
       
-      comparePrograms(niuMatch?.program || null, shardaMatch?.program || null, selectedProgram)
+      comparePrograms(niuMatch?.program || null, shardaMatch?.program || null, selectedProgram, galgotiasMatch?.program || null)
+      
+    } else {
+      // fromUniversity === 'galgotias'
+      setSelectedGalgotiasProgram(selectedProgram)
+      
+      // Find matches in NIU, Sharda, and Chandigarh
+      const niuMatch = niuPrograms.length > 0 ? findBestMatch(selectedProgram, niuPrograms, 'niu') : null
+      const shardaMatch = shardaPrograms.length > 0 ? findBestMatch(selectedProgram, shardaPrograms, 'sharda') : null
+      const chandigarhMatch = chandigarhPrograms.length > 0 ? findBestMatch(selectedProgram, chandigarhPrograms, 'chandigarh') : null
+      
+      setSelectedNiuProgram(niuMatch?.program || null)
+      setSelectedShardaProgram(shardaMatch?.program || null)
+      setSelectedChandigarhProgram(chandigarhMatch?.program || null)
+      
+      // Set match quality
+      const matches = [niuMatch, shardaMatch, chandigarhMatch].filter(m => m)
+      if (matches.length > 0) {
+        const bestMatch = matches.find(m => m.quality === 'perfect') || 
+                         matches.find(m => m.quality === 'good') || 
+                         matches[0]
+        setMatchQuality(bestMatch)
+      } else {
+        setMatchQuality({
+          quality: 'no-match',
+          reason: `No comparable programs found at other universities for ${selectedProgram.name}`
+        })
+      }
+      
+      comparePrograms(niuMatch?.program || null, shardaMatch?.program || null, chandigarhMatch?.program || null, selectedProgram)
     }
   }
 
@@ -344,6 +382,29 @@ function App() {
       if (university.additionalFees.wbeRecurring) {
         const wbeAnnualFee = university.additionalFees.wbeRecurring.totalAnnual
         additionalFees.wbeRecurring = wbeAnnualFee * (program.duration - 1) // From 2nd year onwards
+      }
+    }
+
+    // Chandigarh has recurring fees: examination fee (₹5,000/year) and health insurance (₹3,000/year)
+    if (university.id === 'chandigarh') {
+      if (university.additionalFees.recurring) {
+        const examFee = university.additionalFees.recurring.examination?.amount || 0
+        const healthInsurance = university.additionalFees.recurring.healthInsurance?.amount || 0
+        const annualRecurring = examFee + healthInsurance // ₹5,000 + ₹3,000 = ₹8,000 per year
+        additionalFees.recurring = annualRecurring * program.duration
+      }
+    }
+
+    // Galgotias has recurring fees: examination fee (₹20,000/year)
+    if (university.id === 'galgotias') {
+      if (university.additionalFees.recurring) {
+        const examFee = university.additionalFees.recurring.examination?.amount || 0
+        additionalFees.recurring = examFee * program.duration // ₹20,000 per year
+      }
+      
+      // Handle industry fee for BCA and MCA industry-oriented programs
+      if (program.hasIndustryFee && program.industryFeeFirstYear) {
+        additionalFees.oneTime += program.industryFeeFirstYear
       }
     }
 
@@ -450,6 +511,32 @@ function App() {
       }
     }
 
+    // Galgotias has course-based scholarships: 60% for B.Tech, 50% for others
+    if (university.id === 'galgotias') {
+      // Determine scholarship percentage based on degree type
+      // Only B.Tech gets 60%, all other courses (including M.Tech) get 50%
+      const isBtech = program.degree === 'B.Tech'
+      const discountPercentage = isBtech 
+        ? university.scholarships.bangladeshStudents.btech.percentage 
+        : university.scholarships.bangladeshStudents.others.percentage
+      
+      const discountedAnnual = program.annualFees.map(fee => fee * (1 - (discountPercentage / 100)))
+      const totalDiscounted = discountedAnnual.reduce((sum, fee) => sum + fee, 0)
+
+      return {
+        flat: {
+          percentage: discountPercentage,
+          yearlyFees: discountedAnnual,
+          totalFees: totalDiscounted + totalAdditionalFees,
+          savings: totalAnnualFees - totalDiscounted
+        },
+        oneTimeFee: additionalFees.oneTime,
+        additionalFees,
+        originalTotal: totalAnnualFees + totalAdditionalFees,
+        scholarshipType: 'course-based'
+      }
+    }
+
     // NIU has flat 50% for all
     const discountPercentage = university.scholarships.bangladeshStudents.percentage
     const discountedAnnual = program.annualFees.map(fee => fee * (1 - (discountPercentage / 100)))
@@ -468,10 +555,11 @@ function App() {
     }
   }
 
-  const comparePrograms = (niuProgram, shardaProgram, chandigarhProgram) => {
+  const comparePrograms = (niuProgram, shardaProgram, chandigarhProgram, galgotiasProgram) => {
     const niuCalc = niuProgram ? calculateFees(niuProgram, niuData) : null
     const shardaCalc = shardaProgram ? calculateFees(shardaProgram, shardaData) : null
     const chandigarhCalc = chandigarhProgram ? calculateFees(chandigarhProgram, chandigarhData) : null
+    const galgotiasCalc = galgotiasProgram ? calculateFees(galgotiasProgram, galgotiasData) : null
 
     setComparisonData({
       niu: niuProgram ? {
@@ -488,6 +576,11 @@ function App() {
         program: chandigarhProgram,
         university: chandigarhData,
         calculations: chandigarhCalc
+      } : null,
+      galgotias: galgotiasProgram ? {
+        program: galgotiasProgram,
+        university: galgotiasData,
+        calculations: galgotiasCalc
       } : null
     })
   }
@@ -525,6 +618,156 @@ function App() {
     return eligibleWBE.length > 0 ? eligibleWBE[0] : null // Return best (first) eligible WBE option
   }
 
+  // Get all available scholarship tiers for Sharda (all tiers, not filtered by GPA)
+  const getAllShardaScholarshipTiers = (calculations) => {
+    const allTiers = []
+    
+    // Add standard tiers
+    if (calculations.tiers && calculations.tiers.length > 0) {
+      calculations.tiers.forEach(tier => {
+        if (!allTiers.find(t => t.percentage === tier.percentage && t.type === 'standard')) {
+          allTiers.push({ ...tier, type: 'standard' })
+        }
+      })
+    }
+    
+    // Add WBE enhanced tiers
+    if (calculations.wbeEnhanced && calculations.wbeEnhanced.length > 0) {
+      calculations.wbeEnhanced.forEach(tier => {
+        if (!allTiers.find(t => t.percentage === tier.percentage && t.type === 'wbeEnhanced')) {
+          allTiers.push({ ...tier, type: 'wbeEnhanced' })
+        }
+      })
+    }
+    
+    return allTiers.sort((a, b) => b.percentage - a.percentage)
+  }
+
+  // Get all available scholarship tiers for Chandigarh
+  const getAllChandigarhScholarshipTiers = (calculations) => {
+    return calculations.tiers || []
+  }
+
+  // Get all available scholarship options for NIU
+  const getNIUScholarshipOptions = () => {
+    return [
+      { percentage: 0, label: 'No Scholarship' },
+      { percentage: 50, label: '50% Scholarship' }
+    ]
+  }
+
+  // Get all available scholarship options for Sharda
+  const getShardaScholarshipOptions = (calculations) => {
+    const options = [
+      { percentage: 0, label: 'No Scholarship' }
+    ]
+    
+    // Get all unique scholarship percentages from tiers
+    const allTiers = getAllShardaScholarshipTiers(calculations)
+    const uniquePercentages = new Set()
+    
+    allTiers.forEach(tier => {
+      if (!uniquePercentages.has(tier.percentage)) {
+        uniquePercentages.add(tier.percentage)
+        options.push({
+          percentage: tier.percentage,
+          label: `${tier.percentage}% Scholarship`,
+          isWBE: tier.type === 'wbeEnhanced'
+        })
+      }
+    })
+    
+    // Sort by percentage (descending)
+    return options.sort((a, b) => b.percentage - a.percentage)
+  }
+
+  // Get all available scholarship options for Chandigarh
+  const getChandigarhScholarshipOptions = (calculations) => {
+    const options = [
+      { percentage: 0, label: 'No Scholarship' }
+    ]
+    
+    // Get all tiers (35% and 50%)
+    const tiers = getAllChandigarhScholarshipTiers(calculations)
+    tiers.forEach(tier => {
+      options.push({
+        percentage: tier.percentage,
+        label: `${tier.percentage}% Scholarship`,
+        gpaRange: tier.gpaRange
+      })
+    })
+    
+    // Sort by percentage (descending)
+    return options.sort((a, b) => b.percentage - a.percentage)
+  }
+
+  // Get all available scholarship options for Galgotias
+  const getGalgotiasScholarshipOptions = (program) => {
+    const options = [
+      { percentage: 0, label: 'No Scholarship' },
+      { percentage: 50, label: '50% Scholarship' }
+    ]
+    
+    // Add 60% option if it's a B.Tech program
+    if (program.degree === 'B.Tech') {
+      options.push({ percentage: 60, label: '60% Scholarship (B.Tech)' })
+    }
+    
+    // Sort by percentage (descending)
+    return options.sort((a, b) => b.percentage - a.percentage)
+  }
+
+  // Calculate fees with specific scholarship percentage for any university
+  const calculateFeesWithScholarship = (program, university, scholarshipPercentage) => {
+    const totalAnnualFees = program.annualFees.reduce((sum, fee) => sum + fee, 0)
+    const oneTimeFee = university.additionalFees.oneTime.amount
+    const additionalFees = {
+      oneTime: oneTimeFee,
+      recurring: 0
+    }
+
+    // Calculate recurring fees based on university
+    if (university.id === 'sharda') {
+      if (university.additionalFees.recurring) {
+        const examFee = university.additionalFees.recurring.examination.amount * program.duration
+        const regFee = university.additionalFees.recurring.registration.amount * (program.duration - 1)
+        const medicalFee = university.additionalFees.recurring.medical.amount * (program.duration - 1)
+        const alumniFee = university.additionalFees.recurring.alumni.amount
+        additionalFees.recurring = examFee + regFee + medicalFee + alumniFee
+      }
+    } else if (university.id === 'chandigarh') {
+      if (university.additionalFees.recurring) {
+        const examFee = university.additionalFees.recurring.examination?.amount || 0
+        const healthInsurance = university.additionalFees.recurring.healthInsurance?.amount || 0
+        const annualRecurring = examFee + healthInsurance
+        additionalFees.recurring = annualRecurring * program.duration
+      }
+    } else if (university.id === 'galgotias') {
+      if (university.additionalFees.recurring) {
+        const examFee = university.additionalFees.recurring.examination?.amount || 0
+        additionalFees.recurring = examFee * program.duration
+      }
+      if (program.hasIndustryFee && program.industryFeeFirstYear) {
+        additionalFees.oneTime += program.industryFeeFirstYear
+      }
+    }
+
+    // Calculate discounted fees
+    const discountedAnnual = program.annualFees.map(fee => fee * (1 - (scholarshipPercentage / 100)))
+    const totalDiscounted = discountedAnnual.reduce((sum, fee) => sum + fee, 0)
+    const totalAdditionalFees = additionalFees.oneTime + additionalFees.recurring
+
+    return {
+      percentage: scholarshipPercentage,
+      yearlyFees: discountedAnnual,
+      totalFees: totalDiscounted + totalAdditionalFees,
+      savings: totalAnnualFees - totalDiscounted,
+      oneTimeFee: additionalFees.oneTime,
+      additionalFees,
+      originalTotal: totalAnnualFees + totalAdditionalFees
+    }
+  }
+
   // Clear all student data for new consultation
   const clearStudentData = () => {
     setStudentGPA('')
@@ -539,407 +782,570 @@ function App() {
     }).format(amount)
   }
 
-  // Copy NIU details only - Professional message for students
-  const copyNIUDetails = async () => {
-    if (!comparisonData) return
+  // Copy NIU details with specific scholarship percentage
+  const copyNIUDetails = async (scholarshipPercentage = 50) => {
+    if (!comparisonData?.niu) return
 
-    const studentGreeting = studentName ? `Dear ${studentName},\n\n` : ''
+    const program = comparisonData.niu.program
+    const university = comparisonData.niu.university
     
-    const niuYearlyBreakdown = comparisonData.niu.calculations.flat.yearlyFees
-      .map((fee, index) => `Year ${index + 1}: ${formatCurrency(fee)}`)
-      .join('\n')
-
-    const text = `${studentGreeting}🎓 EXCELLENT NEWS ABOUT YOUR ADMISSION TO NIU! 🇮🇳
-
-I'm pleased to share the detailed fee structure for your ${comparisonData.niu.program.name} program at Noida International University.
-
-📚 PROGRAM DETAILS:
-✅ Program: ${comparisonData.niu.program.name}
-✅ Duration: ${comparisonData.niu.program.duration} years
-✅ Location: Greater Noida (1 hour from Delhi Airport)
-✅ Recognition: NAAC A+ Rated University
-
-💰 TOTAL INVESTMENT:
-${niuYearlyBreakdown}
-One-Time Fee (First Year): ${formatCurrency(comparisonData.niu.calculations.oneTimeFee)}
-
-🎉 BANGLADESHI STUDENT SCHOLARSHIP: 50% GUARANTEED!
-💸 Total After Scholarship: ${formatCurrency(comparisonData.niu.calculations.flat.totalFees)}
-💵 You Save: ${formatCurrency(comparisonData.niu.calculations.flat.savings)}
-
-🌟 KEY ADVANTAGES:
-${comparisonData.niu.program.highlights.map(h => `✓ ${h}`).join('\n')}
-
-🏠 WHAT'S INCLUDED IN ONE-TIME FEE:
-✓ Registration & Admission Processing
-✓ Visa Support Documentation
-✓ Airport Pickup Service
-✓ FRRO Registration Assistance
-✓ Student ID & Library Access
-
-This is an exceptional opportunity with guaranteed scholarship for Bangladeshi students. The program offers excellent career prospects and industry connections.
-
-📞 Ready to proceed with your admission? Contact us for the next steps!
-
-Best regards,
-WBE Education Consultancy`.trim()
-
-    try {
-      await navigator.clipboard.writeText(text)
-      alert('🎉 NIU details copied! Perfect for sharing with your student.')
-    } catch (err) {
-      alert('❌ Failed to copy. Please try again.')
-    }
-  }
-
-  // Copy Sharda details only - Professional message for students
-  const copyShardaDetails = async () => {
-    if (!comparisonData) return
-
-    const studentGreeting = studentName ? `Dear ${studentName},\n\n` : ''
-    const eligibleScholarships = getEligibleShardaScholarships(comparisonData.sharda.calculations)
-
-    let scholarshipText = ''
-    if (comparisonData.sharda.calculations.noScholarship) {
-      scholarshipText = `📚 PROGRAM INVESTMENT:
-This is a premium program with no scholarships available.
-Total Program Cost: ${formatCurrency(comparisonData.sharda.calculations.originalTotal)}
-
-🏆 PROGRAM VALUE:
-Despite the premium pricing, this program offers exceptional career opportunities and industry recognition.`
-    } else if (eligibleScholarships.length === 1) {
-      const tier = eligibleScholarships[0]
-      const yearlyBreakdown = tier.yearlyFees
-        .map((fee, index) => `Year ${index + 1}: ${formatCurrency(fee)}`)
-        .join('\n')
+    const feeCalc = calculateFeesWithScholarship(program, university, scholarshipPercentage)
+    
+    // Build year-by-year breakdown
+    let yearBreakdown = ''
+    for (let i = 0; i < program.duration; i++) {
+      const originalFee = program.annualFees[i]
+      const scholarshipAmount = scholarshipPercentage > 0 ? Math.round(originalFee * (scholarshipPercentage / 100)) : 0
+      const netTuition = scholarshipPercentage > 0 ? originalFee - scholarshipAmount : originalFee
+      const additionalFee = i === 0 ? feeCalc.oneTimeFee : 0
+      const yearTotal = netTuition + additionalFee
       
-      scholarshipText = `🎉 SCHOLARSHIP CONFIRMED: ${tier.percentage}% DISCOUNT!
-Based on your academic performance (GPA ${studentGPA}), you qualify for our ${tier.name}.
-
-💰 YOUR PROGRAM FEES:
-${yearlyBreakdown}
-One-Time Fee: ${formatCurrency(comparisonData.sharda.calculations.oneTimeFee)}
-
-💸 Total After Scholarship: ${formatCurrency(tier.totalFees)}
-💵 You Save: ${formatCurrency(tier.savings)}`
-    } else if (eligibleScholarships.length > 1) {
-      const bestTier = eligibleScholarships[0] // Assuming first tier is the best
-      scholarshipText = `🎉 MULTIPLE SCHOLARSHIPS AVAILABLE!
-Based on your GPA ${studentGPA}, you qualify for up to ${bestTier.percentage}% scholarship.
-
-💰 BEST OPTION - ${bestTier.name}:
-Total After ${bestTier.percentage}% Scholarship: ${formatCurrency(bestTier.totalFees)}
-💵 You Save: ${formatCurrency(bestTier.savings)}`
-    } else {
-      scholarshipText = `📚 PROGRAM INVESTMENT:
-Please contact us to discuss scholarship opportunities based on your academic profile.`
+      yearBreakdown += `*Year ${i + 1}:*\n`
+      yearBreakdown += `Tuition Fee: ${formatCurrency(originalFee)}\n`
+      if (scholarshipPercentage > 0) {
+        yearBreakdown += `Scholarship (${scholarshipPercentage}%): –${formatCurrency(scholarshipAmount)}\n`
+        yearBreakdown += `Net Tuition: ${formatCurrency(netTuition)}\n`
+      }
+      if (i === 0) {
+        yearBreakdown += `Admission Fee: ${formatCurrency(additionalFee)}\n`
+      }
+      yearBreakdown += `✅ *Total Year ${i + 1} = ${formatCurrency(yearTotal)}*\n\n`
     }
 
-    const text = `${studentGreeting}🌟 OUTSTANDING OPPORTUNITY AT SHARDA UNIVERSITY! 🇮🇳
+    const scholarshipText = scholarshipPercentage === 0 
+      ? '*💰 FEE STRUCTURE (No Scholarship)*'
+      : `*💰 FEE STRUCTURE (After ${scholarshipPercentage}% Scholarship)*`
 
-I'm excited to present the details for your ${comparisonData.sharda.program.name} program at Sharda University.
+    const text = `*🌟 NIU University*
 
-📚 PROGRAM OVERVIEW:
-✅ Program: ${comparisonData.sharda.program.name}
-✅ Duration: ${comparisonData.sharda.program.duration} years  
-✅ Location: Greater Noida (International Campus)
-✅ Recognition: NAAC A Grade | Students from 95+ Countries
+*Program:* ${program.name}
+
+*Duration:* ${program.duration} years
 
 ${scholarshipText}
 
-🌟 PROGRAM HIGHLIGHTS:
-${comparisonData.sharda.program.highlights.map(h => `✓ ${h}`).join('\n')}
+${yearBreakdown}---
 
-🏠 COMPREHENSIVE SUPPORT SERVICES:
-✓ Admission Processing & Documentation
-✓ Visa Support & Airport Reception  
-✓ FRRO Registration Assistance
-✓ International Student Community
-✓ Modern Campus Infrastructure
+*GRAND TOTAL (All ${program.duration} Years)*
 
-Sharda University offers an exceptional international education experience with strong industry connections and global recognition.
+Without scholarship: ${formatCurrency(feeCalc.originalTotal)}
 
-📞 Interested to secure your admission? Let's discuss the application process!
-
-Best regards,
-WBE Education Consultancy`.trim()
+${scholarshipPercentage > 0 ? `*Savings with ${scholarshipPercentage}% Scholarship: ${formatCurrency(feeCalc.savings)}*\n\n*Total Payable Fees for Entire Course: ${formatCurrency(feeCalc.totalFees)}*` : `*Total Payable Fees for Entire Course: ${formatCurrency(feeCalc.totalFees)}*`}`.trim()
 
     try {
       await navigator.clipboard.writeText(text)
-      alert('🎉 Sharda details copied! Perfect for sharing with your student.')
+      alert(`✅ NIU details (${scholarshipPercentage === 0 ? 'No Scholarship' : scholarshipPercentage + '% Scholarship'}) copied! Ready for WhatsApp.`)
     } catch (err) {
       alert('❌ Failed to copy. Please try again.')
     }
   }
 
-  // Smart Sharda Details - Automatically chooses best message (standard or WBE enhanced)
-  const copySmartShardaDetails = async () => {
-    if (!comparisonData) return
+  // Copy Sharda details with specific scholarship percentage
+  const copyShardaDetails = async (scholarshipPercentage = null) => {
+    if (!comparisonData?.sharda) return
 
-    const studentGreeting = studentName ? `Dear ${studentName},\n\n` : ''
-    const eligibleScholarships = getEligibleShardaScholarships(comparisonData.sharda.calculations)
-    const bestWBEScholarship = getBestWBEScholarship(comparisonData.sharda.calculations)
-    
-    // Check if WBE Enhanced provides genuine benefit
-    const shouldShowWBEEnhanced = bestWBEScholarship && eligibleScholarships.length > 0 && 
-      bestWBEScholarship.totalFees < eligibleScholarships[0].totalFees
+    const studentNameText = studentName ? `*Hi ${studentName}!* 👋\n\n` : '*Hi!* 👋\n\n'
+    const program = comparisonData.sharda.program
+    const calc = comparisonData.sharda.calculations
+    const university = comparisonData.sharda.university
 
-    if (shouldShowWBEEnhanced) {
-      // WBE Enhanced message with corrected fee explanation
-      const wbeYearlyBreakdown = bestWBEScholarship.yearlyFees
-        .map((fee, index) => `Year ${index + 1}: ${formatCurrency(fee)} (Tuition after ${bestWBEScholarship.percentage}% scholarship)`)
-        .join('\n')
+    let feeCalc, tierInfo, isWBE = false
 
-      // WBE Enhanced Fee Structure
-      const wbeAnnualFeeAmount = (comparisonData.sharda.calculations.additionalFees.wbeRecurring / (comparisonData.sharda.program.duration - 1))
-      const wbeAdditionalFees = `Year 1: ${formatCurrency(comparisonData.sharda.calculations.additionalFees.wbeComprehensive)} (WBE Comprehensive Package)
-Year 2-${comparisonData.sharda.program.duration}: ${formatCurrency(wbeAnnualFeeAmount)} per year (WBE Annual Fee)`
-
-      const wbePackageBreakdown = `
-🎯 WBE COMPREHENSIVE PACKAGE (Year 1 Total: ${formatCurrency(comparisonData.sharda.calculations.additionalFees.wbeComprehensive)}):
-This all-inclusive package includes:
-✓ University Admission Processing: ₹30,000
-✓ Medical Check-up & Insurance: ₹10,000 (₹5,000 from Year 2)
-✓ Registration Fee: ₹15,000 (Annual from Year 2)
-✓ Examination Fee: ₹12,000 (Annual)
-
-📊 WBE ANNUAL FEES (Years 2-${comparisonData.sharda.program.duration}: ₹32,000 per year):
-✓ Medical Check-up & Insurance: ₹5,000 per year
-✓ Registration Fee: ₹15,000 per year
-✓ Examination Fee: ₹12,000 per year`
-
-      const savings = eligibleScholarships[0].totalFees - bestWBEScholarship.totalFees
-
-      const text = `${studentGreeting}🚀 EXCLUSIVE WBE PARTNERSHIP BENEFITS - SHARDA UNIVERSITY! 🇮🇳
-
-${studentName ? `${studentName}, ` : ''}I have excellent news about your Sharda University admission through our exclusive WBE partnership!
-
-📚 PROGRAM DETAILS:
-✅ Program: ${comparisonData.sharda.program.name}
-✅ Duration: ${comparisonData.sharda.program.duration} years
-✅ Location: Greater Noida (International Campus)
-✅ Recognition: NAAC A Grade | Students from 95+ Countries
-
-🌟 YOUR WBE ENHANCED BENEFITS:
-Standard Application: ${eligibleScholarships[0].percentage}% scholarship (${formatCurrency(eligibleScholarships[0].totalFees)})
-Through WBE Partnership: ${bestWBEScholarship.percentage}% scholarship (${formatCurrency(bestWBEScholarship.totalFees)})
-📈 Additional WBE Savings: ${formatCurrency(savings)}
-
-💰 DETAILED FEE BREAKDOWN (WBE ENHANCED):
-
-📚 TUITION FEES (After ${bestWBEScholarship.percentage}% WBE Scholarship):
-${wbeYearlyBreakdown}
-
-🏫 WBE ADDITIONAL FEES:
-${wbeAdditionalFees}
-${wbePackageBreakdown}
-
-🎯 TOTAL PROGRAM INVESTMENT: ${formatCurrency(bestWBEScholarship.totalFees)}
-💸 Your Academic Savings: ${formatCurrency(bestWBEScholarship.savings)}
-
-🏆 FREE WBE PARTNERSHIP SERVICES (Others charge for these):
-✓ FREE Visa Slot Arrangement (Save 12,000-20,000 BDT)
-✓ FREE Premium Documentation Support
-✓ FREE Airport Reception & FRRO Registration
-✓ FREE Accommodation Assistance
-✓ FREE 24/7 Student Support Helpline
-✓ Priority University Processing
-
-💡 *All fees above are paid directly to Sharda University. WBE provides ALL services completely FREE!
-
-🌟 PROGRAM HIGHLIGHTS:
-${comparisonData.sharda.program.highlights.map(h => `✓ ${h}`).join('\n')}
-
-⚡ WHY CHOOSE WBE?
-Other consultancies charge 15,000-25,000 BDT for basic services. WBE provides premium support completely FREE through our exclusive university partnership!
-
-📞 Ready to secure your enhanced admission with FREE premium services? Contact us now!
-
-Best regards,
-WBE Education Consultancy
-
-*All WBE services are provided FREE. You only pay university fees directly to Sharda.`.trim()
-
-      try {
-        await navigator.clipboard.writeText(text)
-        alert('🎉 WBE Enhanced Sharda details copied! Clear messaging about FREE services.')
-      } catch (err) {
-        alert('❌ Failed to copy. Please try again.')
+    // Handle no scholarship case
+    if (scholarshipPercentage === 0 || (scholarshipPercentage === null && calc.noScholarship)) {
+      feeCalc = calculateFeesWithScholarship(program, university, 0)
+      tierInfo = null
+    } else if (scholarshipPercentage !== null) {
+      // Find matching tier in calculated data
+      let matchingTier = null
+      
+      // Check standard tiers
+      if (calc.tiers && calc.tiers.length > 0) {
+        matchingTier = calc.tiers.find(t => t.percentage === scholarshipPercentage)
+      }
+      
+      // Check WBE enhanced tiers
+      if (!matchingTier && calc.wbeEnhanced && calc.wbeEnhanced.length > 0) {
+        matchingTier = calc.wbeEnhanced.find(t => t.percentage === scholarshipPercentage)
+        if (matchingTier) isWBE = true
+      }
+      
+      if (matchingTier) {
+        // Use calculated tier data
+        feeCalc = {
+          percentage: matchingTier.percentage,
+          yearlyFees: matchingTier.yearlyFees,
+          totalFees: matchingTier.totalFees,
+          savings: matchingTier.savings,
+          oneTimeFee: isWBE ? calc.additionalFees.wbeComprehensive : calc.oneTimeFee,
+          additionalFees: calc.additionalFees,
+          tierName: matchingTier.name,
+          conditions: matchingTier.conditions,
+          originalTotal: calc.originalTotal
+        }
+        tierInfo = matchingTier
+      } else {
+        // Calculate with specified percentage
+        feeCalc = calculateFeesWithScholarship(program, university, scholarshipPercentage)
+        feeCalc.originalTotal = calc.originalTotal
+        tierInfo = null
       }
     } else {
-      // Standard Sharda message when WBE Enhanced doesn't provide better scholarship
-      let scholarshipText = ''
-      if (comparisonData.sharda.calculations.noScholarship) {
-        scholarshipText = `📚 PROGRAM INVESTMENT:
-This is a premium program with no scholarships available.
-Total Program Cost: ${formatCurrency(comparisonData.sharda.calculations.originalTotal)}
-
-🏆 WBE VALUE-ADDED SERVICES (FREE):
-✓ FREE Visa Slot Arrangement (Save 12,000-20,000 BDT)
-✓ FREE Complete Documentation Support
-✓ FREE Airport Reception & Assistance
-✓ FREE Accommodation Guidance`
-      } else if (eligibleScholarships.length === 1) {
-        const tier = eligibleScholarships[0]
-        const yearlyBreakdown = tier.yearlyFees
-          .map((fee, index) => `Year ${index + 1}: ${formatCurrency(fee)}`)
-          .join('\n')
-        
-        scholarshipText = `🎉 SCHOLARSHIP CONFIRMED: ${tier.percentage}% DISCOUNT!
-Based on your academic performance (GPA ${studentGPA}), you qualify for ${tier.name}.
-
-💰 YOUR PROGRAM FEES:
-${yearlyBreakdown}
-University Admission Fee: ${formatCurrency(comparisonData.sharda.calculations.oneTimeFee)}
-
-💸 Total Program Cost: ${formatCurrency(tier.totalFees)}
-💵 Academic Savings: ${formatCurrency(tier.savings)}
-
-🏆 BONUS: FREE WBE SERVICES (Others charge 15K-25K BDT):
-✓ FREE Visa Slot Arrangement (Save 12,000-20,000 BDT)
-✓ FREE Premium Documentation Support
-✓ FREE Airport Reception & FRRO Registration
-✓ FREE Accommodation Assistance`
-      } else {
-        scholarshipText = `📚 SCHOLARSHIP OPPORTUNITIES:
-Multiple scholarship tiers available based on your academic profile.
-Contact us for personalized scholarship assessment.
-
-🏆 FREE WBE SERVICES (Others charge for these):
-✓ FREE Visa Slot Arrangement (Save 12,000-20,000 BDT)
-✓ FREE Complete Documentation Support
-✓ FREE Premium Student Services`
+      // Default: use best eligible scholarship
+      const eligibleScholarships = getEligibleShardaScholarships(calc)
+      const bestWBEScholarship = getBestWBEScholarship(calc)
+      
+      if (bestWBEScholarship && eligibleScholarships.length > 0 && 
+          bestWBEScholarship.totalFees < eligibleScholarships[0].totalFees) {
+        tierInfo = bestWBEScholarship
+        isWBE = true
+        feeCalc = {
+          percentage: bestWBEScholarship.percentage,
+          yearlyFees: bestWBEScholarship.yearlyFees,
+          totalFees: bestWBEScholarship.totalFees,
+          savings: bestWBEScholarship.savings,
+          oneTimeFee: calc.additionalFees.wbeComprehensive,
+          additionalFees: calc.additionalFees,
+          tierName: bestWBEScholarship.name,
+          conditions: bestWBEScholarship.conditions,
+          originalTotal: calc.originalTotal
+        }
+      } else if (eligibleScholarships.length > 0) {
+        tierInfo = eligibleScholarships[0]
+        feeCalc = {
+          percentage: tierInfo.percentage,
+          yearlyFees: tierInfo.yearlyFees,
+          totalFees: tierInfo.totalFees,
+          savings: tierInfo.savings,
+          oneTimeFee: calc.oneTimeFee,
+          additionalFees: calc.additionalFees,
+          tierName: tierInfo.name,
+          conditions: tierInfo.conditions,
+          originalTotal: calc.originalTotal
+        }
+    } else {
+        feeCalc = calculateFeesWithScholarship(program, university, 0)
+        feeCalc.originalTotal = calc.originalTotal
+        tierInfo = null
       }
+    }
 
-      const text = `${studentGreeting}🌟 OUTSTANDING OPPORTUNITY AT SHARDA UNIVERSITY! 🇮🇳
+    // Build year-by-year breakdown using calculated tier data
+    let yearBreakdown = ''
+    // Year 1: ₹52,000 (Admission Fee including all services)
+    // Years 2+: ₹32,000 (Registration + Exam + Medical/Insurance)
+    const year1AdditionalFee = calc.additionalFees.wbeComprehensive // ₹52,000
+    const years2PlusFee = 32000 // ₹32,000 per year for years 2+
+    
+    for (let i = 0; i < program.duration; i++) {
+      const originalFee = program.annualFees[i]
+      // Use calculated net tuition from tier if available, otherwise calculate
+      const netTuition = feeCalc.yearlyFees ? feeCalc.yearlyFees[i] : (feeCalc.percentage > 0 ? originalFee * (1 - feeCalc.percentage / 100) : originalFee)
+      const scholarshipAmount = feeCalc.percentage > 0 ? Math.round(originalFee - netTuition) : 0
+      const additionalFee = i === 0 ? year1AdditionalFee : years2PlusFee
+      const yearTotal = Math.round(netTuition) + additionalFee
+      
+      yearBreakdown += `*Year ${i + 1}:*\n`
+      yearBreakdown += `Tuition Fee: ${formatCurrency(originalFee)}\n`
+      if (feeCalc.percentage > 0) {
+        yearBreakdown += `Scholarship (${feeCalc.percentage}%): –${formatCurrency(scholarshipAmount)}\n`
+        yearBreakdown += `Net Tuition: ${formatCurrency(Math.round(netTuition))}\n`
+      }
+      if (i === 0) {
+        yearBreakdown += `Admission Fee: ${formatCurrency(additionalFee)} (Including Registration fee, Examination fee, Insurance fee, and FRRO/VISA assistance)\n`
+      } else {
+        yearBreakdown += `Other Fees: ${formatCurrency(additionalFee)} (Examination Fee, Registration fee, Insurance fee, and FRRO)\n`
+      }
+      yearBreakdown += `✅ *Total Year ${i + 1} = ${formatCurrency(yearTotal)}*\n\n`
+    }
 
-I'm excited to present your ${comparisonData.sharda.program.name} program details at Sharda University.
+    const scholarshipText = feeCalc.percentage === 0
+      ? '*💰 FEE STRUCTURE (No Scholarship)*'
+      : `*💰 FEE STRUCTURE (After ${feeCalc.percentage}% Scholarship)*`
 
-📚 PROGRAM OVERVIEW:
-✅ Program: ${comparisonData.sharda.program.name}
-✅ Duration: ${comparisonData.sharda.program.duration} years  
-✅ Location: Greater Noida (International Campus)
-✅ Recognition: NAAC A Grade | Students from 95+ Countries
+    const text = `*🌟 Sharda University*
+
+*Program:* ${program.name}
+
+*Duration:* ${program.duration} years
 
 ${scholarshipText}
 
-🌟 PROGRAM HIGHLIGHTS:
-${comparisonData.sharda.program.highlights.map(h => `✓ ${h}`).join('\n')}
+${yearBreakdown}---
 
-💡 WBE ADVANTAGE: While others charge consultation fees, we provide all premium services FREE through our exclusive university partnerships!
+*GRAND TOTAL (All ${program.duration} Years)*
 
-📞 Ready to secure your admission with FREE premium support? Let's start your application!
+Without scholarship: ${formatCurrency(feeCalc.originalTotal)}
 
-Best regards,
-WBE Education Consultancy`.trim()
+${feeCalc.percentage > 0 ? `*Savings with ${feeCalc.percentage}% Scholarship: ${formatCurrency(feeCalc.savings)}*\n\n*Total Payable Fees for Entire Course: ${formatCurrency(feeCalc.totalFees)}*` : `*Total Payable Fees for Entire Course: ${formatCurrency(feeCalc.totalFees)}*`}`.trim()
 
-      try {
-        await navigator.clipboard.writeText(text)
-        alert('🎉 Sharda details copied! Emphasizing FREE WBE services.')
-      } catch (err) {
-        alert('❌ Failed to copy. Please try again.')
-      }
+    try {
+      await navigator.clipboard.writeText(text)
+      alert(`✅ Sharda details (${feeCalc.percentage === 0 ? 'No Scholarship' : feeCalc.percentage + '% Scholarship'}) copied! Ready for WhatsApp.`)
+    } catch (err) {
+      alert('❌ Failed to copy. Please try again.')
     }
   }
 
-  // Smart Full Comparison - Budget-aware recommendation with WBE advantages
+  // Legacy compatibility - Smart Sharda Details
+  const copySmartShardaDetails = async () => {
+    await copyShardaDetails(null)
+  }
+
+  // Copy Chandigarh details with specific scholarship percentage
+  const copyChandigarhDetails = async (scholarshipPercentage = null) => {
+    if (!comparisonData?.chandigarh) return
+
+    const program = comparisonData.chandigarh.program
+    const calc = comparisonData.chandigarh.calculations
+    const university = comparisonData.chandigarh.university
+
+    let feeCalc, tierInfo
+
+    // Handle no scholarship case
+    if (scholarshipPercentage === 0) {
+      feeCalc = calculateFeesWithScholarship(program, university, 0)
+      tierInfo = null
+    } else if (scholarshipPercentage !== null) {
+      // Find matching tier in calculated data
+      const matchingTier = calc.tiers?.find(t => t.percentage === scholarshipPercentage)
+      
+      if (matchingTier) {
+        // Use calculated tier data
+        feeCalc = {
+          percentage: matchingTier.percentage,
+          yearlyFees: matchingTier.yearlyFees,
+          totalFees: matchingTier.totalFees,
+          savings: matchingTier.savings,
+          oneTimeFee: calc.oneTimeFee,
+          additionalFees: calc.additionalFees,
+          tierName: matchingTier.name,
+          gpaRange: matchingTier.gpaRange,
+          conditions: matchingTier.conditions,
+          originalTotal: calc.originalTotal
+        }
+        tierInfo = matchingTier
+      } else {
+        // Calculate with specified percentage
+        feeCalc = calculateFeesWithScholarship(program, university, scholarshipPercentage)
+        tierInfo = null
+      }
+    } else {
+      // Default: use best eligible tier
+      const eligibleTiers = getEligibleChandigarhScholarships(calc)
+      if (eligibleTiers.length > 0) {
+        tierInfo = eligibleTiers[0]
+        feeCalc = {
+          percentage: tierInfo.percentage,
+          yearlyFees: tierInfo.yearlyFees,
+          totalFees: tierInfo.totalFees,
+          savings: tierInfo.savings,
+          oneTimeFee: calc.oneTimeFee,
+          additionalFees: calc.additionalFees,
+          tierName: tierInfo.name,
+          gpaRange: tierInfo.gpaRange,
+          conditions: tierInfo.conditions,
+          originalTotal: calc.originalTotal
+        }
+      } else {
+        feeCalc = calculateFeesWithScholarship(program, university, 0)
+        tierInfo = null
+      }
+    }
+
+    // Build year-by-year breakdown
+    let yearBreakdown = ''
+    const oneTimeFee = calc.oneTimeFee
+    const examFeeAnnual = 5000
+    const healthInsuranceAnnual = 3000
+    
+    for (let i = 0; i < program.duration; i++) {
+      const originalFee = program.annualFees[i]
+      const scholarshipAmount = feeCalc.percentage > 0 ? Math.round(originalFee * (feeCalc.percentage / 100)) : 0
+      const netTuition = feeCalc.percentage > 0 ? originalFee - scholarshipAmount : originalFee
+      const additionalFees = i === 0 ? oneTimeFee + examFeeAnnual + healthInsuranceAnnual : examFeeAnnual + healthInsuranceAnnual
+      const yearTotal = netTuition + additionalFees
+      
+      yearBreakdown += `*Year ${i + 1}:*\n`
+      yearBreakdown += `Tuition Fee: ${formatCurrency(originalFee)}\n`
+      if (feeCalc.percentage > 0) {
+        yearBreakdown += `Scholarship (${feeCalc.percentage}%): –${formatCurrency(scholarshipAmount)}\n`
+        yearBreakdown += `Net Tuition: ${formatCurrency(netTuition)}\n`
+      }
+      if (i === 0) {
+        yearBreakdown += `Admission Fee: ${formatCurrency(oneTimeFee)}\n`
+      }
+      yearBreakdown += `Exam Fee: ${formatCurrency(examFeeAnnual)}\n`
+      yearBreakdown += `Health Insurance: ${formatCurrency(healthInsuranceAnnual)}\n`
+      yearBreakdown += `✅ *Total Year ${i + 1} = ${formatCurrency(yearTotal)}*\n\n`
+    }
+
+    const scholarshipText = feeCalc.percentage === 0
+      ? '*💰 FEE STRUCTURE (No Scholarship)*'
+      : `*💰 FEE STRUCTURE (After ${feeCalc.percentage}% Scholarship)*`
+
+    const text = `*🌟 Chandigarh University*
+
+*Program:* ${program.name}
+
+*Duration:* ${program.duration} years
+
+${scholarshipText}
+
+${yearBreakdown}---
+
+*GRAND TOTAL (All ${program.duration} Years)*
+
+Without scholarship: ${formatCurrency(feeCalc.originalTotal)}
+
+${feeCalc.percentage > 0 ? `*Savings with ${feeCalc.percentage}% Scholarship: ${formatCurrency(feeCalc.savings)}*\n\n*Total Payable Fees for Entire Course: ${formatCurrency(feeCalc.totalFees)}*` : `*Total Payable Fees for Entire Course: ${formatCurrency(feeCalc.totalFees)}*`}`.trim()
+
+      try {
+        await navigator.clipboard.writeText(text)
+      alert(`✅ Chandigarh details (${feeCalc.percentage === 0 ? 'No Scholarship' : feeCalc.percentage + '% Scholarship'}) copied! Ready for WhatsApp.`)
+      } catch (err) {
+        alert('❌ Failed to copy. Please try again.')
+      }
+  }
+
+  // Copy Galgotias details with specific scholarship percentage
+  const copyGalgotiasDetails = async (scholarshipPercentage = null) => {
+    if (!comparisonData?.galgotias) return
+
+    const program = comparisonData.galgotias.program
+    const calc = comparisonData.galgotias.calculations
+    const university = comparisonData.galgotias.university
+
+    let feeCalc
+
+    // Determine default scholarship if not specified
+    if (scholarshipPercentage === null) {
+      // Use the calculated default (60% for B.Tech, 50% for others)
+      feeCalc = {
+        percentage: calc.flat.percentage,
+        yearlyFees: calc.flat.yearlyFees,
+        totalFees: calc.flat.totalFees,
+        savings: calc.flat.savings,
+        oneTimeFee: calc.oneTimeFee,
+        additionalFees: calc.additionalFees,
+        originalTotal: calc.originalTotal
+      }
+      } else {
+      // Use specified scholarship percentage
+      feeCalc = calculateFeesWithScholarship(program, university, scholarshipPercentage)
+    }
+
+    // Build year-by-year breakdown
+    let yearBreakdown = ''
+    const oneTimeFee = calc.oneTimeFee
+    const examFeeAnnual = 20000
+    const industryFee = program.hasIndustryFee ? program.industryFeeFirstYear : 0
+    
+    for (let i = 0; i < program.duration; i++) {
+      const originalFee = program.annualFees[i]
+      const scholarshipAmount = feeCalc.percentage > 0 ? Math.round(originalFee * (feeCalc.percentage / 100)) : 0
+      const netTuition = feeCalc.percentage > 0 ? originalFee - scholarshipAmount : originalFee
+      const additionalFees = i === 0 ? oneTimeFee + examFeeAnnual + industryFee : examFeeAnnual
+      const yearTotal = netTuition + additionalFees
+      
+      yearBreakdown += `*Year ${i + 1}:*\n`
+      yearBreakdown += `Tuition Fee: ${formatCurrency(originalFee)}\n`
+      if (feeCalc.percentage > 0) {
+        yearBreakdown += `Scholarship (${feeCalc.percentage}%): –${formatCurrency(scholarshipAmount)}\n`
+        yearBreakdown += `Net Tuition: ${formatCurrency(netTuition)}\n`
+      }
+      if (i === 0) {
+        yearBreakdown += `Admission Fee: ${formatCurrency(oneTimeFee)}\n`
+        if (industryFee > 0) {
+          yearBreakdown += `Industry Fee: ${formatCurrency(industryFee)}\n`
+        }
+      }
+      yearBreakdown += `Exam Fee: ${formatCurrency(examFeeAnnual)}\n`
+      yearBreakdown += `✅ *Total Year ${i + 1} = ${formatCurrency(yearTotal)}*\n\n`
+    }
+
+    const scholarshipText = feeCalc.percentage === 0
+      ? '*💰 FEE STRUCTURE (No Scholarship)*'
+      : `*💰 FEE STRUCTURE (After ${feeCalc.percentage}% Scholarship)*`
+
+    const text = `*🌟 Galgotias University*
+
+*Program:* ${program.name}
+
+*Duration:* ${program.duration} years
+
+${scholarshipText}
+
+${yearBreakdown}---
+
+*GRAND TOTAL (All ${program.duration} Years)*
+
+Without scholarship: ${formatCurrency(feeCalc.originalTotal)}
+
+${feeCalc.percentage > 0 ? `*Savings with ${feeCalc.percentage}% Scholarship: ${formatCurrency(feeCalc.savings)}*\n\n*Total Payable Fees for Entire Course: ${formatCurrency(feeCalc.totalFees)}*` : `*Total Payable Fees for Entire Course: ${formatCurrency(feeCalc.totalFees)}*`}`.trim()
+
+      try {
+        await navigator.clipboard.writeText(text)
+      alert(`✅ Galgotias details (${feeCalc.percentage === 0 ? 'No Scholarship' : feeCalc.percentage + '% Scholarship'}) copied! Ready for WhatsApp.`)
+      } catch (err) {
+        alert('❌ Failed to copy. Please try again.')
+    }
+  }
+
+  // Smart Full Comparison - WhatsApp optimized with all four universities
   const copySmartComparison = async () => {
     if (!comparisonData) return
 
-    const studentGreeting = studentName ? `Dear ${studentName},\n\n` : ''
-    const eligibleShardaScholarships = getEligibleShardaScholarships(comparisonData.sharda.calculations)
-    const bestWBEScholarship = getBestWBEScholarship(comparisonData.sharda.calculations)
-    
-    // Determine best option based on budget and profile
-    const niuTotal = comparisonData.niu.calculations.flat.totalFees
-    const shardaTotal = eligibleShardaScholarships.length > 0 ? eligibleShardaScholarships[0].totalFees : comparisonData.sharda.calculations.originalTotal
-    const wbeTotal = bestWBEScholarship ? bestWBEScholarship.totalFees : shardaTotal
-
-    // Calculate budget differences
-    const shardaVsNiu = shardaTotal - niuTotal
-    const wbeVsNiu = wbeTotal - niuTotal
-    
-    let recommendation = ''
-    let budgetAnalysis = ''
-    
-    // Smart budget-based recommendation
-    if (niuTotal < shardaTotal && niuTotal < wbeTotal) {
-      recommendation = '🏆 BUDGET RECOMMENDATION: NIU'
-      budgetAnalysis = `💰 BEST VALUE FOR MONEY: NIU saves you ${formatCurrency(Math.min(shardaVsNiu, wbeVsNiu))} compared to Sharda options.`
-    } else if (wbeTotal <= shardaTotal && bestWBEScholarship) {
-      recommendation = '🚀 PREMIUM RECOMMENDATION: Sharda via WBE Partnership'
-      budgetAnalysis = `💎 BEST OVERALL VALUE: WBE Partnership provides premium services FREE plus ${bestWBEScholarship.percentage}% scholarship.`
-    } else if (eligibleShardaScholarships.length > 0) {
-      recommendation = '🎓 QUALITY RECOMMENDATION: Sharda University'
-      budgetAnalysis = `🌟 PREMIUM EDUCATION: Higher investment but international campus experience with ${eligibleShardaScholarships[0].percentage}% scholarship.`
-    } else {
-      recommendation = '🏆 RECOMMENDED: NIU'
-      budgetAnalysis = '💰 GUARANTEED VALUE: 50% scholarship with excellent career prospects.'
+    // Count available universities
+    const universityCount = (comparisonData.niu ? 1 : 0) + (comparisonData.sharda ? 1 : 0) + (comparisonData.chandigarh ? 1 : 0) + (comparisonData.galgotias ? 1 : 0)
+    if (universityCount < 2) {
+      alert('⚠️ Please select at least 2 universities to compare.')
+      return
     }
 
-    const wbeAdvantages = bestWBEScholarship ? `
-🚀 WBE PARTNERSHIP EXCLUSIVE BENEFITS (FREE):
-✓ FREE Visa Slot Arrangement (Save 12,000-20,000 BDT)
-✓ FREE Premium Documentation Support  
-✓ FREE Airport Reception & FRRO Registration
-✓ FREE Accommodation Assistance
-✓ FREE 24/7 Student Support Helpline
-✓ Enhanced Scholarship Processing
+    const studentNameText = studentName ? `*Hi ${studentName}!* 👋\n\n` : '*Hi!* 👋\n\n'
+    
+    // Calculate totals for all available universities
+    const niuTotal = comparisonData.niu ? comparisonData.niu.calculations.flat.totalFees : 0
+    const eligibleShardaScholarships = comparisonData.sharda ? getEligibleShardaScholarships(comparisonData.sharda.calculations) : []
+    const bestWBEScholarship = comparisonData.sharda ? getBestWBEScholarship(comparisonData.sharda.calculations) : null
+    const shardaTotal = comparisonData.sharda ? (eligibleShardaScholarships.length > 0 ? eligibleShardaScholarships[0].totalFees : comparisonData.sharda.calculations.originalTotal) : 0
+    const wbeTotal = bestWBEScholarship ? bestWBEScholarship.totalFees : shardaTotal
 
-💡 Total WBE Service Value: 25,000-35,000 BDT (FREE for WBE students)` : `
-🌟 WBE STANDARD SERVICES (FREE):
-✓ FREE Visa Slot Arrangement (Save 12,000-20,000 BDT)
-✓ FREE Documentation Support
-✓ FREE University Application Processing
-✓ FREE Student Guidance & Support
+    const eligibleChandigarhTiers = comparisonData.chandigarh ? getEligibleChandigarhScholarships(comparisonData.chandigarh.calculations) : []
+    const chandigarhTotal = comparisonData.chandigarh ? (eligibleChandigarhTiers.length > 0 ? eligibleChandigarhTiers[0].totalFees : comparisonData.chandigarh.calculations.originalTotal) : 0
+    const chandigarhTier = eligibleChandigarhTiers.length > 0 ? eligibleChandigarhTiers[0] : null
 
-💡 Total WBE Service Value: 15,000-25,000 BDT (FREE for WBE students)`
+    const galgotiasTotal = comparisonData.galgotias ? comparisonData.galgotias.calculations.flat.totalFees : 0
+    const galgotiasScholarship = comparisonData.galgotias ? `${comparisonData.galgotias.calculations.flat.percentage}%` : 'N/A'
 
-    const text = `${studentGreeting}📊 SMART UNIVERSITY COMPARISON & RECOMMENDATION
+    // Find the best option
+    const options = []
+    if (comparisonData.niu) options.push({ name: 'NIU', total: niuTotal, scholarship: '50%', program: comparisonData.niu.program })
+    if (comparisonData.sharda) {
+      options.push({ name: 'Sharda', total: shardaTotal, scholarship: eligibleShardaScholarships.length > 0 ? `${eligibleShardaScholarships[0].percentage}%` : 'N/A', program: comparisonData.sharda.program })
+      if (bestWBEScholarship && wbeTotal < shardaTotal) {
+        options.push({ name: 'Sharda (WBE)', total: wbeTotal, scholarship: `${bestWBEScholarship.percentage}%`, program: comparisonData.sharda.program, isWBE: true })
+      }
+    }
+    if (comparisonData.chandigarh) {
+      options.push({ name: 'Chandigarh', total: chandigarhTotal, scholarship: chandigarhTier ? `${chandigarhTier.percentage}%` : '35-50%', program: comparisonData.chandigarh.program })
+    }
+    if (comparisonData.galgotias) {
+      options.push({ name: 'Galgotias', total: galgotiasTotal, scholarship: galgotiasScholarship, program: comparisonData.galgotias.program })
+    }
+
+    if (options.length === 0) {
+      alert('⚠️ No programs available for comparison.')
+      return
+    }
+
+    const bestOption = options.reduce((best, current) => 
+      current.total < best.total ? current : best
+    )
+
+    let recommendation = ''
+    if (bestOption.name === 'NIU') {
+      recommendation = `*🏆 Best Value: NIU*\n*💰 Most Affordable Option*`
+    } else if (bestOption.name === 'Sharda (WBE)') {
+      recommendation = `*🚀 Best Overall: Sharda (WBE Partnership)*\n*💎 Premium Education + Maximum Savings*`
+    } else if (bestOption.name === 'Chandigarh') {
+      recommendation = `*🎓 Best Value: Chandigarh University*\n*🌟 Quality Education at Great Price*`
+    } else if (bestOption.name === 'Galgotias') {
+      recommendation = `*🎓 Best Value: Galgotias University*\n*🌟 Excellent Education with Great Scholarships*`
+    } else {
+      recommendation = `*🎓 Recommended: ${bestOption.name}*\n*⭐ Best Fit for Your Profile*`
+    }
+
+    let text = `${studentNameText}*📊 University Comparison*
 
 ${recommendation}
 
-🎯 PERSONALIZED ANALYSIS FOR YOUR PROFILE:
-${budgetAnalysis}
+─────────────────────
+*💰 COST COMPARISON*
+─────────────────────
+`
 
-📈 COMPLETE COST BREAKDOWN:
+    if (comparisonData.niu) {
+      text += `\n*🇮🇳 NIU*
+*Program:* ${comparisonData.niu.program.name}
+*Total Cost:* ${formatCurrency(niuTotal)}
+*Scholarship:* 50% Guaranteed
+*Key Points:* Affordable, guaranteed scholarship, industry partnerships`
 
-🇮🇳 NIU - ${comparisonData.niu.program.name}
-💰 Total Investment: ${formatCurrency(niuTotal)}
-🎓 Scholarship: 50% Guaranteed
-⭐ Key Strengths: Affordable, guaranteed scholarship, industry partnerships
+      if (bestOption.name === 'NIU') {
+        text += `\n*✅ BEST VALUE - Recommended!*`
+      }
+      text += `\n`
+    }
 
-🇮🇳 SHARDA - ${comparisonData.sharda.program.name}
-💰 Standard Total: ${formatCurrency(shardaTotal)}${bestWBEScholarship ? `
-💰 WBE Enhanced: ${formatCurrency(wbeTotal)} (${formatCurrency(shardaTotal - wbeTotal)} additional savings)
+    if (comparisonData.sharda) {
+      text += `*🇮🇳 Sharda*
+*Program:* ${comparisonData.sharda.program.name}
+*Total Cost:* ${formatCurrency(shardaTotal)}`
+      
+      if (bestWBEScholarship && wbeTotal < shardaTotal) {
+        text += `\n*WBE Enhanced:* ${formatCurrency(wbeTotal)} *[Save ${formatCurrency(shardaTotal - wbeTotal)}]*`
+      }
+      
+      text += `\n*Scholarship:* ${eligibleShardaScholarships.length > 0 ? `${eligibleShardaScholarships[0].percentage}%` : 'N/A'}`
+      text += `\n*Key Points:* International campus, 95+ countries, premium facilities`
 
-📊 WBE Enhanced Fee Structure:
-Year 1: ₹52,000 (WBE Comprehensive Package)
-Years 2-${comparisonData.sharda.program.duration}: ₹32,000 per year (WBE Annual Fee)
-Total WBE Additional Fees: ${formatCurrency(comparisonData.sharda.calculations.additionalFees.wbeComprehensive + comparisonData.sharda.calculations.additionalFees.wbeRecurring)}` : ''}
-🎓 Scholarship: ${eligibleShardaScholarships.length > 0 ? `${eligibleShardaScholarships[0].percentage}%` : 'No scholarships available'}
-⭐ Key Strengths: International campus, 95+ countries, premium facilities
+      if (bestOption.name === 'Sharda' || bestOption.name === 'Sharda (WBE)') {
+        text += `\n*✅ PREMIUM CHOICE - Recommended!*`
+      }
+      text += `\n`
+    }
 
-${wbeAdvantages}
+    if (comparisonData.chandigarh) {
+      text += `*🇮🇳 Chandigarh*
+*Program:* ${comparisonData.chandigarh.program.name}
+*Total Cost:* ${formatCurrency(chandigarhTotal)}`
+      text += `\n*Scholarship:* ${chandigarhTier ? `${chandigarhTier.percentage}%` : '35-50% (Based on GPA)'}`
+      text += `\n*Key Points:* NAAC A+, Industry partnerships, Modern campus`
 
-💡 WHY CHOOSE WBE EDUCATION CONSULTANCY:
-• Other consultancies charge 15,000-25,000 BDT for basic services
-• WBE provides ALL services completely FREE through university partnerships
-• Exclusive scholarship enhancements and priority processing
-• 24/7 support from application to graduation
+      if (bestOption.name === 'Chandigarh') {
+        text += `\n*✅ GREAT VALUE - Recommended!*`
+      }
+      text += `\n`
+    }
 
-${studentName ? `${studentName}, b` : 'B'}ased on your profile, ${recommendation.toLowerCase().includes('niu') ? 'NIU offers the best value with guaranteed savings and excellent career prospects.' : recommendation.toLowerCase().includes('wbe') ? 'Sharda via WBE Partnership provides premium education with maximum savings and FREE premium services.' : 'Sharda University offers international education experience worth the investment.'}
+    if (comparisonData.galgotias) {
+      text += `*🇮🇳 Galgotias*
+*Program:* ${comparisonData.galgotias.program.name}
+*Total Cost:* ${formatCurrency(galgotiasTotal)}`
+      text += `\n*Scholarship:* ${galgotiasScholarship} (No GPA requirement)`
+      text += `\n*Key Points:* NAAC A, NBA accredited, Industry partnerships, Modern campus`
 
-📞 Ready to proceed with the best option for your future? Contact WBE now!
+      if (bestOption.name === 'Galgotias') {
+        text += `\n*✅ EXCELLENT VALUE - Recommended!*`
+      }
+      text += `\n`
+    }
+
+    text += `─────────────────────
+*🎁 FREE WBE Services*
+─────────────────────
+✓ FREE Visa Slot (Save 12K-20K BDT)
+✓ FREE Documentation Support
+✓ FREE Airport Reception
+✓ FREE FRRO Registration
+✓ FREE Accommodation Help
+✓ FREE 24/7 Support
+
+*💡 All services FREE! Others charge 15K-25K BDT.*
+
+─────────────────────
+*📞 Next Steps*
+─────────────────────
+Ready to proceed? Contact us for application process!
 
 Best regards,
-WBE Education Consultancy
-
-*All WBE services provided FREE. You only pay university fees directly.`.trim()
+*WBE Education Consultancy*`
 
     try {
       await navigator.clipboard.writeText(text)
-      alert('🎉 Smart comparison with personalized recommendation copied! Perfect for student guidance.')
+      alert('✅ Comparison copied! Ready for WhatsApp.')
     } catch (err) {
       alert('❌ Failed to copy. Please try again.')
     }
@@ -954,7 +1360,7 @@ WBE Education Consultancy
             University Fee Comparison Tool
           </h1>
           <p className="text-lg text-gray-600">
-            For WBE Counselors - Compare NIU, Sharda & Chandigarh Programs
+            For WBE Counselors - Compare NIU, Sharda, Chandigarh & Galgotias Programs
           </p>
           <p className="text-sm text-gray-500 mt-2">
             Reference Tool - All scholarship tiers displayed for transparency
@@ -1133,8 +1539,8 @@ WBE Education Consultancy
           </div>
         </div>
 
-        {/* Program Selection - Three Universities */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        {/* Program Selection - Four Universities */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6 mb-6">
           {/* NIU Programs */}
           <div className="bg-white rounded-lg shadow-md p-6">
             <div className="flex items-center justify-between mb-4">
@@ -1224,6 +1630,36 @@ WBE Education Consultancy
               ))}
             </div>
           </div>
+
+          {/* Galgotias Programs */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-semibold text-gray-900">
+                Galgotias Programs ({galgotiasPrograms.length})
+              </h2>
+              <span className="text-sm bg-orange-100 text-orange-800 px-3 py-1 rounded-full">
+                60%/50%
+              </span>
+            </div>
+            <div className="space-y-2 max-h-96 overflow-y-auto">
+              {galgotiasPrograms.map(program => (
+                <button
+                  key={program.id}
+                  onClick={() => handleProgramSelection(program, 'galgotias')}
+                  className={`w-full text-left p-3 border rounded-lg transition-colors ${
+                    selectedGalgotiasProgram?.id === program.id
+                      ? 'border-orange-500 bg-orange-50 ring-2 ring-orange-200'
+                      : 'border-gray-200 hover:border-orange-500 hover:bg-orange-50'
+                  }`}
+                >
+                  <div className="font-medium text-gray-900">{program.name}</div>
+                  <div className="text-sm text-gray-600">
+                    {program.duration} years • {formatCurrency(program.annualFees[0])} per year
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Match Quality Indicator */}
@@ -1282,52 +1718,31 @@ WBE Education Consultancy
         )}
 
         {/* Comparison Results */}
-        {comparisonData && (comparisonData.niu || comparisonData.sharda) && (
+        {comparisonData && (comparisonData.niu || comparisonData.sharda || comparisonData.chandigarh || comparisonData.galgotias) && (
           <div className="bg-white rounded-lg shadow-md p-6">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-gray-900">
-                {comparisonData.niu && comparisonData.sharda ? 'Detailed Comparison' : 'Program Details'}
+                {((comparisonData.niu && comparisonData.sharda) || (comparisonData.niu && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.sharda && comparisonData.galgotias) || (comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.sharda && comparisonData.galgotias) || (comparisonData.niu && comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias)) ? 'Detailed Comparison' : 'Program Details'}
               </h2>
-              <div className="flex flex-wrap gap-2">
-                {comparisonData.niu && (
-                  <button
-                    onClick={copyNIUDetails}
-                    className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                    Copy NIU Details
-                  </button>
-                )}
-                {comparisonData.sharda && (
-                  <button
-                    onClick={copySmartShardaDetails}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                    Copy Sharda Details
-                  </button>
-                )}
-                {comparisonData.niu && comparisonData.sharda && (
+              {/* Smart Comparison Button */}
+              {((comparisonData.niu && comparisonData.sharda) || (comparisonData.niu && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.sharda && comparisonData.galgotias) || (comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.sharda && comparisonData.galgotias) || (comparisonData.niu && comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias)) && (
                   <button
                     onClick={copySmartComparison}
-                    className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
+                  className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2.5 rounded-lg transition-all flex items-center gap-2 shadow-lg hover:shadow-xl font-semibold transform hover:scale-105"
+                  title="Copy comprehensive comparison message for students (WhatsApp ready)"
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
-                    Smart Comparison
+                  📊 Smart Comparison
                   </button>
                 )}
-              </div>
             </div>
 
             <div className={`grid grid-cols-1 ${
-              (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh) ? 'lg:grid-cols-3' : 
-              ((comparisonData.niu && comparisonData.sharda) || (comparisonData.niu && comparisonData.chandigarh) || (comparisonData.sharda && comparisonData.chandigarh)) ? 'lg:grid-cols-2' : ''
+              (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias) ? 'lg:grid-cols-4' :
+              ((comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.sharda && comparisonData.galgotias) || (comparisonData.niu && comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias)) ? 'lg:grid-cols-3' : 
+              ((comparisonData.niu && comparisonData.sharda) || (comparisonData.niu && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.sharda && comparisonData.galgotias) || (comparisonData.chandigarh && comparisonData.galgotias)) ? 'lg:grid-cols-2' : ''
             } gap-6`}>
               {/* NIU Details */}
               {comparisonData.niu && (
@@ -1346,7 +1761,18 @@ WBE Education Consultancy
                   </div>
 
                   <div className="bg-white rounded-lg p-4">
-                    <h5 className="font-semibold text-gray-900 mb-2">Original Fees</h5>
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="font-semibold text-gray-900">No Scholarship</h5>
+                      <button
+                        onClick={() => copyNIUDetails(0)}
+                        className="p-1.5 hover:bg-gray-100 rounded transition-colors"
+                        title="Copy fee breakdown to clipboard"
+                      >
+                        <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                      </button>
+                    </div>
                     {comparisonData.niu.program.annualFees.map((fee, index) => (
                       <div key={index} className="flex justify-between text-sm mb-1">
                         <span>Year {index + 1}:</span>
@@ -1364,26 +1790,44 @@ WBE Education Consultancy
                   </div>
 
                   <div className="bg-green-100 rounded-lg p-4">
-                    <h5 className="font-semibold text-green-900 mb-2">
-                      After 50% Scholarship (All BD Students)
-                    </h5>
-                    {comparisonData.niu.calculations.flat.yearlyFees.map((fee, index) => (
-                      <div key={index} className="flex justify-between text-sm mb-1">
-                        <span>Year {index + 1}:</span>
-                        <span className="font-medium">{formatCurrency(fee)}</span>
-                      </div>
-                    ))}
-            <div className="flex justify-between text-sm mb-1 pt-2 border-t border-green-200">
-              <span>One-Time Fee:</span>
-              <span className="font-medium">{formatCurrency(comparisonData.niu.calculations.oneTimeFee)}</span>
-            </div>
-                    <div className="flex justify-between font-bold text-green-900 pt-2 border-t border-green-200">
-                      <span>Total After Scholarship:</span>
-                      <span>{formatCurrency(comparisonData.niu.calculations.flat.totalFees)}</span>
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="font-semibold text-green-900">
+                        After 50% Scholarship (All BD Students)
+                      </h5>
+                      <button
+                        onClick={() => copyNIUDetails(50)}
+                        className="p-1.5 hover:bg-green-200 rounded transition-colors"
+                        title="Copy fee breakdown to clipboard"
+                      >
+                        <svg className="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                      </button>
                     </div>
-                    <div className="flex justify-between text-sm text-green-700 mt-2">
-                      <span>You Save:</span>
-                      <span className="font-semibold">{formatCurrency(comparisonData.niu.calculations.flat.savings)}</span>
+                    <div className="space-y-2">
+                      {comparisonData.niu.calculations.flat.yearlyFees.map((fee, index) => (
+                        <div key={index} className="flex justify-between text-sm">
+                          <span>Year {index + 1}:</span>
+                          <div className="text-right">
+                            <span className="line-through text-gray-500 mr-2">
+                              {formatCurrency(comparisonData.niu.program.annualFees[index])}
+                            </span>
+                            <span className="font-medium text-green-900">{formatCurrency(fee)}</span>
+                          </div>
+                        </div>
+                      ))}
+                      <div className="flex justify-between text-sm pt-2 border-t border-green-300">
+                        <span>One-Time Fee:</span>
+                        <span className="font-medium text-green-900">{formatCurrency(comparisonData.niu.calculations.oneTimeFee)}</span>
+                      </div>
+                      <div className="flex justify-between font-bold pt-2 border-t border-green-300">
+                        <span>Total After Scholarship:</span>
+                        <span className="text-green-900">{formatCurrency(comparisonData.niu.calculations.flat.totalFees)}</span>
+                      </div>
+                      <div className="flex justify-between text-sm text-green-700 mt-2">
+                        <span>You Save:</span>
+                        <span className="font-semibold">{formatCurrency(comparisonData.niu.calculations.flat.savings)}</span>
+                      </div>
                     </div>
                   </div>
 
@@ -1419,7 +1863,18 @@ WBE Education Consultancy
                   </div>
 
                   <div className="bg-white rounded-lg p-4">
-                    <h5 className="font-semibold text-gray-900 mb-2">Original Fees</h5>
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="font-semibold text-gray-900">No Scholarship</h5>
+                      <button
+                        onClick={() => copyShardaDetails(0)}
+                        className="p-1.5 hover:bg-gray-100 rounded transition-colors"
+                        title="Copy fee breakdown to clipboard"
+                      >
+                        <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                      </button>
+                    </div>
                     {comparisonData.sharda.program.annualFees.map((fee, index) => (
                       <div key={index} className="flex justify-between text-sm mb-1">
                         <span>Year {index + 1}:</span>
@@ -1458,11 +1913,22 @@ WBE Education Consultancy
                       <div>
                         <h5 className="font-semibold text-blue-900 mb-3">Scholarship Information</h5>
                         <div className="bg-orange-100 border border-orange-200 rounded-lg p-4">
-                          <div className="flex items-center mb-2">
-                            <svg className="w-5 h-5 text-orange-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                            </svg>
-                            <h6 className="font-semibold text-orange-900">No Scholarships Available</h6>
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="flex items-center">
+                              <svg className="w-5 h-5 text-orange-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                              </svg>
+                              <h6 className="font-semibold text-orange-900">No Scholarships Available</h6>
+                            </div>
+                            <button
+                              onClick={() => copyShardaDetails(0)}
+                              className="p-1.5 hover:bg-orange-200 rounded transition-colors"
+                              title="Copy fee breakdown to clipboard"
+                            >
+                              <svg className="w-4 h-4 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                              </svg>
+                            </button>
                           </div>
                           <p className="text-sm text-orange-800 mb-3">
                             {comparisonData.sharda.calculations.categoryName}: No scholarships are offered for this program category.
@@ -1484,10 +1950,21 @@ WBE Education Consultancy
                           {comparisonData.sharda.calculations.categoryDescription}
                         </p>
                         {getEligibleShardaScholarships(comparisonData.sharda.calculations).map((tier, index) => (
-                          <div key={index} className="bg-blue-100 border border-blue-200 rounded-lg p-4 mb-3 hover:bg-blue-200 transition-colors cursor-pointer">
+                          <div key={index} className="bg-blue-100 border border-blue-200 rounded-lg p-4 mb-3 hover:bg-blue-200 transition-colors">
                             <div className="flex items-center justify-between mb-3">
-                              <h6 className="font-semibold text-blue-900">{tier.name}</h6>
-                              <span className="text-lg font-bold text-blue-900">{tier.percentage}%</span>
+                              <div className="flex items-center gap-2 flex-1">
+                                <h6 className="font-semibold text-blue-900">{tier.name}</h6>
+                                <span className="text-lg font-bold text-blue-900">{tier.percentage}%</span>
+                              </div>
+                              <button
+                                onClick={() => copyShardaDetails(tier.percentage)}
+                                className="p-1.5 hover:bg-blue-300 rounded transition-colors flex-shrink-0"
+                                title="Copy fee breakdown to clipboard"
+                              >
+                                <svg className="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                              </button>
                             </div>
                             <p className="text-xs text-blue-700 mb-3">
                               GPA Range: {tier.gpaRange} • {tier.conditions}
@@ -1510,7 +1987,7 @@ WBE Education Consultancy
                               <div className="pt-2 border-t border-blue-200">
                                 <div className="flex justify-between text-xs mb-1">
                                   <span>Year 1 - Admission/Procedure & Other Fees:</span>
-                                  <span className="font-medium text-blue-900">{formatCurrency(tier.type === 'wbeEnhanced' ? comparisonData.sharda.calculations.additionalFees.wbeComprehensive : comparisonData.sharda.calculations.additionalFees.wbeComprehensive)}</span>
+                                  <span className="font-medium text-blue-900">{formatCurrency(comparisonData.sharda.calculations.additionalFees.wbeComprehensive)}</span>
                                 </div>
                                 <div className="flex justify-between text-xs mb-1">
                                   <span>Years 2-{comparisonData.sharda.program.duration} - Annual Other Fees:</span>
@@ -1578,7 +2055,18 @@ WBE Education Consultancy
                   </div>
 
                   <div className="bg-white rounded-lg p-4">
-                    <h5 className="font-semibold text-gray-900 mb-2">Original Fees</h5>
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="font-semibold text-gray-900">No Scholarship</h5>
+                      <button
+                        onClick={() => copyChandigarhDetails(0)}
+                        className="p-1.5 hover:bg-gray-100 rounded transition-colors"
+                        title="Copy fee breakdown to clipboard"
+                      >
+                        <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                      </button>
+                    </div>
                     {comparisonData.chandigarh.program.annualFees.map((fee, index) => (
                       <div key={index} className="flex justify-between text-sm mb-1">
                         <span>Year {index + 1}:</span>
@@ -1590,8 +2078,12 @@ WBE Education Consultancy
                       <span className="font-medium">{formatCurrency(comparisonData.chandigarh.calculations.oneTimeFee)}</span>
                     </div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span>Annual Examination Fee:</span>
-                      <span className="font-medium">₹10,000 per year</span>
+                      <span>Examination Fee (Annual):</span>
+                      <span className="font-medium">₹5,000 per year</span>
+                    </div>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span>Health Insurance (Annual):</span>
+                      <span className="font-medium">₹3,000 per year</span>
                     </div>
                     <div className="flex justify-between font-bold pt-2 border-t">
                       <span>Total Original:</span>
@@ -1607,10 +2099,21 @@ WBE Education Consultancy
                       Scholarship percentage depends on your academic GPA
                     </p>
                     {getEligibleChandigarhScholarships(comparisonData.chandigarh.calculations).map((tier, index) => (
-                      <div key={index} className="bg-purple-100 border border-purple-200 rounded-lg p-4 mb-3 hover:bg-purple-200 transition-colors cursor-pointer">
+                      <div key={index} className="bg-purple-100 border border-purple-200 rounded-lg p-4 mb-3 hover:bg-purple-200 transition-colors">
                         <div className="flex items-center justify-between mb-3">
-                          <h6 className="font-semibold text-purple-900">{tier.name}</h6>
-                          <span className="text-lg font-bold text-purple-900">{tier.percentage}%</span>
+                          <div className="flex items-center gap-2 flex-1">
+                            <h6 className="font-semibold text-purple-900">{tier.name}</h6>
+                            <span className="text-lg font-bold text-purple-900">{tier.percentage}%</span>
+                          </div>
+                          <button
+                            onClick={() => copyChandigarhDetails(tier.percentage)}
+                            className="p-1.5 hover:bg-purple-300 rounded transition-colors flex-shrink-0"
+                            title="Copy fee breakdown to clipboard"
+                          >
+                            <svg className="w-4 h-4 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                          </button>
                         </div>
                         <p className="text-xs text-purple-700 mb-3">
                           GPA Range: {tier.gpaRange} • {tier.conditions}
@@ -1636,8 +2139,12 @@ WBE Education Consultancy
                               <span className="font-medium text-purple-900">{formatCurrency(comparisonData.chandigarh.calculations.oneTimeFee)}</span>
                             </div>
                             <div className="flex justify-between text-xs mb-1">
-                              <span>Annual Examination Fee:</span>
-                              <span className="font-medium text-purple-900">₹10,000 per year</span>
+                              <span>Examination Fee (Annual):</span>
+                              <span className="font-medium text-purple-900">₹5,000 per year</span>
+                            </div>
+                            <div className="flex justify-between text-xs mb-1">
+                              <span>Health Insurance (Annual):</span>
+                              <span className="font-medium text-purple-900">₹3,000 per year</span>
                             </div>
                           </div>
                         </div>
@@ -1671,47 +2178,147 @@ WBE Education Consultancy
                 </div>
               )}
 
-              {/* No Matching Programs Message */}
-              {!comparisonData.sharda && comparisonData.niu && (
-                <div className="border-2 border-gray-200 rounded-lg p-6 bg-gray-50">
-                  <div className="text-center py-8">
-                    <div className="text-6xl mb-4">🚫</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">No Sharda Programs Available</h3>
-                    <p className="text-gray-600 mb-4">
-                      Sharda University doesn't offer programs in this degree level category.
+              {/* Galgotias Details */}
+              {comparisonData.galgotias && (
+                <div className="border-2 border-orange-200 rounded-lg p-6 bg-orange-50">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {comparisonData.galgotias.university.name}
+                  </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-gray-900">
+                      {comparisonData.galgotias.program.name}
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      Duration: {comparisonData.galgotias.program.duration} years
                     </p>
-                    <div className="bg-blue-100 border border-blue-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-blue-900 mb-2">Alternative Options:</h4>
-                      <ul className="text-sm text-blue-800 space-y-1">
-                        <li>• Try selecting a different degree level (Bachelor, Masters, etc.)</li>
-                        <li>• NIU offers excellent programs with guaranteed 50% scholarship</li>
-                        <li>• Contact WBE for personalized guidance on alternative programs</li>
-                      </ul>
+                        </div>
+
+                  <div className="bg-white rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="font-semibold text-gray-900">No Scholarship</h5>
+                      <button
+                        onClick={() => copyGalgotiasDetails(0)}
+                        className="p-1.5 hover:bg-gray-100 rounded transition-colors"
+                        title="Copy fee breakdown to clipboard"
+                      >
+                        <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                      </button>
+                    </div>
+                    {comparisonData.galgotias.program.annualFees.map((fee, index) => (
+                      <div key={index} className="flex justify-between text-sm mb-1">
+                        <span>Year {index + 1}:</span>
+                        <span className="font-medium">{formatCurrency(fee)}</span>
+                          </div>
+                    ))}
+                    <div className="flex justify-between text-sm mb-1 pt-2 border-t">
+                      <span>One-Time Fee:</span>
+                      <span className="font-medium">{formatCurrency(comparisonData.galgotias.calculations.oneTimeFee)}</span>
+                          </div>
+                    {comparisonData.galgotias.program.hasIndustryFee && (
+                    <div className="flex justify-between text-sm mb-1">
+                        <span>Industry Fee (1st Year):</span>
+                        <span className="font-medium">{formatCurrency(comparisonData.galgotias.program.industryFeeFirstYear)}</span>
+                      </div>
+                    )}
+                    <div className="flex justify-between text-sm mb-1">
+                      <span>Examination Fee (Annual):</span>
+                      <span className="font-medium">₹20,000 per year</span>
+                      </div>
+                    <div className="flex justify-between font-bold pt-2 border-t">
+                      <span>Total Original:</span>
+                      <span>{formatCurrency(comparisonData.galgotias.calculations.originalTotal)}</span>
                     </div>
                   </div>
+
+                  <div className="space-y-3">
+                    {/* Scholarship Card */}
+                    <div className="bg-orange-100 border border-orange-200 rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-2 flex-1">
+                          <h6 className="font-semibold text-orange-900">
+                            {comparisonData.galgotias.program.degree === 'B.Tech'
+                              ? '60% Scholarship (B.Tech)' 
+                              : '50% Scholarship'}
+                          </h6>
+                          <span className="text-lg font-bold text-orange-900">{comparisonData.galgotias.calculations.flat.percentage}%</span>
+                        </div>
+                        <button
+                          onClick={() => copyGalgotiasDetails(comparisonData.galgotias.calculations.flat.percentage)}
+                          className="p-1.5 hover:bg-orange-300 rounded transition-colors flex-shrink-0"
+                          title="Copy fee breakdown to clipboard"
+                        >
+                          <svg className="w-4 h-4 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                          </svg>
+                        </button>
+                      </div>
+                      <p className="text-xs text-orange-700 mb-3">
+                        No GPA requirement - Guaranteed for all Bangladeshi students!
+                      </p>
+                      
+                      {/* Year-by-year breakdown */}
+                      <div className="bg-white rounded-lg p-3 mb-3">
+                        <h7 className="text-xs font-semibold text-orange-900 mb-2 block">Yearly Fees After {comparisonData.galgotias.calculations.flat.percentage}% Scholarship:</h7>
+                        {comparisonData.galgotias.calculations.flat.yearlyFees.map((fee, yearIndex) => (
+                          <div key={yearIndex} className="flex justify-between text-xs mb-1">
+                            <span>Year {yearIndex + 1}:</span>
+                            <div className="text-right">
+                              <span className="line-through text-gray-500 mr-2">
+                                {formatCurrency(comparisonData.galgotias.program.annualFees[yearIndex])}
+                              </span>
+                              <span className="font-medium text-orange-900">{formatCurrency(fee)}</span>
+                            </div>
+                          </div>
+                        ))}
+                        <div className="pt-2 border-t border-orange-200">
+                          <div className="flex justify-between text-xs mb-1">
+                            <span>One-Time Fee (Year 1):</span>
+                            <span className="font-medium text-orange-900">{formatCurrency(comparisonData.galgotias.calculations.oneTimeFee)}</span>
+                          </div>
+                          {comparisonData.galgotias.program.hasIndustryFee && (
+                            <div className="flex justify-between text-xs mb-1">
+                              <span>Industry Fee (1st Year):</span>
+                              <span className="font-medium text-orange-900">{formatCurrency(comparisonData.galgotias.program.industryFeeFirstYear)}</span>
+                            </div>
+                          )}
+                          <div className="flex justify-between text-xs mb-1">
+                            <span>Examination Fee (Annual):</span>
+                            <span className="font-medium text-orange-900">₹20,000 per year</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between items-center bg-orange-50 rounded-lg p-2">
+                          <span className="font-medium">Total After Scholarship:</span>
+                          <span className="font-bold text-orange-900">{formatCurrency(comparisonData.galgotias.calculations.flat.totalFees)}</span>
+                        </div>
+                        <div className="flex justify-between items-center bg-green-50 rounded-lg p-2">
+                          <span className="font-medium text-green-700">You Save:</span>
+                          <span className="font-bold text-green-700">{formatCurrency(comparisonData.galgotias.calculations.flat.savings)}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-lg p-4">
+                    <h5 className="font-semibold text-gray-900 mb-2">Program Highlights</h5>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      {comparisonData.galgotias.program.highlights.map((highlight, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="text-orange-600 mr-2">✓</span>
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
                 </div>
               )}
 
-              {/* No Matching Programs Message for NIU */}
-              {!comparisonData.niu && comparisonData.sharda && (
-                <div className="border-2 border-gray-200 rounded-lg p-6 bg-gray-50">
-                  <div className="text-center py-8">
-                    <div className="text-6xl mb-4">🚫</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">No NIU Programs Available</h3>
-                    <p className="text-gray-600 mb-4">
-                      NIU doesn't offer programs in this degree level category.
-                    </p>
-                    <div className="bg-green-100 border border-green-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-900 mb-2">Alternative Options:</h4>
-                      <ul className="text-sm text-green-800 space-y-1">
-                        <li>• Try selecting a different degree level or field</li>
-                        <li>• Sharda University offers diverse international programs</li>
-                        <li>• Contact WBE for personalized program recommendations</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         )}

@@ -25,11 +25,12 @@ function App() {
 
   // Degree level mapping - map existing degree types to hierarchical categories
   const degreeLevelMapping = {
-    'Diploma': ['Diploma'],
-    'Bachelor': ['B.Tech', 'B.Sc.', 'BBA', 'B.Com', 'B.A.', 'B.Des', 'B.Arch', 'BFA', 'B.Ed'],
-    'Bachelor (Lateral Entry)': ['B.Tech Lateral', 'B.Sc. Lateral', 'BBA Lateral'],
-    'Masters': ['M.Tech', 'M.Sc.', 'MBA', 'M.Com', 'M.A.', 'M.Des', 'M.Arch', 'MFA', 'M.Ed'],
-    'PhD': ['Ph.D.', 'PhD']
+    'Diploma': ['Diploma', 'D.Pharm'],
+    'Bachelor': ['B.Tech', 'B.Sc.', 'BBA', 'B.Com', 'B.A.', 'B.Des', 'B.Arch', 'BFA', 'B.Ed', 'BVA', 'B.Optom', 'BPT', 'B.Pharm', 'BJMC', 'BBA LLB', 'BA LLB', 'Pharm.D', 'B.Sc', 'BCA', 'BHM', 'BMRIT', 'B.Sc-FS', 'B.Sc-AG', 'B.Sc-IT', 'BA', 'BA-JMC', 'B.Interior', 'B.Des.', 'D-CMA', 'BPH', 'GNM'],
+    'Bachelor (Lateral Entry)': ['B.Tech Lateral', 'B.Sc Lateral', 'BBA Lateral', 'B.Des Lateral', 'BHM Lateral', 'B.Optom Lateral', 'BPT Lateral', 'BMRIT Lateral'],
+    'Masters': ['M.Tech', 'M.Sc.', 'MBA', 'M.Com', 'M.A.', 'M.Des', 'M.Arch', 'MFA', 'M.Ed', 'MPT', 'M.Pharm', 'LLM', 'MCA', 'MA', 'M.Sc', 'MFC', 'M.Optom', 'MA-JMC', 'MPH', 'PGDEMS'],
+    'PhD': ['Ph.D.', 'PhD'],
+    'Certificate': ['Certificate']
   }
 
   // Reverse mapping for quick lookup
@@ -48,7 +49,7 @@ function App() {
   // Hierarchical filter logic
   const getHierarchicalOptions = () => {
     // Fixed degree level options
-    const degreeLevels = ['Diploma', 'Bachelor', 'Bachelor (Lateral Entry)', 'Masters', 'PhD']
+    const degreeLevels = ['Diploma', 'Bachelor', 'Bachelor (Lateral Entry)', 'Masters', 'PhD', 'Certificate']
     
     // Get available fields for selected degree level
     let availableFields = new Set()

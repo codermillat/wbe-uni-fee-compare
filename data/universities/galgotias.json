@@ -300,7 +300,7 @@
       },
       {
         "id": "btech-aiml",
-        "name": "B.Tech. in Artificial Intelligence and Machine Learning",
+        "name": "B.Tech in Artificial Intelligence and Machine Learning",
         "specialization": "Artificial Intelligence and Machine Learning",
         "degree": "B.Tech",
         "field": "Engineering",
@@ -440,6 +440,278 @@
           "PhD in CSE",
           "Advanced research",
           "Academic excellence"
+        ]
+      },
+      {
+        "id": "btech-cse-lateral",
+        "name": "B.Tech Lateral Entry - Computer Science and Engineering",
+        "specialization": "Computer Science and Engineering",
+        "degree": "B.Tech Lateral",
+        "field": "Engineering",
+        "duration": 3,
+        "annualFees": [308000, 308000, 308000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Tech",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "btech-me-lateral",
+        "name": "B.Tech Lateral Entry - Mechanical Engineering",
+        "specialization": "Mechanical Engineering",
+        "degree": "B.Tech Lateral",
+        "field": "Engineering",
+        "duration": 3,
+        "annualFees": [298000, 298000, 298000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Tech",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "btech-ce-lateral",
+        "name": "B.Tech Lateral Entry - Civil Engineering",
+        "specialization": "Civil Engineering",
+        "degree": "B.Tech Lateral",
+        "field": "Engineering",
+        "duration": 3,
+        "annualFees": [298000, 298000, 298000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Tech",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "btech-ece-lateral",
+        "name": "B.Tech Lateral Entry - Electronics and Communication Engineering",
+        "specialization": "Electronics and Communication Engineering",
+        "degree": "B.Tech Lateral",
+        "field": "Engineering",
+        "duration": 3,
+        "annualFees": [298000, 298000, 298000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Tech",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "btech-ee-lateral",
+        "name": "B.Tech Lateral Entry - Electrical Engineering",
+        "specialization": "Electrical Engineering",
+        "degree": "B.Tech Lateral",
+        "field": "Engineering",
+        "duration": 3,
+        "annualFees": [298000, 298000, 298000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Tech",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "btech-biotech-lateral",
+        "name": "B.Tech Lateral Entry - Biotechnology",
+        "specialization": "Biotechnology",
+        "degree": "B.Tech Lateral",
+        "field": "Engineering",
+        "duration": 3,
+        "annualFees": [200000, 200000, 200000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Tech",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "btech-other-lateral",
+        "name": "B.Tech Lateral Entry - All Other Streams",
+        "specialization": "Other Engineering Streams",
+        "degree": "B.Tech Lateral",
+        "field": "Engineering",
+        "duration": 3,
+        "annualFees": [298000, 298000, 298000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "All B.Tech specializations available",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "bdes-fashion-lateral",
+        "name": "B.Des Lateral Entry - Fashion Design",
+        "specialization": "Fashion Design",
+        "degree": "B.Des Lateral",
+        "field": "Design",
+        "duration": 3,
+        "annualFees": [270000, 270000, 270000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Des",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "bdes-interior-lateral",
+        "name": "B.Des Lateral Entry - Interior Design",
+        "specialization": "Interior Design",
+        "degree": "B.Des Lateral",
+        "field": "Design",
+        "duration": 3,
+        "annualFees": [180000, 180000, 180000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Des",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "bsc-fashion-lateral",
+        "name": "B.Sc Lateral Entry - Fashion Design",
+        "specialization": "Fashion Design",
+        "degree": "B.Sc Lateral",
+        "field": "Design",
+        "duration": 2,
+        "annualFees": [270000, 270000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Sc",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "bhm-lateral",
+        "name": "Bachelor of Hotel Management Lateral Entry",
+        "specialization": "Hotel Management",
+        "degree": "BHM Lateral",
+        "field": "Hospitality",
+        "duration": 3,
+        "annualFees": [144000, 144000, 144000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular BHM",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "bsc-hotel-lateral",
+        "name": "B.Sc Lateral Entry - Hotel Management",
+        "specialization": "Hotel Management",
+        "degree": "B.Sc Lateral",
+        "field": "Hospitality",
+        "duration": 2,
+        "annualFees": [154000, 154000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Sc",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "bsc-mlt-lateral",
+        "name": "B.Sc Lateral Entry - Medical Lab Technology",
+        "specialization": "Medical Lab Technology",
+        "degree": "B.Sc Lateral",
+        "field": "Health Sciences",
+        "duration": 3,
+        "annualFees": [100000, 100000, 100000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Sc",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "boptom-lateral",
+        "name": "Bachelor of Optometry Lateral Entry",
+        "specialization": "Optometry",
+        "degree": "B.Optom Lateral",
+        "field": "Health Sciences",
+        "duration": 3,
+        "annualFees": [100000, 100000, 100000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Optom",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "bpt-lateral",
+        "name": "Bachelor of Physiotherapy Lateral Entry",
+        "specialization": "Physiotherapy",
+        "degree": "BPT Lateral",
+        "field": "Health Sciences",
+        "duration": 3,
+        "annualFees": [140000, 140000, 140000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular BPT",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "bsc-cvt-lateral",
+        "name": "B.Sc Lateral Entry - Cardiovascular Technology",
+        "specialization": "Cardiovascular Technology",
+        "degree": "B.Sc Lateral",
+        "field": "Health Sciences",
+        "duration": 3,
+        "annualFees": [100000, 100000, 100000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular B.Sc",
+          "Fast-track completion"
+        ]
+      },
+      {
+        "id": "bmrit-lateral",
+        "name": "B.Sc Lateral Entry - Medical Radiology and Imaging Technology (BMRIT)",
+        "specialization": "Medical Radiology and Imaging Technology",
+        "degree": "BMRIT Lateral",
+        "field": "Health Sciences",
+        "duration": 3,
+        "annualFees": [100000, 100000, 100000],
+        "scholarshipEligible": true,
+        "highlights": [
+          "Direct 2nd year entry",
+          "For diploma holders",
+          "Same curriculum as regular BMRIT",
+          "Fast-track completion"
         ]
       },
       {

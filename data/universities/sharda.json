@@ -46,20 +46,7 @@
               "gpaMax": 3.49,
               "conditions": "GPA 3.0 - 3.49"
             }
-          ],
-          "wbeEnhanced": {
-            "name": "WBE Enhanced Scholarship",
-            "description": "Enhanced scholarships available through WBE partnership after admission fee payment",
-            "tiers": [
-              {
-                "name": "WBE Premium (Enhanced 50%)",
-                "percentage": 50,
-                "gpaMin": 3,
-                "gpaMax": 5,
-                "conditions": "GPA 3.0+ through WBE partnership (After ₹52K admission fee)"
-              }
-            ]
-          }
+          ]
         },
         "category2": {
           "name": "Category 2",
@@ -83,22 +70,16 @@
               "percentage": 20,
               "gpaMin": 3,
               "gpaMax": 5,
-              "conditions": "GPA 3.0 and above (30% available on special request)"
+              "conditions": "GPA 3.0 and above"
+            },
+            {
+              "name": "Enhanced Scholarship",
+              "percentage": 30,
+              "gpaMin": 3,
+              "gpaMax": 5,
+              "conditions": "GPA 3.0 and above"
             }
-          ],
-          "wbeEnhanced": {
-            "name": "WBE Enhanced Category 3",
-            "description": "Enhanced 30% scholarship available through WBE special request after admission fee payment",
-            "tiers": [
-              {
-                "name": "WBE Enhanced (30%)",
-                "percentage": 30,
-                "gpaMin": 3,
-                "gpaMax": 5,
-                "conditions": "GPA 3.0+ through WBE special request (After ₹52K admission fee)"
-              }
-            ]
-          }
+          ]
         },
         "category4": {
           "name": "Category 4",
@@ -270,7 +251,7 @@
     },
     {
       "id": "btech-cse-cyber",
-      "name": "B.Tech CSE (Cyber Security & Forensics)",
+      "name": "B.Tech CSE - Cyber Security & Forensics (in association with EC-Council)",
       "specialization": "Cyber Security & Forensics",
       "degree": "B.Tech",
       "field": "Engineering",
@@ -287,7 +268,7 @@
     },
     {
       "id": "btech-cse-iot",
-      "name": "B.Tech CSE (AI for IoT Applications)",
+      "name": "B.Tech CSE - Artificial Intelligence for IoT Applications (in association with AERIS)",
       "specialization": "AI for IoT Applications",
       "degree": "B.Tech",
       "field": "Engineering",
@@ -304,7 +285,7 @@
     },
     {
       "id": "btech-cse-cloud",
-      "name": "B.Tech CSE (Cloud Technology & Virtualization)",
+      "name": "B.Tech CSE - Cloud Technology & Virtualization (in association with AWS)",
       "specialization": "Cloud Technology & Virtualization",
       "degree": "B.Tech",
       "field": "Engineering",
@@ -321,7 +302,7 @@
     },
     {
       "id": "btech-cse-ds",
-      "name": "B.Tech CSE (Data Science & Analytics)",
+      "name": "B.Tech CSE - Data Science & Analytics (in association with Oracle)",
       "specialization": "Data Science & Analytics",
       "degree": "B.Tech",
       "field": "Engineering",
@@ -338,7 +319,7 @@
     },
     {
       "id": "btech-cse-fullstack",
-      "name": "B.Tech CSE (Full Stack Development)",
+      "name": "B.Tech CSE - Full Stack Development (in association with Xebia Academic Alliance)",
       "specialization": "Full Stack Development",
       "degree": "B.Tech",
       "field": "Engineering",
@@ -524,6 +505,24 @@
       ]
     },
     {
+      "id": "btech-ce-cs-minor",
+      "name": "B.Tech in Civil Engineering with minor in CS & Engg.",
+      "specialization": "Civil Engineering with Computer Science Minor",
+      "degree": "B.Tech",
+      "field": "Engineering",
+      "duration": 4,
+      "annualFees": [185400, 190962, 196691, 202592],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Structural engineering",
+        "Computer science applications",
+        "Construction management",
+        "BIM technology",
+        "Interdisciplinary approach"
+      ]
+    },
+    {
       "id": "btech-biotech-stem",
       "name": "B.Tech Biotechnology (Stem Cell & Tissue Engg.)",
       "specialization": "Stem Cell & Tissue Engineering",
@@ -695,7 +694,7 @@
     },
     {
       "id": "mtech-biotech",
-      "name": "M.Tech. Biotechnology",
+      "name": "M.Tech. - Biotechnology (Animal/Plant Biotechnology/Genetic Engineering/Bio-Engineering and Bio-Informatics)",
       "specialization": "Biotechnology (Multiple Specializations)",
       "degree": "M.Tech",
       "field": "Engineering",
@@ -729,7 +728,7 @@
     },
     {
       "id": "mtech-civil",
-      "name": "M.Tech. Civil Engineering",
+      "name": "M.Tech. - Civil Engineering (Environmental/Structural/Construction/Geotechnical & Earthquake Engg./Remote Sensing & GIS)",
       "specialization": "Civil Engineering (Multiple Specializations)",
       "degree": "M.Tech",
       "field": "Engineering",
@@ -746,7 +745,7 @@
     },
     {
       "id": "mtech-cse",
-      "name": "M.Tech. CSE",
+      "name": "M.Tech. - Computer Science & Engineering (Networking & Cyber Security/Software Engineering/Data Science)",
       "specialization": "Computer Science & Engineering (Multiple Specializations)",
       "degree": "M.Tech",
       "field": "Engineering",
@@ -763,7 +762,7 @@
     },
     {
       "id": "mtech-eee",
-      "name": "M.Tech. EEE",
+      "name": "M.Tech. - Electrical and Electronics Engg. (Instrumentation and Control/Industrial Automation/Power System Engineering)",
       "specialization": "Electrical & Electronics Engineering (Multiple Specializations)",
       "degree": "M.Tech",
       "field": "Engineering",
@@ -780,7 +779,7 @@
     },
     {
       "id": "mtech-ece",
-      "name": "M.Tech. ECE",
+      "name": "M.Tech. - Electronics & Communication Engg. (Digital Communication/VLSI Technology)",
       "specialization": "Electronics & Communication Engineering (Multiple Specializations)",
       "degree": "M.Tech",
       "field": "Engineering",
@@ -848,7 +847,7 @@
     },
     {
       "id": "bcom-ica",
-      "name": "B.Com. (Finance & Accounting with ICA)",
+      "name": "B.Com. - Finance & Accounting (with ICA)",
       "specialization": "Finance & Accounting with ICA",
       "degree": "B.Com",
       "field": "Commerce",
@@ -865,7 +864,7 @@
     },
     {
       "id": "bcom-international",
-      "name": "B.Com. (International Accounting & Finance)",
+      "name": "B.Com. - International Accounting & Finance (with ACCA, UK)",
       "specialization": "International Accounting & Finance",
       "degree": "B.Com",
       "field": "Commerce",
@@ -882,8 +881,8 @@
     },
     {
       "id": "bba",
-      "name": "Bachelor of Business Administration",
-      "specialization": "Business Administration",
+      "name": "BBA - Banking & Finance/International Business/Marketing Management/Entrepreneurship/HRM/Health Care Management/Supply Chain Management & Logistics",
+      "specialization": "Business Administration (Multiple Specializations)",
       "degree": "BBA",
       "field": "Management",
       "duration": 3,
@@ -894,13 +893,14 @@
         "Management fundamentals",
         "Industry exposure",
         "Business labs",
-        "Entrepreneurship cell"
+        "Entrepreneurship cell",
+        "Multiple specialization options"
       ]
     },
     {
       "id": "bba-hons",
-      "name": "BBA (Hons./Research)",
-      "specialization": "Business Administration (Hons./Research)",
+      "name": "BBA (Hons./Research) - Banking & Finance/International Business/Marketing Management/Entrepreneurship/HRM/Health Care Management/Supply Chain Management & Logistics",
+      "specialization": "Business Administration (Hons./Research) (Multiple Specializations)",
       "degree": "BBA",
       "field": "Management",
       "duration": 4,
@@ -911,12 +911,13 @@
         "4-year honors program",
         "Research component",
         "Advanced management",
-        "Leadership development"
+        "Leadership development",
+        "Multiple specialization options"
       ]
     },
     {
       "id": "bba-finance",
-      "name": "BBA (Finance & Accounting)",
+      "name": "BBA - Finance & Accounting (with ACCA, UK)",
       "specialization": "Finance & Accounting",
       "degree": "BBA",
       "field": "Management",
@@ -950,8 +951,8 @@
     },
     {
       "id": "mba",
-      "name": "Master of Business Administration",
-      "specialization": "Business Administration",
+      "name": "MBA - Marketing/International Business/Business Analytics/Banking & Finance/HRM/Entrepreneurship/Supply Chain/Health Care",
+      "specialization": "Business Administration (Multiple Specializations)",
       "degree": "MBA",
       "field": "Management",
       "duration": 2,
@@ -962,7 +963,8 @@
         "AICTE approved",
         "Corporate internships",
         "Case study methodology",
-        "Leadership development"
+        "Leadership development",
+        "Multiple specialization options"
       ]
     },
     {
@@ -1153,8 +1155,212 @@
       ]
     },
     {
+      "id": "ba-english",
+      "name": "B.A. - English",
+      "specialization": "English",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 3,
+      "annualFees": [125000, 128750, 132613],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "English literature",
+        "Language studies",
+        "Literary criticism",
+        "Communication skills"
+      ]
+    },
+    {
+      "id": "ba-history",
+      "name": "B.A. - History",
+      "specialization": "History",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 3,
+      "annualFees": [125000, 128750, 132613],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Historical analysis",
+        "World history",
+        "Research methods",
+        "Cultural studies"
+      ]
+    },
+    {
+      "id": "ba-sociology",
+      "name": "B.A. - Sociology",
+      "specialization": "Sociology",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 3,
+      "annualFees": [125000, 128750, 132613],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Social structures",
+        "Social behavior",
+        "Research methodology",
+        "Social policy"
+      ]
+    },
+    {
+      "id": "ba-political-science",
+      "name": "B.A. - Political Science",
+      "specialization": "Political Science",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 3,
+      "annualFees": [125000, 128750, 132613],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Political theory",
+        "Public policy",
+        "Government systems",
+        "Political analysis"
+      ]
+    },
+    {
+      "id": "ba-geography",
+      "name": "B.A. - Geography",
+      "specialization": "Geography",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 3,
+      "annualFees": [125000, 128750, 132613],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Human geography",
+        "Physical geography",
+        "Geographic information systems",
+        "Environmental studies"
+      ]
+    },
+    {
+      "id": "ba-international-relations",
+      "name": "B.A. - International Relations",
+      "specialization": "International Relations",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 3,
+      "annualFees": [125000, 128750, 132613],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "International relations",
+        "Diplomacy",
+        "Global politics",
+        "Foreign policy"
+      ]
+    },
+    {
+      "id": "ba-english-hons",
+      "name": "B.A. (Hons./Research) - English",
+      "specialization": "English (Hons./Research)",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 4,
+      "annualFees": [125000, 128750, 132613, 136591],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced English literature",
+        "Academic writing"
+      ]
+    },
+    {
+      "id": "ba-history-hons",
+      "name": "B.A. (Hons./Research) - History",
+      "specialization": "History (Hons./Research)",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 4,
+      "annualFees": [125000, 128750, 132613, 136591],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced historical research",
+        "Historical methodology"
+      ]
+    },
+    {
+      "id": "ba-sociology-hons",
+      "name": "B.A. (Hons./Research) - Sociology",
+      "specialization": "Sociology (Hons./Research)",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 4,
+      "annualFees": [125000, 128750, 132613, 136591],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced sociology",
+        "Social research methods"
+      ]
+    },
+    {
+      "id": "ba-political-science-hons",
+      "name": "B.A. (Hons./Research) - Political Science",
+      "specialization": "Political Science (Hons./Research)",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 4,
+      "annualFees": [125000, 128750, 132613, 136591],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced political science",
+        "Policy research"
+      ]
+    },
+    {
+      "id": "ba-geography-hons",
+      "name": "B.A. (Hons./Research) - Geography",
+      "specialization": "Geography (Hons./Research)",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 4,
+      "annualFees": [125000, 128750, 132613, 136591],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced geography",
+        "Geographic research"
+      ]
+    },
+    {
+      "id": "ba-international-relations-hons",
+      "name": "B.A. (Hons./Research) - International Relations",
+      "specialization": "International Relations (Hons./Research)",
+      "degree": "BA",
+      "field": "Liberal Arts",
+      "duration": 4,
+      "annualFees": [125000, 128750, 132613, 136591],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced international relations",
+        "Diplomatic studies"
+      ]
+    },
+    {
       "id": "ma",
-      "name": "M.A.",
+      "name": "Master of Arts - Modern History/Sociology/Applied Psychology/Clinical Psychology",
       "specialization": "Liberal Arts (Multiple Specializations)",
       "degree": "MA",
       "field": "Liberal Arts",
@@ -1187,8 +1393,178 @@
       ]
     },
     {
+      "id": "bsc-physics",
+      "name": "B.Sc. - Physics",
+      "specialization": "Physics",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [110000, 113300, 116699],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Physics fundamentals",
+        "Research foundation",
+        "Laboratory work",
+        "Higher studies pathway"
+      ]
+    },
+    {
+      "id": "bsc-physics-hons",
+      "name": "B.Sc. (Hons./Research) - Physics",
+      "specialization": "Physics (Hons./Research)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [110000, 113300, 116699, 120200],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced physics",
+        "PhD preparation"
+      ]
+    },
+    {
+      "id": "bsc-chemistry",
+      "name": "B.Sc. - Chemistry",
+      "specialization": "Chemistry",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [110000, 113300, 116699],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Chemistry fundamentals",
+        "Research foundation",
+        "Laboratory work",
+        "Higher studies pathway"
+      ]
+    },
+    {
+      "id": "bsc-chemistry-hons",
+      "name": "B.Sc. (Hons./Research) - Chemistry",
+      "specialization": "Chemistry (Hons./Research)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [110000, 113300, 116699, 120200],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced chemistry",
+        "PhD preparation"
+      ]
+    },
+    {
+      "id": "bsc-computational-chemistry",
+      "name": "B.Sc. - Computational Chemistry",
+      "specialization": "Computational Chemistry",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [110000, 113300, 116699],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Computational chemistry",
+        "Research foundation",
+        "Laboratory work",
+        "Higher studies pathway"
+      ]
+    },
+    {
+      "id": "bsc-computational-chemistry-hons",
+      "name": "B.Sc. (Hons./Research) - Computational Chemistry",
+      "specialization": "Computational Chemistry (Hons./Research)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [110000, 113300, 116699, 120200],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced computational chemistry",
+        "PhD preparation"
+      ]
+    },
+    {
+      "id": "bsc-mathematics",
+      "name": "B.Sc. - Mathematics",
+      "specialization": "Mathematics",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [110000, 113300, 116699],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Mathematics fundamentals",
+        "Research foundation",
+        "Mathematical modeling",
+        "Higher studies pathway"
+      ]
+    },
+    {
+      "id": "bsc-mathematics-hons",
+      "name": "B.Sc. (Hons/Research) - Mathematics",
+      "specialization": "Mathematics (Hons./Research)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [110000, 113300, 116699, 120200],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced mathematics",
+        "PhD preparation"
+      ]
+    },
+    {
+      "id": "bsc-zoology",
+      "name": "B.Sc. - Zoology",
+      "specialization": "Zoology",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [110000, 113300, 116699],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Zoology fundamentals",
+        "Research foundation",
+        "Laboratory work",
+        "Higher studies pathway"
+      ]
+    },
+    {
+      "id": "bsc-zoology-hons",
+      "name": "B.Sc. (Hons/Research) - Zoology",
+      "specialization": "Zoology (Hons./Research)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [110000, 113300, 116699, 120200],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced zoology",
+        "PhD preparation"
+      ]
+    },
+    {
       "id": "bsc-basic",
-      "name": "B.Sc.",
+      "name": "B.Sc. - Physics/Chemistry/Computational Chemistry/Mathematics/Zoology",
       "specialization": "Basic Sciences (Physics/Chemistry/Maths/Zoology)",
       "degree": "B.Sc.",
       "field": "Sciences",
@@ -1200,12 +1576,13 @@
         "Pure sciences",
         "Research foundation",
         "Laboratory work",
-        "Higher studies pathway"
+        "Higher studies pathway",
+        "Multiple specialization options"
       ]
     },
     {
       "id": "bsc-basic-hons",
-      "name": "B.Sc. (Hons./Research)",
+      "name": "B.Sc. (Hons./Research) - Physics/Chemistry/Computational Chemistry/Mathematics/Zoology",
       "specialization": "Basic Sciences (Hons./Research)",
       "degree": "B.Sc.",
       "field": "Sciences",
@@ -1217,12 +1594,13 @@
         "4-year honors program",
         "Research component",
         "Advanced sciences",
-        "PhD preparation"
+        "PhD preparation",
+        "Multiple specialization options"
       ]
     },
     {
       "id": "bsc-bio",
-      "name": "B.Sc. (Bio Sciences)",
+      "name": "B.Sc. - Bio Chemistry/Biotechnology/Microbiology/Food Science & Technology",
       "specialization": "Bio Sciences (Biochemistry/Biotech/Microbiology/Food Science)",
       "degree": "B.Sc.",
       "field": "Sciences",
@@ -1239,7 +1617,7 @@
     },
     {
       "id": "bsc-bio-hons",
-      "name": "B.Sc. (Hons./Research) Bio Sciences",
+      "name": "B.Sc. (Hons/Research) - Bio Chemistry/Biotechnology/Microbiology/Food Science & Technology",
       "specialization": "Bio Sciences (Hons./Research)",
       "degree": "B.Sc.",
       "field": "Sciences",
@@ -1256,7 +1634,7 @@
     },
     {
       "id": "msc-general",
-      "name": "M.Sc.",
+      "name": "M.Sc. - Biotechnology/Microbiology/Food Science & Technology",
       "specialization": "Sciences (Multiple Specializations)",
       "degree": "M.Sc.",
       "field": "Sciences",
@@ -1278,7 +1656,7 @@
       "degree": "B.Arch",
       "field": "Architecture",
       "duration": 5,
-      "annualFees": [180000, 180000, 180000, 180000, 180000],
+      "annualFees": [219000, 225570, 232337, 239307, 246486],
       "scholarshipEligible": true,
       "scholarshipCategory": "category1",
       "highlights": [
@@ -1329,7 +1707,7 @@
       "degree": "B.Sc.",
       "field": "Nursing",
       "duration": 4,
-      "annualFees": [140000, 140000, 140000, 140000],
+      "annualFees": [240000, 247200, 254616, 262254],
       "scholarshipEligible": true,
       "scholarshipCategory": "category2",
       "highlights": [
@@ -1346,7 +1724,7 @@
       "degree": "B.Pharm",
       "field": "Pharmacy",
       "duration": 4,
-      "annualFees": [140000, 140000, 140000, 140000],
+      "annualFees": [240000, 247200, 254616, 262254],
       "scholarshipEligible": true,
       "scholarshipCategory": "category4",
       "highlights": [
@@ -1536,7 +1914,7 @@
     },
     {
       "id": "btech-cse-cyber-lateral",
-      "name": "B.Tech Lateral Entry - CSE (Cyber Security & Forensics)",
+      "name": "B.Tech Lateral Entry - CSE (Cyber Security & Forensics) (in association with EC-Council)",
       "specialization": "Cyber Security & Forensics",
       "degree": "B.Tech Lateral",
       "field": "Engineering",
@@ -1555,7 +1933,7 @@
     },
     {
       "id": "btech-cse-iot-lateral",
-      "name": "B.Tech Lateral Entry - CSE (AI for IoT Applications)",
+      "name": "B.Tech Lateral Entry - CSE (AI for IoT Applications) (in association with AERIS)",
       "specialization": "AI for IoT Applications",
       "degree": "B.Tech Lateral",
       "field": "Engineering",
@@ -1574,7 +1952,7 @@
     },
     {
       "id": "btech-cse-cloud-lateral",
-      "name": "B.Tech Lateral Entry - CSE (Cloud Technology & Virtualization)",
+      "name": "B.Tech Lateral Entry - CSE (Cloud Technology & Virtualization) (in association with AWS)",
       "specialization": "Cloud Technology & Virtualization",
       "degree": "B.Tech Lateral",
       "field": "Engineering",
@@ -1593,7 +1971,7 @@
     },
     {
       "id": "btech-cse-ds-lateral",
-      "name": "B.Tech Lateral Entry - CSE (Data Science & Analytics)",
+      "name": "B.Tech Lateral Entry - CSE (Data Science & Analytics) (in association with Oracle)",
       "specialization": "Data Science & Analytics",
       "degree": "B.Tech Lateral",
       "field": "Engineering",
@@ -1612,7 +1990,7 @@
     },
     {
       "id": "btech-cse-fullstack-lateral",
-      "name": "B.Tech Lateral Entry - CSE (Full Stack Development)",
+      "name": "B.Tech Lateral Entry - CSE (Full Stack Development) (in association with Xebia Academic Alliance)",
       "specialization": "Full Stack Development",
       "degree": "B.Tech Lateral",
       "field": "Engineering",
@@ -1855,6 +2233,775 @@
         "Gene therapy",
         "CRISPR technology",
         "Biotechnology research"
+      ]
+    },
+    {
+      "id": "ba-film-tv",
+      "name": "B.A. - Film Television & OTT Production",
+      "specialization": "Film Television & OTT Production",
+      "degree": "BA",
+      "field": "Media",
+      "duration": 3,
+      "annualFees": [222000, 228660, 235520],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Film & TV production",
+        "OTT content creation",
+        "Modern studio facilities",
+        "Industry internships"
+      ]
+    },
+    {
+      "id": "ba-film-tv-hons",
+      "name": "B.A. (Hons./Research) - Film Television & OTT Production",
+      "specialization": "Film Television & OTT Production (Hons./Research)",
+      "degree": "BA",
+      "field": "Media",
+      "duration": 4,
+      "annualFees": [222000, 228660, 235520, 242585],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced film production",
+        "Industry exposure"
+      ]
+    },
+    {
+      "id": "bjmc-hons",
+      "name": "B.A. (Hons./Research) - Journalism & Mass Communication",
+      "specialization": "Journalism & Mass Communication (Hons./Research)",
+      "degree": "BJMC",
+      "field": "Journalism",
+      "duration": 4,
+      "annualFees": [185000, 190550, 196267, 202154],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced journalism",
+        "Media industry preparation"
+      ]
+    },
+    {
+      "id": "bsc-animation-vfx",
+      "name": "B.Sc. - Animation, VFX and Gaming Design (Specialisation in Animation & VFX/Specialisation in Gaming Design)",
+      "specialization": "Animation, VFX and Gaming Design",
+      "degree": "B.Sc.",
+      "field": "Media",
+      "duration": 3,
+      "annualFees": [185000, 190550, 196267],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Animation & VFX",
+        "Gaming design",
+        "3D modeling",
+        "Industry-standard software"
+      ]
+    },
+    {
+      "id": "bsc-animation-vfx-hons",
+      "name": "B.Sc. (Hons./Research) - Animation, VFX and Gaming Design (Specialisation in Animation & VFX/Specialisation in Gaming Design)",
+      "specialization": "Animation, VFX and Gaming Design (Hons./Research)",
+      "degree": "B.Sc.",
+      "field": "Media",
+      "duration": 4,
+      "annualFees": [185000, 190550, 196267, 202154],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced animation techniques",
+        "Industry projects"
+      ]
+    },
+    {
+      "id": "ma-journalism",
+      "name": "M.A. - Journalism & Mass Communication/Advertising, Public Relations and Corporate Communication",
+      "specialization": "Journalism & Mass Communication / Advertising, Public Relations and Corporate Communication",
+      "degree": "MA",
+      "field": "Journalism",
+      "duration": 2,
+      "annualFees": [176000, 181280],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced journalism",
+        "Advertising & PR",
+        "Corporate communication",
+        "Media management"
+      ]
+    },
+    {
+      "id": "ba-visual-arts",
+      "name": "Bachelor of Visual Arts (Applied Arts)",
+      "specialization": "Visual Arts (Applied Arts)",
+      "degree": "BVA",
+      "field": "Design",
+      "duration": 4,
+      "annualFees": [110000, 113300, 116699, 120200],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Applied arts",
+        "Visual design",
+        "Creative expression",
+        "Art studios"
+      ]
+    },
+    {
+      "id": "bdes-interior",
+      "name": "Bachelor of Design - Interior/Fashion/Communication Design",
+      "specialization": "Design (Multiple Specializations)",
+      "degree": "B.Des",
+      "field": "Design",
+      "duration": 4,
+      "annualFees": [275000, 283250, 291748, 300500],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Interior design",
+        "Fashion design",
+        "Communication design",
+        "Space planning",
+        "Modern design tools",
+        "Industry projects"
+      ]
+    },
+    {
+      "id": "mdes-interior",
+      "name": "Masters in Design - Interior Design/Fashion Design",
+      "specialization": "Design (Multiple Specializations)",
+      "degree": "M.Des",
+      "field": "Design",
+      "duration": 2,
+      "annualFees": [275000, 283250],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced interior design",
+        "Advanced fashion design",
+        "Research focus",
+        "Industry projects",
+        "Professional development"
+      ]
+    },
+    {
+      "id": "bsc-radiology",
+      "name": "B.Sc. in Radiological Imaging Techniques",
+      "specialization": "Radiological Imaging Techniques",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 3,
+      "annualFees": [200000, 206000, 212180],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Radiological imaging",
+        "Medical imaging technology",
+        "Hospital training",
+        "Diagnostic techniques"
+      ]
+    },
+    {
+      "id": "bsc-bmlt",
+      "name": "B.Sc. in Medical Laboratory Technology (BMLT)",
+      "specialization": "Medical Laboratory Technology",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 3,
+      "annualFees": [170000, 175100, 180353],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Medical laboratory technology",
+        "Clinical diagnostics",
+        "Laboratory management",
+        "Hospital training"
+      ]
+    },
+    {
+      "id": "bsc-cvt",
+      "name": "B.Sc. - Cardiovascular Technology",
+      "specialization": "Cardiovascular Technology",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [185000, 190550, 196267, 202154],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Cardiovascular technology",
+        "Cardiac diagnostics",
+        "Hospital training",
+        "Cardiac care"
+      ]
+    },
+    {
+      "id": "boptom",
+      "name": "Bachelor of Optometry",
+      "specialization": "Optometry",
+      "degree": "B.Optom",
+      "field": "Allied Health Sciences",
+      "duration": 4,
+      "annualFees": [165000, 169950, 175049, 180300],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Optometry",
+        "Eye care",
+        "Clinical training",
+        "Vision science"
+      ]
+    },
+    {
+      "id": "bsc-nutrition",
+      "name": "Bachelor of Science (Nutrition & Dietetics)",
+      "specialization": "Nutrition & Dietetics",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 3,
+      "annualFees": [165000, 169950, 175049],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Nutrition & dietetics",
+        "Clinical nutrition",
+        "Food science",
+        "Health promotion"
+      ]
+    },
+    {
+      "id": "mpt",
+      "name": "Master of Physiotherapy (MPT) - Orthopaedics/Neurology/Cardiopulmonary/Sports",
+      "specialization": "Physiotherapy (Multiple Specializations)",
+      "degree": "MPT",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [230000, 236900],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced physiotherapy",
+        "Specialization options",
+        "Clinical research",
+        "Professional practice"
+      ]
+    },
+    {
+      "id": "msc-clinical-research",
+      "name": "M.Sc. (Clinical Research)",
+      "specialization": "Clinical Research",
+      "degree": "M.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [153000, 157590],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Clinical research",
+        "Research methodology",
+        "Pharmaceutical research",
+        "Industry opportunities"
+      ]
+    },
+    {
+      "id": "msc-forensic",
+      "name": "M.Sc. (Forensic Science)",
+      "specialization": "Forensic Science",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [164000, 168920],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Forensic science",
+        "Crime investigation",
+        "Laboratory techniques",
+        "Legal applications"
+      ]
+    },
+    {
+      "id": "msc-nutrition",
+      "name": "M.Sc. (Nutrition & Dietetics) - Clinical Nutrition/Food Science and Nutrition/Public Health Nutrition",
+      "specialization": "Nutrition & Dietetics (Multiple Specializations)",
+      "degree": "M.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [164000, 168920],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Advanced nutrition",
+        "Clinical nutrition",
+        "Food science",
+        "Research focus"
+      ]
+    },
+    {
+      "id": "bsc-nursing-post-basic",
+      "name": "Post Basic B.Sc. (Nursing)",
+      "specialization": "Nursing",
+      "degree": "B.Sc.",
+      "field": "Nursing",
+      "duration": 2,
+      "annualFees": [162000, 166860],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category2",
+      "highlights": [
+        "Post-basic nursing",
+        "Advanced nursing practice",
+        "Clinical specialization",
+        "Professional development"
+      ]
+    },
+    {
+      "id": "msc-nursing",
+      "name": "M.Sc. (Nursing) - Community Health/Obstetrics & Gynecology/Child Health/Medical Surgical/Psychiatric Nursing",
+      "specialization": "Nursing (Multiple Specializations)",
+      "degree": "M.Sc.",
+      "field": "Nursing",
+      "duration": 2,
+      "annualFees": [202873, 208959],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category2",
+      "highlights": [
+        "Advanced nursing",
+        "Specialization options",
+        "Clinical research",
+        "Leadership development"
+      ]
+    },
+    {
+      "id": "pharmd",
+      "name": "Pharm D",
+      "specialization": "Pharmacy",
+      "degree": "Pharm.D",
+      "field": "Pharmacy",
+      "duration": 6,
+      "annualFees": [370800, 381924, 393382, 405183, 417339, 429859],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category4",
+      "highlights": [
+        "Doctor of Pharmacy",
+        "Clinical pharmacy",
+        "Hospital training",
+        "Pharmaceutical care"
+      ]
+    },
+    {
+      "id": "mpharm",
+      "name": "M Pharm",
+      "specialization": "Pharmacy (Multiple Specializations)",
+      "degree": "M.Pharm",
+      "field": "Pharmacy",
+      "duration": 2,
+      "annualFees": [180000, 185400],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category4",
+      "highlights": [
+        "Advanced pharmacy",
+        "Research focus",
+        "Specialization options",
+        "Industry opportunities"
+      ]
+    },
+    {
+      "id": "bsc-environmental",
+      "name": "B.Sc. - Environmental Science",
+      "specialization": "Environmental Science",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [140000, 144200, 148526],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Environmental science",
+        "Ecology",
+        "Conservation",
+        "Research opportunities"
+      ]
+    },
+    {
+      "id": "bsc-environmental-hons",
+      "name": "B.Sc. (Hons./Research) - Environmental Science",
+      "specialization": "Environmental Science (Hons./Research)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [140000, 144200, 148526, 152982],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced environmental science",
+        "Conservation focus"
+      ]
+    },
+    {
+      "id": "bsc-computational-math",
+      "name": "B.Sc. - Computational Mathematics and Statistics",
+      "specialization": "Computational Mathematics and Statistics",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [110000, 113300, 116699],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Computational mathematics",
+        "Statistics",
+        "Data analysis",
+        "Mathematical modeling"
+      ]
+    },
+    {
+      "id": "bsc-computational-math-hons",
+      "name": "B.Sc. (Hons/Research) - Computational Mathematics and Statistics",
+      "specialization": "Computational Mathematics and Statistics (Hons./Research)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [110000, 113300, 116699, 120200],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced mathematics",
+        "Statistical analysis"
+      ]
+    },
+    {
+      "id": "bsc-data-science",
+      "name": "B.Sc. - Data Science and Analytics",
+      "specialization": "Data Science and Analytics",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [120000, 123600, 127308],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Data science",
+        "Analytics",
+        "Machine learning",
+        "Big data"
+      ]
+    },
+    {
+      "id": "bsc-data-science-hons",
+      "name": "B.Sc. (Hons/Research) - Data Science and Analytics",
+      "specialization": "Data Science and Analytics (Hons./Research)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [120000, 123600, 127308, 131127],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced data science",
+        "Analytics expertise"
+      ]
+    },
+    {
+      "id": "bsc-physics-computational",
+      "name": "B.Sc. - Physics (Computational Physics / Renewable Energy)",
+      "specialization": "Physics (Computational Physics / Renewable Energy)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 3,
+      "annualFees": [110000, 113300, 116699],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Computational physics",
+        "Renewable energy",
+        "Physics research",
+        "Energy systems"
+      ]
+    },
+    {
+      "id": "bsc-physics-computational-hons",
+      "name": "B.Sc. (Hons./Research) - Physics (Computational Physics / Renewable Energy)",
+      "specialization": "Physics (Computational Physics / Renewable Energy) (Hons./Research)",
+      "degree": "B.Sc.",
+      "field": "Sciences",
+      "duration": 4,
+      "annualFees": [110000, 113300, 116699, 120200],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "4-year honors program",
+        "Research component",
+        "Advanced physics",
+        "Energy research"
+      ]
+    },
+    {
+      "id": "msc-chemistry-physics-math",
+      "name": "M.Sc. - Chemistry/Physics/Mathematics",
+      "specialization": "Chemistry/Physics/Mathematics",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [130000, 133900],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Chemistry",
+        "Physics",
+        "Mathematics",
+        "Research focus",
+        "Laboratory techniques"
+      ]
+    },
+    {
+      "id": "msc-biochemistry",
+      "name": "M.Sc. - Biochemistry",
+      "specialization": "Biochemistry",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [130000, 133900],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Biochemistry",
+        "Molecular biology",
+        "Research focus",
+        "Laboratory techniques"
+      ]
+    },
+    {
+      "id": "msc-data-science",
+      "name": "M.Sc. - Data Science & Analytics",
+      "specialization": "Data Science & Analytics",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [130000, 133900],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Data science",
+        "Analytics",
+        "Machine learning",
+        "Research projects"
+      ]
+    },
+    {
+      "id": "msc-environmental",
+      "name": "M.Sc. - Environmental Science/Water Resource & Environmental Management",
+      "specialization": "Environmental Science/Water Resource & Environmental Management",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [125000, 128750],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Environmental science",
+        "Water resource management",
+        "Conservation",
+        "Research focus"
+      ]
+    },
+    {
+      "id": "msc-medical",
+      "name": "M.Sc. - Medical Anatomy/Medical Bio Chemistry/Medical Microbiology/Medical Pharmacology/Medical Physiology",
+      "specialization": "Medical Sciences (Multiple Specializations)",
+      "degree": "M.Sc.",
+      "field": "Medical Sciences",
+      "duration": 3,
+      "annualFees": [140000, 144200, 148526],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category4",
+      "highlights": [
+        "Medical sciences",
+        "Anatomy & physiology",
+        "Medical research",
+        "Clinical applications"
+      ]
+    },
+    {
+      "id": "ma-english",
+      "name": "M.A. - English",
+      "specialization": "English",
+      "degree": "MA",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [100000, 103000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "English literature",
+        "Literary criticism",
+        "Research methods",
+        "Academic writing"
+      ]
+    },
+    {
+      "id": "ma-political-science",
+      "name": "Master of Arts - Political Science",
+      "specialization": "Political Science",
+      "degree": "MA",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [100000, 103000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Political science",
+        "Public policy",
+        "International relations",
+        "Research focus"
+      ]
+    },
+    {
+      "id": "ma-international-relations",
+      "name": "Master of Arts - Political Science spc. in International Relations",
+      "specialization": "Political Science (International Relations)",
+      "degree": "MA",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [100000, 103000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "International relations",
+        "Diplomacy",
+        "Global politics",
+        "Foreign policy"
+      ]
+    },
+    {
+      "id": "ma-clinical-psychology",
+      "name": "Master of Arts - Clinical Psychology",
+      "specialization": "Clinical Psychology",
+      "degree": "MA",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [100000, 103000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Clinical psychology",
+        "Mental health",
+        "Counseling",
+        "Therapeutic techniques"
+      ]
+    },
+    {
+      "id": "ma-applied-psychology",
+      "name": "Master of Arts - Applied Psychology",
+      "specialization": "Applied Psychology",
+      "degree": "MA",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [100000, 103000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Applied psychology",
+        "Practical applications",
+        "Behavioral science",
+        "Research methods"
+      ]
+    },
+    {
+      "id": "ma-modern-history",
+      "name": "Master of Arts - Modern History",
+      "specialization": "Modern History",
+      "degree": "MA",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [100000, 103000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Modern history",
+        "Historical research",
+        "Contemporary history",
+        "Research methodology"
+      ]
+    },
+    {
+      "id": "ma-sociology",
+      "name": "Master of Arts - Sociology",
+      "specialization": "Sociology",
+      "degree": "MA",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [100000, 103000],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category3",
+      "highlights": [
+        "Advanced sociology",
+        "Social theory",
+        "Research methods",
+        "Social policy analysis"
+      ]
+    },
+    {
+      "id": "bsc-forensic",
+      "name": "B.Sc. - Forensic Science",
+      "specialization": "Forensic Science",
+      "degree": "B.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 3,
+      "annualFees": [175000, 180250, 185658],
+      "scholarshipEligible": true,
+      "scholarshipCategory": "category1",
+      "highlights": [
+        "Forensic science",
+        "Crime investigation",
+        "Laboratory techniques",
+        "Legal applications"
+      ]
+    },
+    {
+      "id": "certificate-english",
+      "name": "Certificate of Proficiency (English)",
+      "specialization": "English Proficiency",
+      "degree": "Certificate",
+      "field": "Liberal Arts",
+      "duration": 0.5,
+      "annualFees": [30900],
+      "scholarshipEligible": false,
+      "scholarshipCategory": null,
+      "highlights": [
+        "English language proficiency",
+        "Communication skills",
+        "Language certification",
+        "Short-term program"
+      ]
+    },
+    {
+      "id": "advance-certificate-english",
+      "name": "Advance Certificate of Proficiency (English)",
+      "specialization": "Advanced English Proficiency",
+      "degree": "Certificate",
+      "field": "Liberal Arts",
+      "duration": 1,
+      "annualFees": [61800],
+      "scholarshipEligible": false,
+      "scholarshipCategory": null,
+      "highlights": [
+        "Advanced English proficiency",
+        "Professional communication",
+        "Language certification",
+        "Career enhancement"
       ]
     }
   ]

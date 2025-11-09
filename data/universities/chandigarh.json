@@ -569,8 +569,8 @@
     },
     {
       "id": "bcom-general",
-      "name": "B.Com (Hons.) - General",
-      "specialization": "Commerce",
+      "name": "B.Com (Hons.) - General (Auditing & Taxation / E Commerce / Marketing / Financial Markets / Advanced Cost & Management Accounting)",
+      "specialization": "Commerce (Multiple Specializations)",
       "degree": "B.Com",
       "field": "Commerce",
       "duration": 4,
@@ -580,7 +580,8 @@
         "Commerce fundamentals",
         "Accounting & finance",
         "Professional preparation",
-        "Career opportunities"
+        "Career opportunities",
+        "Multiple specialization options"
       ]
     },
     {
@@ -1720,16 +1721,81 @@
       ]
     },
     {
-      "id": "me-ce",
-      "name": "M.E. - Civil Engineering (All specializations)",
-      "specialization": "Civil Engineering",
+      "id": "me-ce-environmental",
+      "name": "M.E. - Civil Engineering - Environmental Engineering",
+      "specialization": "Environmental Engineering",
       "degree": "M.Tech",
       "field": "Engineering",
       "duration": 2,
       "annualFees": [178000, 178000],
       "scholarshipEligible": true,
       "highlights": [
-        "Civil engineering",
+        "Environmental engineering",
+        "Advanced research",
+        "Industry projects",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-ce-ctm",
+      "name": "M.E. - Civil Engineering - Construction Technology & Management (CTM)",
+      "specialization": "Construction Technology & Management",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Construction technology",
+        "Project management",
+        "Advanced research",
+        "Industry projects",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-ce-structural",
+      "name": "M.E. - Civil Engineering - Structural Engineering",
+      "specialization": "Structural Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Structural engineering",
+        "Advanced research",
+        "Industry projects",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-ce-transportation",
+      "name": "M.E. - Civil Engineering - Transportation Engineering",
+      "specialization": "Transportation Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Transportation engineering",
+        "Advanced research",
+        "Industry projects",
+        "Career advancement"
+      ]
+    },
+    {
+      "id": "me-ce-geotechnical",
+      "name": "M.E. - Civil Engineering - Geotechnical Engineering",
+      "specialization": "Geotechnical Engineering",
+      "degree": "M.Tech",
+      "field": "Engineering",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Geotechnical engineering",
         "Advanced research",
         "Industry projects",
         "Career advancement"
@@ -1960,6 +2026,23 @@
       ]
     },
     {
+      "id": "mba-advanced-studies",
+      "name": "MBA - Centre for Advanced Studies in Social Science and Management",
+      "specialization": "Advanced Studies in Social Science and Management",
+      "degree": "MBA",
+      "field": "Management",
+      "duration": 2,
+      "annualFees": [328000, 328000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Advanced studies",
+        "Social science",
+        "Management",
+        "Research focus",
+        "Career opportunities"
+      ]
+    },
+    {
       "id": "ma-economics",
       "name": "M.A. - Economics",
       "specialization": "Economics",
@@ -2089,15 +2172,47 @@
     },
     {
       "id": "mpharm-pharmacology",
-      "name": "M. Pharm - Pharmacology / Industrial Pharmacy / Pharmaceutical Chemistry",
-      "specialization": "Pharmacy",
+      "name": "M. Pharm - Pharmacology",
+      "specialization": "Pharmacology",
       "degree": "M.Pharm",
       "field": "Pharmacy",
       "duration": 2,
       "annualFees": [218000, 218000],
       "scholarshipEligible": true,
       "highlights": [
-        "Pharmacy specialization",
+        "Pharmacology",
+        "Advanced research",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mpharm-industrial-pharmacy",
+      "name": "M. Pharm - Industrial Pharmacy",
+      "specialization": "Industrial Pharmacy",
+      "degree": "M.Pharm",
+      "field": "Pharmacy",
+      "duration": 2,
+      "annualFees": [218000, 218000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Industrial pharmacy",
+        "Advanced research",
+        "Industry exposure",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mpharm-pharmaceutical-chemistry",
+      "name": "M. Pharm - Pharmaceutical Chemistry",
+      "specialization": "Pharmaceutical Chemistry",
+      "degree": "M.Pharm",
+      "field": "Pharmacy",
+      "duration": 2,
+      "annualFees": [218000, 218000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Pharmaceutical chemistry",
         "Advanced research",
         "Industry exposure",
         "Career opportunities"
@@ -2136,17 +2251,33 @@
       ]
     },
     {
-      "id": "mpt",
-      "name": "MPT - Specialization in Sports / Ortho",
-      "specialization": "Physiotherapy",
+      "id": "mpt-sports",
+      "name": "MPT - Specialization in Sports",
+      "specialization": "Sports Physiotherapy",
       "degree": "MPT",
       "field": "Allied Health Sciences",
       "duration": 2,
       "annualFees": [148000, 148000],
       "scholarshipEligible": true,
       "highlights": [
-        "Physiotherapy specialization",
-        "Sports/Ortho focus",
+        "Sports physiotherapy",
+        "Athletic training",
+        "Clinical training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "mpt-ortho",
+      "name": "MPT - Specialization in Ortho",
+      "specialization": "Orthopaedic Physiotherapy",
+      "degree": "MPT",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [148000, 148000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Orthopaedic physiotherapy",
+        "Musculoskeletal rehabilitation",
         "Clinical training",
         "Career opportunities"
       ]
@@ -2168,9 +2299,9 @@
       ]
     },
     {
-      "id": "msc-mlt",
-      "name": "M.Sc - Medical Lab Technology (Clinical Microbiology / Biochemistry)",
-      "specialization": "Medical Lab Technology",
+      "id": "msc-mlt-microbiology",
+      "name": "M.Sc - Medical Lab Technology (Clinical Microbiology)",
+      "specialization": "Clinical Microbiology",
       "degree": "M.Sc.",
       "field": "Allied Health Sciences",
       "duration": 2,
@@ -2178,6 +2309,24 @@
       "scholarshipEligible": true,
       "highlights": [
         "Medical lab technology",
+        "Clinical microbiology",
+        "Lab diagnostics",
+        "Clinical training",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "msc-mlt-biochemistry",
+      "name": "M.Sc - Medical Lab Technology (Clinical Biochemistry)",
+      "specialization": "Clinical Biochemistry",
+      "degree": "M.Sc.",
+      "field": "Allied Health Sciences",
+      "duration": 2,
+      "annualFees": [178000, 178000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Medical lab technology",
+        "Clinical biochemistry",
         "Lab diagnostics",
         "Clinical training",
         "Career opportunities"
@@ -2216,16 +2365,50 @@
       ]
     },
     {
-      "id": "msc-general",
-      "name": "M.Sc. - Chemistry / Physics / Botany / Data Sciences / Zoology",
-      "specialization": "Sciences",
+      "id": "msc-chemistry-physics",
+      "name": "M.Sc. - Chemistry / Physics",
+      "specialization": "Chemistry / Physics",
       "degree": "M.Sc.",
       "field": "Sciences",
       "duration": 2,
       "annualFees": [138000, 138000],
       "scholarshipEligible": true,
       "highlights": [
-        "Sciences",
+        "Chemistry",
+        "Physics",
+        "Advanced research",
+        "Lab facilities",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "msc-botany-datascience",
+      "name": "M.Sc. - Botany / Data Sciences",
+      "specialization": "Botany / Data Sciences",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [138000, 138000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Botany",
+        "Data sciences",
+        "Advanced research",
+        "Lab facilities",
+        "Career pathways"
+      ]
+    },
+    {
+      "id": "msc-zoology",
+      "name": "M.Sc. - Zoology",
+      "specialization": "Zoology",
+      "degree": "M.Sc.",
+      "field": "Sciences",
+      "duration": 2,
+      "annualFees": [138000, 138000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Zoology",
         "Advanced research",
         "Lab facilities",
         "Career pathways"
@@ -2297,15 +2480,31 @@
     },
     {
       "id": "ma-english",
-      "name": "M.A. - English / Psychology",
-      "specialization": "English / Psychology",
+      "name": "M.A. - English",
+      "specialization": "English",
       "degree": "M.A.",
       "field": "Liberal Arts",
       "duration": 2,
       "annualFees": [128000, 128000],
       "scholarshipEligible": true,
       "highlights": [
-        "English / Psychology",
+        "English literature",
+        "Advanced research",
+        "Critical thinking",
+        "Career opportunities"
+      ]
+    },
+    {
+      "id": "ma-psychology",
+      "name": "M.A. - Psychology",
+      "specialization": "Psychology",
+      "degree": "M.A.",
+      "field": "Liberal Arts",
+      "duration": 2,
+      "annualFees": [128000, 128000],
+      "scholarshipEligible": true,
+      "highlights": [
+        "Psychology",
         "Advanced research",
         "Critical thinking",
         "Career opportunities"

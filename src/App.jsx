@@ -58,13 +58,15 @@ function App() {
       // Filter programs by degree level
       const levelPrograms = allPrograms.filter(p => getDegreeLevel(p) === selectedDegree)
       
+      // Always populate available fields for the selected degree level
+      levelPrograms.forEach(p => availableFields.add(p.field))
+      
       if (selectedField) {
         // Both level and field selected
         filteredPrograms = levelPrograms.filter(p => p.field === selectedField)
       } else {
-        // Only level selected, show available fields
+        // Only level selected
         filteredPrograms = levelPrograms
-        levelPrograms.forEach(p => availableFields.add(p.field))
       }
     }
 
@@ -1352,26 +1354,26 @@ Best regards,
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-2 sm:p-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center py-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+        <div className="text-center py-4 sm:py-6">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
             University Fee Comparison Tool
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600">
             For WBE Counselors - Compare NIU, Sharda, Chandigarh & Galgotias Programs
           </p>
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-xs sm:text-sm text-gray-500 mt-1 sm:mt-2">
             Reference Tool - All scholarship tiers displayed for transparency
           </p>
         </div>
 
         {/* Hierarchical Filters */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-3">
-              <h2 className="text-xl font-semibold">Program Filters</h2>
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+              <h2 className="text-lg sm:text-xl font-semibold">Program Filters</h2>
               {activeFilterCount > 0 && (
                 <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full">
                   {activeFilterCount} filter{activeFilterCount > 1 ? 's' : ''} active
@@ -1381,7 +1383,7 @@ Best regards,
             {activeFilterCount > 0 && (
               <button
                 onClick={clearAllFilters}
-                className="text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-lg transition-colors flex items-center gap-2"
+                className="text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-lg transition-colors flex items-center gap-2 self-start sm:self-auto"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -1391,7 +1393,7 @@ Best regards,
             )}
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Degree Level
@@ -1442,8 +1444,8 @@ Best regards,
           </div>
           
           {/* Hierarchical Filter Explanation */}
-          <div className="mt-4 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
-            <div className="flex items-start gap-2 text-sm">
+          <div className="mt-4 p-3 sm:p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
+            <div className="flex items-start gap-2 text-xs sm:text-sm">
               <svg className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
@@ -1461,9 +1463,9 @@ Best regards,
                       {selectedDegree && <span><strong>Level:</strong> {selectedDegree}</span>}
                       {selectedDegree && selectedField && <span className="mx-2">•</span>}
                       {selectedField && <span><strong>Field:</strong> {selectedField}</span>}
-                      <span className="ml-3 text-sm">
-                        → {niuPrograms.length + shardaPrograms.length + chandigarhPrograms.length} programs found 
-                        ({niuPrograms.length} NIU, {shardaPrograms.length} Sharda, {chandigarhPrograms.length} Chandigarh)
+                      <span className="ml-2 sm:ml-3 text-xs sm:text-sm">
+                        → {niuPrograms.length + shardaPrograms.length + chandigarhPrograms.length + galgotiasPrograms.length} programs found 
+                        ({niuPrograms.length} NIU, {shardaPrograms.length} Sharda, {chandigarhPrograms.length} Chandigarh, {galgotiasPrograms.length} Galgotias)
                       </span>
                     </div>
                   </div>
@@ -1474,7 +1476,7 @@ Best regards,
         </div>
 
         {/* Student Information - Mobile Optimized */}
-        <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg shadow-md p-6 mb-6">
+        <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold text-gray-900">Student Information</h2>
             <button
@@ -1540,9 +1542,18 @@ Best regards,
         </div>
 
         {/* Program Selection - Four Universities */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6 mb-6">
+        <div className={`grid gap-3 sm:gap-4 mb-4 sm:mb-6 ${
+          (niuPrograms.length > 0 ? 1 : 0) + (shardaPrograms.length > 0 ? 1 : 0) + (chandigarhPrograms.length > 0 ? 1 : 0) + (galgotiasPrograms.length > 0 ? 1 : 0) === 1 
+            ? 'grid-cols-1' 
+            : (niuPrograms.length > 0 ? 1 : 0) + (shardaPrograms.length > 0 ? 1 : 0) + (chandigarhPrograms.length > 0 ? 1 : 0) + (galgotiasPrograms.length > 0 ? 1 : 0) === 2
+            ? 'grid-cols-1 md:grid-cols-2'
+            : (niuPrograms.length > 0 ? 1 : 0) + (shardaPrograms.length > 0 ? 1 : 0) + (chandigarhPrograms.length > 0 ? 1 : 0) + (galgotiasPrograms.length > 0 ? 1 : 0) === 3
+            ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+            : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
+        }`}>
           {/* NIU Programs */}
-          <div className="bg-white rounded-lg shadow-md p-6">
+          {niuPrograms.length > 0 && (
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-gray-900">
                 NIU Programs ({niuPrograms.length})
@@ -1570,9 +1581,11 @@ Best regards,
               ))}
             </div>
           </div>
+          )}
 
           {/* Sharda Programs */}
-          <div className="bg-white rounded-lg shadow-md p-6">
+          {shardaPrograms.length > 0 && (
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-gray-900">
                 Sharda Programs ({shardaPrograms.length})
@@ -1600,9 +1613,11 @@ Best regards,
               ))}
             </div>
           </div>
+          )}
 
           {/* Chandigarh Programs */}
-          <div className="bg-white rounded-lg shadow-md p-6">
+          {chandigarhPrograms.length > 0 && (
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-gray-900">
                 Chandigarh Programs ({chandigarhPrograms.length})
@@ -1630,9 +1645,11 @@ Best regards,
               ))}
             </div>
           </div>
+          )}
 
           {/* Galgotias Programs */}
-          <div className="bg-white rounded-lg shadow-md p-6">
+          {galgotiasPrograms.length > 0 && (
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-gray-900">
                 Galgotias Programs ({galgotiasPrograms.length})
@@ -1660,6 +1677,7 @@ Best regards,
               ))}
             </div>
           </div>
+          )}
         </div>
 
         {/* Match Quality Indicator */}
@@ -1719,19 +1737,19 @@ Best regards,
 
         {/* Comparison Results */}
         {comparisonData && (comparisonData.niu || comparisonData.sharda || comparisonData.chandigarh || comparisonData.galgotias) && (
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
                 {((comparisonData.niu && comparisonData.sharda) || (comparisonData.niu && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.sharda && comparisonData.galgotias) || (comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.sharda && comparisonData.galgotias) || (comparisonData.niu && comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias)) ? 'Detailed Comparison' : 'Program Details'}
               </h2>
               {/* Smart Comparison Button */}
               {((comparisonData.niu && comparisonData.sharda) || (comparisonData.niu && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.sharda && comparisonData.galgotias) || (comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.sharda && comparisonData.galgotias) || (comparisonData.niu && comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias)) && (
                   <button
                     onClick={copySmartComparison}
-                  className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2.5 rounded-lg transition-all flex items-center gap-2 shadow-lg hover:shadow-xl font-semibold transform hover:scale-105"
+                  className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-all flex items-center gap-2 shadow-lg hover:shadow-xl font-semibold transform hover:scale-105 text-sm sm:text-base w-full sm:w-auto justify-center"
                   title="Copy comprehensive comparison message for students (WhatsApp ready)"
                   >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                   📊 Smart Comparison
@@ -1740,13 +1758,13 @@ Best regards,
             </div>
 
             <div className={`grid grid-cols-1 ${
-              (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias) ? 'lg:grid-cols-4' :
-              ((comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.sharda && comparisonData.galgotias) || (comparisonData.niu && comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias)) ? 'lg:grid-cols-3' : 
-              ((comparisonData.niu && comparisonData.sharda) || (comparisonData.niu && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.sharda && comparisonData.galgotias) || (comparisonData.chandigarh && comparisonData.galgotias)) ? 'lg:grid-cols-2' : ''
-            } gap-6`}>
+              (comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias) ? 'md:grid-cols-2 lg:grid-cols-4' :
+              ((comparisonData.niu && comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.sharda && comparisonData.galgotias) || (comparisonData.niu && comparisonData.chandigarh && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh && comparisonData.galgotias)) ? 'md:grid-cols-2 lg:grid-cols-3' : 
+              ((comparisonData.niu && comparisonData.sharda) || (comparisonData.niu && comparisonData.chandigarh) || (comparisonData.niu && comparisonData.galgotias) || (comparisonData.sharda && comparisonData.chandigarh) || (comparisonData.sharda && comparisonData.galgotias) || (comparisonData.chandigarh && comparisonData.galgotias)) ? 'md:grid-cols-2' : ''
+            } gap-3 sm:gap-4 lg:gap-6`}>
               {/* NIU Details */}
               {comparisonData.niu && (
-                <div className="border-2 border-green-200 rounded-lg p-6 bg-green-50">
+                <div className="border-2 border-green-200 rounded-lg p-4 sm:p-6 bg-green-50">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
                     {comparisonData.niu.university.name}
                   </h3>
@@ -1792,8 +1810,8 @@ Best regards,
                   <div className="bg-green-100 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-2">
                       <h5 className="font-semibold text-green-900">
-                        After 50% Scholarship (All BD Students)
-                      </h5>
+                      After 50% Scholarship (All BD Students)
+                    </h5>
                       <button
                         onClick={() => copyNIUDetails(50)}
                         className="p-1.5 hover:bg-green-200 rounded transition-colors"
@@ -1805,28 +1823,28 @@ Best regards,
                       </button>
                     </div>
                     <div className="space-y-2">
-                      {comparisonData.niu.calculations.flat.yearlyFees.map((fee, index) => (
+                    {comparisonData.niu.calculations.flat.yearlyFees.map((fee, index) => (
                         <div key={index} className="flex justify-between text-sm">
-                          <span>Year {index + 1}:</span>
+                        <span>Year {index + 1}:</span>
                           <div className="text-right">
                             <span className="line-through text-gray-500 mr-2">
                               {formatCurrency(comparisonData.niu.program.annualFees[index])}
                             </span>
                             <span className="font-medium text-green-900">{formatCurrency(fee)}</span>
                           </div>
-                        </div>
-                      ))}
+                      </div>
+                    ))}
                       <div className="flex justify-between text-sm pt-2 border-t border-green-300">
-                        <span>One-Time Fee:</span>
+              <span>One-Time Fee:</span>
                         <span className="font-medium text-green-900">{formatCurrency(comparisonData.niu.calculations.oneTimeFee)}</span>
-                      </div>
+            </div>
                       <div className="flex justify-between font-bold pt-2 border-t border-green-300">
-                        <span>Total After Scholarship:</span>
+                      <span>Total After Scholarship:</span>
                         <span className="text-green-900">{formatCurrency(comparisonData.niu.calculations.flat.totalFees)}</span>
-                      </div>
-                      <div className="flex justify-between text-sm text-green-700 mt-2">
-                        <span>You Save:</span>
-                        <span className="font-semibold">{formatCurrency(comparisonData.niu.calculations.flat.savings)}</span>
+                    </div>
+                    <div className="flex justify-between text-sm text-green-700 mt-2">
+                      <span>You Save:</span>
+                      <span className="font-semibold">{formatCurrency(comparisonData.niu.calculations.flat.savings)}</span>
                       </div>
                     </div>
                   </div>
@@ -1848,7 +1866,7 @@ Best regards,
 
               {/* Sharda Details */}
               {comparisonData.sharda && (
-                <div className="border-2 border-blue-200 rounded-lg p-6 bg-blue-50">
+                <div className="border-2 border-blue-200 rounded-lg p-4 sm:p-6 bg-blue-50">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
                     {comparisonData.sharda.university.name}
                   </h3>
@@ -1915,10 +1933,10 @@ Best regards,
                         <div className="bg-orange-100 border border-orange-200 rounded-lg p-4">
                           <div className="flex items-center justify-between mb-2">
                             <div className="flex items-center">
-                              <svg className="w-5 h-5 text-orange-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                              </svg>
-                              <h6 className="font-semibold text-orange-900">No Scholarships Available</h6>
+                            <svg className="w-5 h-5 text-orange-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                            </svg>
+                            <h6 className="font-semibold text-orange-900">No Scholarships Available</h6>
                             </div>
                             <button
                               onClick={() => copyShardaDetails(0)}
@@ -1953,8 +1971,8 @@ Best regards,
                           <div key={index} className="bg-blue-100 border border-blue-200 rounded-lg p-4 mb-3 hover:bg-blue-200 transition-colors">
                             <div className="flex items-center justify-between mb-3">
                               <div className="flex items-center gap-2 flex-1">
-                                <h6 className="font-semibold text-blue-900">{tier.name}</h6>
-                                <span className="text-lg font-bold text-blue-900">{tier.percentage}%</span>
+                              <h6 className="font-semibold text-blue-900">{tier.name}</h6>
+                              <span className="text-lg font-bold text-blue-900">{tier.percentage}%</span>
                               </div>
                               <button
                                 onClick={() => copyShardaDetails(tier.percentage)}
@@ -2040,7 +2058,7 @@ Best regards,
 
               {/* Chandigarh Details */}
               {comparisonData.chandigarh && (
-                <div className="border-2 border-purple-200 rounded-lg p-6 bg-purple-50">
+                <div className="border-2 border-purple-200 rounded-lg p-4 sm:p-6 bg-purple-50">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
                     {comparisonData.chandigarh.university.name}
                   </h3>
@@ -2102,8 +2120,8 @@ Best regards,
                       <div key={index} className="bg-purple-100 border border-purple-200 rounded-lg p-4 mb-3 hover:bg-purple-200 transition-colors">
                         <div className="flex items-center justify-between mb-3">
                           <div className="flex items-center gap-2 flex-1">
-                            <h6 className="font-semibold text-purple-900">{tier.name}</h6>
-                            <span className="text-lg font-bold text-purple-900">{tier.percentage}%</span>
+                          <h6 className="font-semibold text-purple-900">{tier.name}</h6>
+                          <span className="text-lg font-bold text-purple-900">{tier.percentage}%</span>
                           </div>
                           <button
                             onClick={() => copyChandigarhDetails(tier.percentage)}
@@ -2180,7 +2198,7 @@ Best regards,
 
               {/* Galgotias Details */}
               {comparisonData.galgotias && (
-                <div className="border-2 border-orange-200 rounded-lg p-6 bg-orange-50">
+                <div className="border-2 border-orange-200 rounded-lg p-4 sm:p-6 bg-orange-50">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
                     {comparisonData.galgotias.university.name}
                   </h3>
@@ -2192,7 +2210,7 @@ Best regards,
                     <p className="text-sm text-gray-600">
                       Duration: {comparisonData.galgotias.program.duration} years
                     </p>
-                        </div>
+                    </div>
 
                   <div className="bg-white rounded-lg p-4">
                     <div className="flex items-center justify-between mb-2">
@@ -2206,7 +2224,7 @@ Best regards,
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                         </svg>
                       </button>
-                    </div>
+                  </div>
                     {comparisonData.galgotias.program.annualFees.map((fee, index) => (
                       <div key={index} className="flex justify-between text-sm mb-1">
                         <span>Year {index + 1}:</span>
@@ -2221,8 +2239,8 @@ Best regards,
                     <div className="flex justify-between text-sm mb-1">
                         <span>Industry Fee (1st Year):</span>
                         <span className="font-medium">{formatCurrency(comparisonData.galgotias.program.industryFeeFirstYear)}</span>
-                      </div>
-                    )}
+                </div>
+              )}
                     <div className="flex justify-between text-sm mb-1">
                       <span>Examination Fee (Annual):</span>
                       <span className="font-medium">₹20,000 per year</span>
@@ -2313,9 +2331,9 @@ Best regards,
                           {highlight}
                         </li>
                       ))}
-                    </ul>
+                      </ul>
+                    </div>
                   </div>
-                </div>
                 </div>
               )}
 

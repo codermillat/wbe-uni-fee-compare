@@ -30,7 +30,7 @@
       "percentage": 50,
       "conditions": "No GPA requirement - All Bangladeshi students get 50% scholarship",
       "gpaMin": 0,
-      "gpaMax": 5.0
+      "gpaMax": 5
     }
   },
   "additionalFees": {
@@ -55,7 +55,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [206000, 206000, 206000, 206000],
+      "annualFees": [
+        206000,
+        206000,
+        206000,
+        206000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Industry-aligned curriculum",
@@ -71,7 +76,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [246000, 246000, 246000, 246000],
+      "annualFees": [
+        246000,
+        246000,
+        246000,
+        246000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "TCS collaboration",
@@ -87,7 +97,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [220000, 220000, 220000, 220000],
+      "annualFees": [
+        220000,
+        220000,
+        220000,
+        220000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Drone technology focus",
@@ -103,7 +118,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [306000, 306000, 306000, 306000],
+      "annualFees": [
+        306000,
+        306000,
+        306000,
+        306000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "IBM collaboration",
@@ -119,7 +139,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [206000, 206000, 206000, 206000],
+      "annualFees": [
+        206000,
+        206000,
+        206000,
+        206000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Big Data analytics",
@@ -135,7 +160,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [206000, 206000, 206000, 206000],
+      "annualFees": [
+        206000,
+        206000,
+        206000,
+        206000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "AI/ML curriculum",
@@ -151,7 +181,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [206000, 206000, 206000, 206000],
+      "annualFees": [
+        206000,
+        206000,
+        206000,
+        206000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Network security focus",
@@ -167,7 +202,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [200000, 200000, 200000, 200000],
+      "annualFees": [
+        200000,
+        200000,
+        200000,
+        200000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Automotive focus",
@@ -183,7 +223,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [200000, 200000, 200000, 200000],
+      "annualFees": [
+        200000,
+        200000,
+        200000,
+        200000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Mechatronics systems",
@@ -199,7 +244,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [200000, 200000, 200000, 200000],
+      "annualFees": [
+        200000,
+        200000,
+        200000,
+        200000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Electric vehicle technology",
@@ -215,7 +265,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [200000, 200000, 200000, 200000],
+      "annualFees": [
+        200000,
+        200000,
+        200000,
+        200000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Structural design labs",
@@ -231,7 +286,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [200000, 200000, 200000, 200000],
+      "annualFees": [
+        200000,
+        200000,
+        200000,
+        200000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Smart city planning",
@@ -247,7 +307,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [200000, 200000, 200000, 200000],
+      "annualFees": [
+        200000,
+        200000,
+        200000,
+        200000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Green construction",
@@ -263,7 +328,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [200000, 200000, 200000, 200000],
+      "annualFees": [
+        200000,
+        200000,
+        200000,
+        200000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Power systems lab",
@@ -279,7 +349,12 @@
       "degree": "B.Tech",
       "field": "Engineering",
       "duration": 4,
-      "annualFees": [200000, 200000, 200000, 200000],
+      "annualFees": [
+        200000,
+        200000,
+        200000,
+        200000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Genetic engineering",
@@ -295,7 +370,11 @@
       "degree": "B.Tech Lateral",
       "field": "Engineering",
       "duration": 3,
-      "annualFees": [240000, 240000, 240000],
+      "annualFees": [
+        240000,
+        240000,
+        240000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Direct 2nd year entry",
@@ -311,7 +390,11 @@
       "degree": "B.Tech Lateral",
       "field": "Engineering",
       "duration": 3,
-      "annualFees": [220000, 220000, 220000],
+      "annualFees": [
+        220000,
+        220000,
+        220000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Direct 2nd year entry",
@@ -327,7 +410,10 @@
       "degree": "M.Tech",
       "field": "Engineering",
       "duration": 2,
-      "annualFees": [128000, 128000],
+      "annualFees": [
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Industrial engineering",
@@ -343,7 +429,10 @@
       "degree": "M.Tech",
       "field": "Engineering",
       "duration": 2,
-      "annualFees": [128000, 128000],
+      "annualFees": [
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Heat transfer",
@@ -359,7 +448,10 @@
       "degree": "M.Tech",
       "field": "Engineering",
       "duration": 2,
-      "annualFees": [128000, 128000],
+      "annualFees": [
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Product design",
@@ -375,7 +467,10 @@
       "degree": "M.Tech",
       "field": "Engineering",
       "duration": 2,
-      "annualFees": [128000, 128000],
+      "annualFees": [
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Construction technology",
@@ -391,7 +486,10 @@
       "degree": "M.Tech",
       "field": "Engineering",
       "duration": 2,
-      "annualFees": [128000, 128000],
+      "annualFees": [
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Water treatment",
@@ -407,7 +505,10 @@
       "degree": "M.Tech",
       "field": "Engineering",
       "duration": 2,
-      "annualFees": [128000, 128000],
+      "annualFees": [
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Structural analysis",
@@ -423,7 +524,10 @@
       "degree": "M.Tech",
       "field": "Engineering",
       "duration": 2,
-      "annualFees": [128000, 128000],
+      "annualFees": [
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Advanced biotechnology",
@@ -439,7 +543,10 @@
       "degree": "M.Tech",
       "field": "Engineering",
       "duration": 2,
-      "annualFees": [128000, 128000],
+      "annualFees": [
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Software development",
@@ -455,7 +562,11 @@
       "degree": "Diploma",
       "field": "Engineering",
       "duration": 3,
-      "annualFees": [108000, 108000, 108000],
+      "annualFees": [
+        108000,
+        108000,
+        108000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Practical electrical training",
@@ -471,7 +582,11 @@
       "degree": "Diploma",
       "field": "Engineering",
       "duration": 3,
-      "annualFees": [108000, 108000, 108000],
+      "annualFees": [
+        108000,
+        108000,
+        108000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Mechanical workshop",
@@ -487,7 +602,11 @@
       "degree": "Diploma",
       "field": "Engineering",
       "duration": 3,
-      "annualFees": [108000, 108000, 108000],
+      "annualFees": [
+        108000,
+        108000,
+        108000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Construction basics",
@@ -503,7 +622,11 @@
       "degree": "Diploma",
       "field": "Engineering",
       "duration": 3,
-      "annualFees": [108000, 108000, 108000],
+      "annualFees": [
+        108000,
+        108000,
+        108000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Programming fundamentals",
@@ -517,9 +640,13 @@
       "name": "Diploma in Clinical Medical Assistance",
       "specialization": "Clinical Medical Assistance",
       "degree": "D-CMA",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 3,
-      "annualFees": [166000, 166000, 166000],
+      "annualFees": [
+        166000,
+        166000,
+        166000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Clinical assistance",
@@ -533,9 +660,13 @@
       "name": "Bachelor of Public Health",
       "specialization": "Public Health",
       "degree": "BPH",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 3,
-      "annualFees": [166000, 166000, 166000],
+      "annualFees": [
+        166000,
+        166000,
+        166000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Community health",
@@ -549,9 +680,14 @@
       "name": "Bachelor in Physiotherapy",
       "specialization": "Physiotherapy",
       "degree": "BPT",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 4.5,
-      "annualFees": [190000, 190000, 190000, 190000],
+      "annualFees": [
+        190000,
+        190000,
+        190000,
+        190000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Rehabilitation therapy",
@@ -565,9 +701,14 @@
       "name": "B.Sc. Medical Laboratory Technology",
       "specialization": "Medical Laboratory Technology",
       "degree": "B.Sc.",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 4,
-      "annualFees": [160000, 160000, 160000, 160000],
+      "annualFees": [
+        160000,
+        160000,
+        160000,
+        160000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Clinical lab training",
@@ -581,9 +722,14 @@
       "name": "B.Sc. Radiology & Imaging Technology",
       "specialization": "Radiology & Imaging Technology",
       "degree": "B.Sc.",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 4,
-      "annualFees": [160000, 160000, 160000, 160000],
+      "annualFees": [
+        160000,
+        160000,
+        160000,
+        160000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "X-ray, CT, MRI training",
@@ -597,9 +743,14 @@
       "name": "B.Sc. Operation Theatre Technology",
       "specialization": "Operation Theatre Technology",
       "degree": "B.Sc.",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 4,
-      "annualFees": [146000, 146000, 146000, 146000],
+      "annualFees": [
+        146000,
+        146000,
+        146000,
+        146000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Surgical assistance",
@@ -613,9 +764,14 @@
       "name": "B.Sc. Cardiac Care Technology",
       "specialization": "Cardiac Care Technology",
       "degree": "B.Sc.",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 4,
-      "annualFees": [150000, 150000, 150000, 150000],
+      "annualFees": [
+        150000,
+        150000,
+        150000,
+        150000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Heart care specialist",
@@ -629,9 +785,13 @@
       "name": "B.Sc. Nutrition & Dietetics",
       "specialization": "Nutrition & Dietetics",
       "degree": "B.Sc.",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 3,
-      "annualFees": [154000, 154000, 154000],
+      "annualFees": [
+        154000,
+        154000,
+        154000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Clinical nutrition",
@@ -645,9 +805,14 @@
       "name": "Bachelor of Optometry",
       "specialization": "Optometry",
       "degree": "B.OPTOM",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 4,
-      "annualFees": [154000, 154000, 154000, 154000],
+      "annualFees": [
+        154000,
+        154000,
+        154000,
+        154000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Eye care specialist",
@@ -661,9 +826,12 @@
       "name": "Master of Physiotherapy",
       "specialization": "Physiotherapy (Multiple Specializations)",
       "degree": "MPT",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 2,
-      "annualFees": [200000, 200000],
+      "annualFees": [
+        200000,
+        200000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Advanced physiotherapy",
@@ -677,9 +845,12 @@
       "name": "M.Sc. Radiology and Imaging Technology",
       "specialization": "Radiology and Imaging Technology",
       "degree": "M.Sc.",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 2,
-      "annualFees": [204000, 204000],
+      "annualFees": [
+        204000,
+        204000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Advanced imaging",
@@ -693,9 +864,12 @@
       "name": "M.Sc. Medical Laboratory Technology",
       "specialization": "Medical Laboratory Technology",
       "degree": "M.Sc.",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 2,
-      "annualFees": [204000, 204000],
+      "annualFees": [
+        204000,
+        204000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Advanced lab techniques",
@@ -709,9 +883,12 @@
       "name": "Master of Public Health",
       "specialization": "Public Health",
       "degree": "MPH",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 2,
-      "annualFees": [204000, 204000],
+      "annualFees": [
+        204000,
+        204000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Health policy",
@@ -725,9 +902,11 @@
       "name": "Post Graduate Diploma in Emergency Medicine",
       "specialization": "Emergency Medicine",
       "degree": "PGDEMS",
-      "field": "Allied Health Sciences",
+      "field": "Health Sciences",
       "duration": 1,
-      "annualFees": [240000],
+      "annualFees": [
+        240000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Emergency care",
@@ -741,9 +920,14 @@
       "name": "B.Sc. Nursing",
       "specialization": "Nursing",
       "degree": "B.Sc.",
-      "field": "Nursing",
+      "field": "Health Sciences",
       "duration": 4,
-      "annualFees": [270000, 270000, 270000, 270000],
+      "annualFees": [
+        270000,
+        270000,
+        270000,
+        270000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "INC recognized",
@@ -757,9 +941,13 @@
       "name": "General Nursing & Midwifery",
       "specialization": "General Nursing",
       "degree": "GNM",
-      "field": "Nursing",
+      "field": "Health Sciences",
       "duration": 3,
-      "annualFees": [220000, 220000, 220000],
+      "annualFees": [
+        220000,
+        220000,
+        220000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "After 10+2 entry",
@@ -773,9 +961,13 @@
       "name": "Diploma in Business Administration",
       "specialization": "Business Administration",
       "degree": "Diploma",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 3,
-      "annualFees": [128000, 128000, 128000],
+      "annualFees": [
+        128000,
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Business fundamentals",
@@ -789,9 +981,13 @@
       "name": "B.Com (Hons.) - 3 Year",
       "specialization": "Commerce (Hons.)",
       "degree": "B.Com",
-      "field": "Commerce",
+      "field": "Commerce & Business",
       "duration": 3,
-      "annualFees": [144000, 144000, 144000],
+      "annualFees": [
+        144000,
+        144000,
+        144000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "3-year degree program",
@@ -805,9 +1001,14 @@
       "name": "B.Com (Hons.) - 4 Year",
       "specialization": "Commerce (Hons.)",
       "degree": "B.Com",
-      "field": "Commerce",
+      "field": "Commerce & Business",
       "duration": 4,
-      "annualFees": [144000, 144000, 144000, 144000],
+      "annualFees": [
+        144000,
+        144000,
+        144000,
+        144000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "4-year honors program",
@@ -821,9 +1022,13 @@
       "name": "BBA General - 3 Year",
       "specialization": "General Management",
       "degree": "BBA",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 3,
-      "annualFees": [158000, 158000, 158000],
+      "annualFees": [
+        158000,
+        158000,
+        158000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "3-year degree program",
@@ -837,9 +1042,14 @@
       "name": "BBA General - 4 Year",
       "specialization": "General Management",
       "degree": "BBA",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 4,
-      "annualFees": [158000, 158000, 158000, 158000],
+      "annualFees": [
+        158000,
+        158000,
+        158000,
+        158000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "4-year honors program",
@@ -853,9 +1063,13 @@
       "name": "BBA Hospital & Health Management - 3 Year",
       "specialization": "Hospital & Health Management",
       "degree": "BBA",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 3,
-      "annualFees": [158000, 158000, 158000],
+      "annualFees": [
+        158000,
+        158000,
+        158000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Healthcare management",
@@ -869,9 +1083,14 @@
       "name": "BBA Hospital & Health Management - 4 Year",
       "specialization": "Hospital & Health Management",
       "degree": "BBA",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 4,
-      "annualFees": [158000, 158000, 158000, 158000],
+      "annualFees": [
+        158000,
+        158000,
+        158000,
+        158000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "4-year healthcare management",
@@ -885,9 +1104,13 @@
       "name": "BBA Aviation - 3 Year",
       "specialization": "Aviation Management",
       "degree": "BBA-AV",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 3,
-      "annualFees": [158000, 158000, 158000],
+      "annualFees": [
+        158000,
+        158000,
+        158000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Aviation industry focus",
@@ -901,9 +1124,14 @@
       "name": "BBA Aviation - 4 Year",
       "specialization": "Aviation Management",
       "degree": "BBA-AV",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 4,
-      "annualFees": [158000, 158000, 158000, 158000],
+      "annualFees": [
+        158000,
+        158000,
+        158000,
+        158000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "4-year aviation management",
@@ -917,9 +1145,12 @@
       "name": "MBA (Dual Specialization)",
       "specialization": "Marketing/Finance/HR/Retail/Int'l Marketing",
       "degree": "MBA",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 2,
-      "annualFees": [250000, 250000],
+      "annualFees": [
+        250000,
+        250000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Two specializations",
@@ -933,9 +1164,12 @@
       "name": "MBA Agri Business",
       "specialization": "Agri Business",
       "degree": "MBA",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 2,
-      "annualFees": [340700, 340700],
+      "annualFees": [
+        340700,
+        340700
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Agricultural business",
@@ -949,9 +1183,12 @@
       "name": "MBA Data Analytics (with IBM)",
       "specialization": "Data Analytics with IBM",
       "degree": "MBA",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 2,
-      "annualFees": [446600, 446600],
+      "annualFees": [
+        446600,
+        446600
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "IBM partnership",
@@ -965,9 +1202,12 @@
       "name": "MBA Pharmaceuticals Management",
       "specialization": "Pharmaceuticals Management",
       "degree": "MBA",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 2,
-      "annualFees": [340700, 340700],
+      "annualFees": [
+        340700,
+        340700
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Pharmaceutical industry",
@@ -981,9 +1221,12 @@
       "name": "MBA Hospital & Health Management",
       "specialization": "Hospital & Health Management",
       "degree": "MBA-HHM",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 2,
-      "annualFees": [340700, 340700],
+      "annualFees": [
+        340700,
+        340700
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Healthcare management",
@@ -997,9 +1240,12 @@
       "name": "M.Com",
       "specialization": "Commerce",
       "degree": "M.Com",
-      "field": "Commerce",
+      "field": "Commerce & Business",
       "duration": 2,
-      "annualFees": [126000, 126000],
+      "annualFees": [
+        126000,
+        126000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Advanced commerce",
@@ -1013,9 +1259,12 @@
       "name": "MBA Elite",
       "specialization": "Marketing/Digital Marketing/Finance/Analytics/HR/IB/IT",
       "degree": "MBA",
-      "field": "Management",
+      "field": "Commerce & Business",
       "duration": 2,
-      "annualFees": [644000, 644000],
+      "annualFees": [
+        644000,
+        644000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Premium MBA program",
@@ -1029,9 +1278,13 @@
       "name": "B.Sc. Biotechnology - 3 Year",
       "specialization": "Biotechnology",
       "degree": "B.Sc.",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 3,
-      "annualFees": [124000, 124000, 124000],
+      "annualFees": [
+        124000,
+        124000,
+        124000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Biotechnology fundamentals",
@@ -1045,9 +1298,14 @@
       "name": "B.Sc. Biotechnology - 4 Year",
       "specialization": "Biotechnology",
       "degree": "B.Sc.",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 4,
-      "annualFees": [124000, 124000, 124000, 124000],
+      "annualFees": [
+        124000,
+        124000,
+        124000,
+        124000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "4-year honors program",
@@ -1061,9 +1319,13 @@
       "name": "B.Sc. Microbiology - 3 Year",
       "specialization": "Microbiology",
       "degree": "B.Sc.",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 3,
-      "annualFees": [124000, 124000, 124000],
+      "annualFees": [
+        124000,
+        124000,
+        124000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Microbial studies",
@@ -1077,9 +1339,14 @@
       "name": "B.Sc. Microbiology - 4 Year",
       "specialization": "Microbiology",
       "degree": "B.Sc.",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 4,
-      "annualFees": [124000, 124000, 124000, 124000],
+      "annualFees": [
+        124000,
+        124000,
+        124000,
+        124000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "4-year honors program",
@@ -1093,9 +1360,13 @@
       "name": "B.Sc. Information Technology - 3 Year",
       "specialization": "Information Technology",
       "degree": "B.Sc.",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 3,
-      "annualFees": [124000, 124000, 124000],
+      "annualFees": [
+        124000,
+        124000,
+        124000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "IT fundamentals",
@@ -1109,9 +1380,14 @@
       "name": "B.Sc. Information Technology - 4 Year",
       "specialization": "Information Technology",
       "degree": "B.Sc.",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 4,
-      "annualFees": [124000, 124000, 124000, 124000],
+      "annualFees": [
+        124000,
+        124000,
+        124000,
+        124000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "4-year honors program",
@@ -1125,9 +1401,13 @@
       "name": "B.Sc. Computer Science - 3 Year",
       "specialization": "Computer Science",
       "degree": "B.Sc.",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 3,
-      "annualFees": [124000, 124000, 124000],
+      "annualFees": [
+        124000,
+        124000,
+        124000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Computer science fundamentals",
@@ -1141,9 +1421,14 @@
       "name": "B.Sc. Computer Science - 4 Year",
       "specialization": "Computer Science",
       "degree": "B.Sc.",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 4,
-      "annualFees": [124000, 124000, 124000, 124000],
+      "annualFees": [
+        124000,
+        124000,
+        124000,
+        124000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "4-year honors program",
@@ -1157,9 +1442,13 @@
       "name": "B.Sc. Forensic Science - 3 Year",
       "specialization": "Forensic Science",
       "degree": "B.Sc-FS",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 3,
-      "annualFees": [124000, 124000, 124000],
+      "annualFees": [
+        124000,
+        124000,
+        124000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Crime investigation",
@@ -1173,9 +1462,14 @@
       "name": "B.Sc. Forensic Science - 4 Year",
       "specialization": "Forensic Science",
       "degree": "B.Sc-FS",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 4,
-      "annualFees": [124000, 124000, 124000, 124000],
+      "annualFees": [
+        124000,
+        124000,
+        124000,
+        124000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "4-year honors program",
@@ -1189,9 +1483,14 @@
       "name": "B.Sc. Agriculture",
       "specialization": "Agriculture",
       "degree": "B.Sc-AG",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 4,
-      "annualFees": [124000, 124000, 124000, 124000],
+      "annualFees": [
+        124000,
+        124000,
+        124000,
+        124000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Agricultural science",
@@ -1205,9 +1504,12 @@
       "name": "M.Sc. Information Technology",
       "specialization": "Information Technology",
       "degree": "M.Sc.",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 2,
-      "annualFees": [140000, 140000],
+      "annualFees": [
+        140000,
+        140000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Advanced IT concepts",
@@ -1221,9 +1523,12 @@
       "name": "M.Sc. Computer Science/Biotechnology/Microbiology",
       "specialization": "Multiple Sciences",
       "degree": "M.Sc.",
-      "field": "Sciences",
+      "field": "Basic Sciences",
       "duration": 2,
-      "annualFees": [128000, 128000],
+      "annualFees": [
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Advanced scientific study",
@@ -1237,9 +1542,13 @@
       "name": "BCA - 3 Year",
       "specialization": "Computer Applications",
       "degree": "BCA",
-      "field": "Computer Science",
+      "field": "Computer Science & IT",
       "duration": 3,
-      "annualFees": [139000, 139000, 139000],
+      "annualFees": [
+        139000,
+        139000,
+        139000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Programming focus",
@@ -1253,9 +1562,14 @@
       "name": "BCA - 4 Year",
       "specialization": "Computer Applications",
       "degree": "BCA",
-      "field": "Computer Science",
+      "field": "Computer Science & IT",
       "duration": 4,
-      "annualFees": [139000, 139000, 139000, 139000],
+      "annualFees": [
+        139000,
+        139000,
+        139000,
+        139000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "4-year honors program",
@@ -1269,9 +1583,12 @@
       "name": "Master of Computer Applications",
       "specialization": "Computer Applications",
       "degree": "MCA",
-      "field": "Computer Science",
+      "field": "Computer Science & IT",
       "duration": 2,
-      "annualFees": [198000, 198000],
+      "annualFees": [
+        198000,
+        198000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Advanced programming",
@@ -1285,9 +1602,14 @@
       "name": "BFA Painting/Sculpture & Applied Arts",
       "specialization": "Painting/Sculpture & Applied Arts",
       "degree": "BFA",
-      "field": "Fine Arts",
+      "field": "Design & Arts",
       "duration": 4,
-      "annualFees": [128000, 128000, 128000, 128000],
+      "annualFees": [
+        128000,
+        128000,
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Traditional & modern art",
@@ -1301,9 +1623,14 @@
       "name": "BFA Animation and VFX Design",
       "specialization": "Animation and VFX Design",
       "degree": "BFA",
-      "field": "Fine Arts",
+      "field": "Design & Arts",
       "duration": 4,
-      "annualFees": [128000, 128000, 128000, 128000],
+      "annualFees": [
+        128000,
+        128000,
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Animation techniques",
@@ -1317,9 +1644,12 @@
       "name": "MFA Painting/Sculpture & Applied Arts",
       "specialization": "Painting/Sculpture & Applied Arts",
       "degree": "MFA",
-      "field": "Fine Arts",
+      "field": "Design & Arts",
       "duration": 2,
-      "annualFees": [112000, 112000],
+      "annualFees": [
+        112000,
+        112000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Advanced fine arts",
@@ -1333,9 +1663,14 @@
       "name": "Bachelor of Interior Design",
       "specialization": "Interior Design",
       "degree": "B.Interior",
-      "field": "Fine Arts",
+      "field": "Design & Arts",
       "duration": 4,
-      "annualFees": [170000, 170000, 170000, 170000],
+      "annualFees": [
+        170000,
+        170000,
+        170000,
+        170000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Space planning",
@@ -1349,9 +1684,14 @@
       "name": "B.Des. Game Art/Film Art",
       "specialization": "Game Art/Film Art",
       "degree": "B.DES.",
-      "field": "Fine Arts",
+      "field": "Design & Arts",
       "duration": 4,
-      "annualFees": [270000, 270000, 270000, 270000],
+      "annualFees": [
+        270000,
+        270000,
+        270000,
+        270000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Game design",
@@ -1367,7 +1707,12 @@
       "degree": "B.Pharm",
       "field": "Pharmacy",
       "duration": 4,
-      "annualFees": [350000, 350000, 350000, 350000],
+      "annualFees": [
+        350000,
+        350000,
+        350000,
+        350000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "PCI approved",
@@ -1383,7 +1728,10 @@
       "degree": "D.Pharm",
       "field": "Pharmacy",
       "duration": 2,
-      "annualFees": [270000, 270000],
+      "annualFees": [
+        270000,
+        270000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "PCI approved",
@@ -1399,7 +1747,10 @@
       "degree": "B.Ed",
       "field": "Education",
       "duration": 2,
-      "annualFees": [114000, 114000],
+      "annualFees": [
+        114000,
+        114000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Teaching certification",
@@ -1415,7 +1766,10 @@
       "degree": "MA",
       "field": "Education",
       "duration": 2,
-      "annualFees": [62000, 62000],
+      "annualFees": [
+        62000,
+        62000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Educational theory",
@@ -1429,9 +1783,13 @@
       "name": "BA Journalism & Mass Communication - 3 Year",
       "specialization": "Journalism & Mass Communication",
       "degree": "BA-JMC",
-      "field": "Journalism",
+      "field": "Media & Communication",
       "duration": 3,
-      "annualFees": [150000, 150000, 150000],
+      "annualFees": [
+        150000,
+        150000,
+        150000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Media production",
@@ -1445,9 +1803,14 @@
       "name": "BA Journalism & Mass Communication - 4 Year",
       "specialization": "Journalism & Mass Communication",
       "degree": "BA-JMC",
-      "field": "Journalism",
+      "field": "Media & Communication",
       "duration": 4,
-      "annualFees": [150000, 150000, 150000, 150000],
+      "annualFees": [
+        150000,
+        150000,
+        150000,
+        150000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "4-year honors program",
@@ -1461,9 +1824,12 @@
       "name": "MA Journalism & Mass Communication",
       "specialization": "Journalism & Mass Communication",
       "degree": "MA-JMC",
-      "field": "Journalism",
+      "field": "Media & Communication",
       "duration": 2,
-      "annualFees": [128000, 128000],
+      "annualFees": [
+        128000,
+        128000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Advanced journalism",
@@ -1479,7 +1845,13 @@
       "degree": "BBA LLB",
       "field": "Law",
       "duration": 5,
-      "annualFees": [165000, 165000, 165000, 165000, 165000],
+      "annualFees": [
+        165000,
+        165000,
+        165000,
+        165000,
+        165000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "5-year integrated",
@@ -1495,7 +1867,13 @@
       "degree": "BA LLB",
       "field": "Law",
       "duration": 5,
-      "annualFees": [165000, 165000, 165000, 165000, 165000],
+      "annualFees": [
+        165000,
+        165000,
+        165000,
+        165000,
+        165000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "5-year integrated",
@@ -1511,7 +1889,11 @@
       "degree": "LLB",
       "field": "Law",
       "duration": 3,
-      "annualFees": [143000, 143000, 143000],
+      "annualFees": [
+        143000,
+        143000,
+        143000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "BCI approved",
@@ -1527,7 +1909,9 @@
       "degree": "LLM",
       "field": "Law",
       "duration": 1,
-      "annualFees": [276000],
+      "annualFees": [
+        276000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Advanced law",
@@ -1541,9 +1925,13 @@
       "name": "BA Liberal Arts - 3 Year",
       "specialization": "Liberal Arts (Multiple Specializations)",
       "degree": "BA",
-      "field": "Liberal Arts",
+      "field": "Arts & Humanities",
       "duration": 3,
-      "annualFees": [120000, 120000, 120000],
+      "annualFees": [
+        120000,
+        120000,
+        120000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Liberal arts education",
@@ -1557,9 +1945,14 @@
       "name": "BA Liberal Arts - 4 Year",
       "specialization": "Liberal Arts (Multiple Specializations)",
       "degree": "BA",
-      "field": "Liberal Arts",
+      "field": "Arts & Humanities",
       "duration": 4,
-      "annualFees": [120000, 120000, 120000, 120000],
+      "annualFees": [
+        120000,
+        120000,
+        120000,
+        120000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "4-year honors program",
@@ -1573,9 +1966,12 @@
       "name": "MA Liberal Arts",
       "specialization": "Liberal Arts (Multiple Specializations)",
       "degree": "MA",
-      "field": "Liberal Arts",
+      "field": "Arts & Humanities",
       "duration": 2,
-      "annualFees": [112000, 112000],
+      "annualFees": [
+        112000,
+        112000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Advanced liberal arts",
@@ -1591,7 +1987,11 @@
       "degree": "Ph.D.",
       "field": "Research",
       "duration": 3,
-      "annualFees": [214000, 214000, 214000],
+      "annualFees": [
+        214000,
+        214000,
+        214000
+      ],
       "scholarshipEligible": true,
       "highlights": [
         "Research degree",
@@ -1607,7 +2007,9 @@
       "degree": "Certificate",
       "field": "Certifications",
       "duration": 0.25,
-      "annualFees": [20000],
+      "annualFees": [
+        20000
+      ],
       "scholarshipEligible": false,
       "highlights": [
         "Basic English skills",
@@ -1623,7 +2025,9 @@
       "degree": "Certificate",
       "field": "Certifications",
       "duration": 0.5,
-      "annualFees": [25000],
+      "annualFees": [
+        25000
+      ],
       "scholarshipEligible": false,
       "highlights": [
         "Intermediate English",
@@ -1639,7 +2043,9 @@
       "degree": "Certificate",
       "field": "Certifications",
       "duration": 1,
-      "annualFees": [50000],
+      "annualFees": [
+        50000
+      ],
       "scholarshipEligible": false,
       "highlights": [
         "Advanced English proficiency",

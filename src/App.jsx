@@ -142,84 +142,588 @@ function App() {
   // Get active filter count
   const activeFilterCount = (selectedDegree ? 1 : 0) + (selectedField ? 1 : 0)
 
-  // Enhanced smart program matching algorithm with stricter criteria
+  // Enhanced smart program matching algorithm with 100% accurate matching
+  // Matches by: Degree Type + Duration + Specialization
   const findBestMatch = (selectedProgram, candidatePrograms, universityName) => {
     if (!candidatePrograms || candidatePrograms.length === 0) return null
 
-    // Helper function to calculate specialization similarity score
-    const getSpecializationSimilarity = (spec1, spec2) => {
-      const normalize = (str) => str.toLowerCase().trim()
-      const s1 = normalize(spec1)
-      const s2 = normalize(spec2)
+    // Helper function to normalize specialization
+    const normalizeSpec = (spec) => {
+      if (!spec) return ''
+      let normalized = spec.toLowerCase().trim()
+        // Remove common degree prefixes (handle with spaces and punctuation)
+        .replace(/^b\.?\s*sc\.?\s*\(?\s*hons\.?\s*\)?\s*-?\s*/i, '')
+        .replace(/^b\.?\s*sc\.?\s*/i, '')
+        .replace(/^b\.?\s*tech\s+in\s+/i, '')
+        .replace(/^b\.?\s*tech\s+/i, '')
+        .replace(/^b\.?\s*e\.?\s*-?\s*/i, '')
+        .replace(/^bachelor\s+of\s+/i, '')
+        .replace(/^b\.?\s*a\.?\s*/i, '')
+        .replace(/^bba\s+/i, '')
+        .replace(/^bcom\s+/i, '')
+        .replace(/^m\.?\s*tech\s+/i, '')
+        .replace(/^m\.?\s*e\.?\s*-?\s*/i, '')
+        .replace(/^mba\s+/i, '')
+        .replace(/^m\.?\s*sc\.?\s*/i, '')
+        .replace(/^m\.?\s*a\.?\s*/i, '')
+        .replace(/^mca\s+/i, '')
+        .replace(/^llb\s+/i, '')
+        .replace(/^llm\s+/i, '')
+        .replace(/^phd\s+/i, '')
+        .replace(/^pharm\.?\s*d\s+/i, '')
+        .replace(/^b\.?\s*arch\s+/i, '')
+        .replace(/^b\.?\s*des\s+/i, '')
+        .replace(/^b\.?\s*pharm\s+/i, '')
+        .replace(/^bpt\s+/i, '')
+        .replace(/^b\.?\s*optom\s+/i, '')
+        .replace(/^mpt\s+/i, '')
+        .replace(/^m\.?\s*pharm\s+/i, '')
+        .replace(/^m\.?\s*arch\s+/i, '')
+        .replace(/^m\.?\s*des\s+/i, '')
+        .replace(/^m\.?\s*com\s+/i, '')
+        .replace(/^m\.?\s*ed\s+/i, '')
+        .replace(/^b\.?\s*ed\s+/i, '')
+        .replace(/^d\.?\s*pharm\s+/i, '')
+        .replace(/^diploma\s+in\s+/i, '')
+        .replace(/^certificate\s+in\s+/i, '')
+        .replace(/^master\s+of\s+/i, '')
+        .replace(/^doctor\s+of\s+/i, '')
+        // Remove abbreviations in parentheses like (CSE), (Hons.), etc. BEFORE converting parentheses to spaces
+        .replace(/\s*\([^)]*\)\s*/g, ' ')
+        // Clean up parentheses and punctuation
+        .replace(/[()]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .replace(/&/g, 'and')
+        // Remove common words that don't add meaning
+        .replace(/^\s*in\s+/i, '')
+        .replace(/^\s*-\s*/, '')
+        .replace(/\s*-\s*$/, '')
+        // Remove degree suffixes
+        .replace(/\s+(hons|hons\.|research)\s*$/i, '')
+        .replace(/^\s*(hons|hons\.|research)\s+/i, '')
+        // DO NOT remove critical engineering abbreviations (ece, cse, etc.) as they distinguish different fields
+        // Only remove non-critical abbreviations that don't change the specialization meaning
+        .replace(/\b(vr|ar|ds)\b/gi, '')
+        .replace(/\s+/g, ' ')
+        .trim()
       
-      // Exact match
-      if (s1 === s2) return 100
-      
-      // Check if one contains the other
-      if (s1.includes(s2) || s2.includes(s1)) return 80
-      
-      // Check for common key words (excluding generic words)
-      const genericWords = ['engineering', 'science', 'technology', 'management', 'studies', 'and', 'with', 'in']
-      const words1 = s1.split(/[\s,&()]+/).filter(w => w.length > 3 && !genericWords.includes(w))
-      const words2 = s2.split(/[\s,&()]+/).filter(w => w.length > 3 && !genericWords.includes(w))
-      
-      if (words1.length === 0 || words2.length === 0) return 0
-      
-      const commonWords = words1.filter(w => words2.includes(w))
-      if (commonWords.length === 0) return 0
-      
-      // Calculate similarity based on common significant words
-      const similarity = (commonWords.length / Math.max(words1.length, words2.length)) * 60
-      return similarity
+      return normalized
     }
 
-    // Priority 1: Perfect match (exact degree + exact specialization)
-    let match = candidatePrograms.find(
-      p => p.degree === selectedProgram.degree && 
-           p.specialization.toLowerCase() === selectedProgram.specialization.toLowerCase()
-    )
-    if (match) {
-      return { 
-        program: match, 
-        quality: 'perfect', 
-        reason: 'Perfect match: Same degree and exact specialization'
+    // Helper function to normalize degree
+    const normalizeDegree = (degree) => {
+      const d = degree.toLowerCase().trim()
+      // Map variations to standard forms
+      if (d.includes('b.tech') || d.includes('b.e.') || d.includes('bachelor of engineering')) return 'B.Tech'
+      if (d.includes('b.sc') || d.includes('bachelor of science')) return 'B.Sc'
+      if (d.includes('bba') || d.includes('bachelor of business')) return 'BBA'
+      if (d.includes('b.com') || d.includes('bachelor of commerce')) return 'B.Com'
+      if (d.includes('ba') || d.includes('b.a') && !d.includes('llb')) return 'BA'
+      if (d.includes('bca') || d.includes('bachelor of computer applications')) return 'BCA'
+      if (d.includes('b.arch') || d.includes('bachelor of architecture')) return 'B.Arch'
+      if (d.includes('b.des') || d.includes('bachelor of design')) return 'B.Des'
+      if (d.includes('b.pharm') || d.includes('bachelor of pharmacy')) return 'B.Pharm'
+      if (d.includes('bpt') || d.includes('bachelor of physiotherapy')) return 'BPT'
+      if (d.includes('b.optom') || d.includes('bachelor of optometry')) return 'B.Optom'
+      if (d.includes('m.tech') || d.includes('m.e.') || d.includes('master of engineering')) return 'M.Tech'
+      if (d.includes('m.sc') || d.includes('master of science')) return 'M.Sc'
+      if (d.includes('mba') || d.includes('master of business')) return 'MBA'
+      if (d.includes('m.com') || d.includes('master of commerce')) return 'M.Com'
+      if (d.includes('ma') || d.includes('m.a') && !d.includes('jmc')) return 'MA'
+      if (d.includes('mca') || d.includes('master of computer applications')) return 'MCA'
+      if (d.includes('llb') || d.includes('bachelor of law')) return 'LLB'
+      if (d.includes('llm') || d.includes('master of law')) return 'LLM'
+      if (d.includes('ph.d') || d.includes('phd') || d.includes('doctor of philosophy')) return 'Ph.D.'
+      if (d.includes('diploma')) return 'Diploma'
+      return degree
+    }
+
+    // Normalize selected program
+    const selectedNormDegree = normalizeDegree(selectedProgram.degree)
+    const selectedNormSpec = normalizeSpec(selectedProgram.specialization)
+    const selectedDuration = selectedProgram.duration
+
+    // Filter candidates by degree and duration first (MUST MATCH)
+    const sameDegreeDuration = candidatePrograms.filter(p => {
+      const pNormDegree = normalizeDegree(p.degree)
+      return pNormDegree === selectedNormDegree && p.duration === selectedDuration
+    })
+
+    if (sameDegreeDuration.length === 0) return null
+
+    // Specialization matching groups - comprehensive list for accurate matching
+    // MUST be defined BEFORE filtering logic
+    const specGroups = {
+      'computer science engineering': [
+        'computer science and engineering', 'computer science & engineering', 
+        'computer science engineering', 'cse', 'computer science and eng',
+        'computer science & eng', 'computer science'
+      ],
+      'mechanical engineering': ['mechanical engineering', 'me', 'mechanical eng'],
+      'civil engineering': ['civil engineering', 'ce', 'civil eng'],
+      'electronics communication engineering': [
+        'electronics and communication engineering', 'electronics & communication engineering',
+        'electronics communication engineering', 'ece', 'electronics and comm',
+        'electronics & comm', 'electronics and communication eng', 'electronics & communication eng'
+      ],
+      'electronics computer engineering': [
+        'electronics and computer engineering', 'electronics & computer engineering',
+        'electronics computer engineering', 'electronics computer eng', 'electronics & computer eng',
+        'electronics and computer engg'
+      ],
+      'electrical engineering': ['electrical engineering', 'ee', 'electrical eng'],
+      'information technology': ['information technology', 'it'],
+      'biotechnology': ['biotechnology', 'biotech', 'bio technology'],
+      'chemical engineering': ['chemical engineering', 'che', 'chemical eng'],
+      'aerospace engineering': ['aerospace engineering', 'ae', 'aerospace eng'],
+      'automobile engineering': ['automobile engineering', 'ame', 'automobile eng', 'automotive engineering'],
+      'mechatronics engineering': ['mechatronics engineering', 'mechatronics'],
+      'food technology': ['food technology', 'ft', 'food tech'],
+      'business administration': [
+        'business administration', 'general management', 'bba general', 'bba',
+        'business admin', 'management', 'general', 'multiple specializations',
+        'banking & finance', 'international business', 'marketing management',
+        'entrepreneurship', 'hrm', 'health care management', 'supply chain management',
+        'business administration (multiple specializations)'
+      ],
+      'commerce': ['commerce', 'general commerce', 'bcom', 'accounting', 'finance and accounting'],
+      'computer science': ['computer science', 'cs', 'computer science (hons)'],
+      'physics': ['physics', 'applied physics'],
+      'chemistry': ['chemistry', 'applied chemistry', 'computational chemistry'],
+      'mathematics': ['mathematics', 'maths', 'applied mathematics'],
+      'english': ['english', 'english literature', 'english language'],
+      'psychology': ['psychology', 'applied psychology', 'clinical psychology'],
+      'economics': ['economics', 'applied economics'],
+      'sociology': ['sociology', 'social sciences'],
+      'political science': ['political science', 'politics', 'government'],
+      'history': ['history', 'modern history'],
+      'geography': ['geography', 'human geography'],
+      'international relations': ['international relations', 'international affairs', 'diplomacy'],
+      'liberal arts': ['liberal arts', 'arts', 'general arts'],
+      'architecture': ['architecture', 'b.arch', 'architectural studies'],
+      'pharmacy': ['pharmacy', 'b.pharm', 'pharmaceutical sciences'],
+      'nursing': ['nursing', 'b.sc nursing'],
+      'physiotherapy': ['physiotherapy', 'physical therapy', 'bpt'],
+      'optometry': ['optometry', 'b.optom', 'bachelor of optometry'],
+      'medical lab technology': [
+        'medical lab technology', 'medical laboratory technology', 'bmlt',
+        'laboratory technology'
+      ],
+      'radiology imaging': [
+        'radiology and imaging technology', 'radiological imaging techniques',
+        'medical radiology and imaging technology', 'bmrit', 'radiology'
+      ],
+      'cardiac care technology': [
+        'cardiac care technology', 'cardiovascular technology', 'cvt'
+      ],
+      'operation theatre technology': [
+        'operation theatre technology', 'ott', 'operation theater technology'
+      ],
+      'nutrition dietetics': [
+        'nutrition and dietetics', 'nutrition & dietetics', 'clinical nutrition',
+        'food science and dietetics'
+      ],
+      'fashion design': ['fashion design', 'fashion', 'apparel design'],
+      'interior design': ['interior design', 'interior', 'space design'],
+      'product design': ['product design', 'industrial design', 'product and industrial design'],
+      'communication design': ['communication design', 'graphic design', 'visual communication'],
+      'animation vfx': [
+        'animation, vfx and gaming', 'animation and vfx', 'animation & vfx',
+        'animation', 'vfx', 'gaming design'
+      ],
+      'journalism mass communication': [
+        'journalism and mass communication', 'journalism & mass communication',
+        'journalism', 'mass communication', 'jbmc'
+      ],
+      'film television': [
+        'film television and ott production', 'film production and theatre',
+        'film and tv production', 'cinema', 'film production'
+      ],
+      'law': ['law', 'legal studies', 'jurisprudence'],
+      'education': ['education', 'b.ed', 'teaching', 'pedagogy']
+    }
+
+    // CRITICAL: Explicitly prevent cross-field matches for engineering programs
+    // Each engineering field should ONLY match with the same field - never cross-match
+    // Order matters: More specific/longer keywords first to prevent false matches
+    const engineeringFields = {
+      // Computer Science & IT fields (must come first - most specific)
+      'cse': ['computer science and engineering', 'computer science & engineering', 'computer science engineering', 'cse'],
+      'it': ['information technology', 'it'],
+      'data science': ['data science', 'data science and analytics', 'data science & analytics', 'data analytics'],
+      'ai ml': ['artificial intelligence and machine learning', 'artificial intelligence & machine learning', 'ai and ml', 'aiml', 'artificial intelligence', 'machine learning'],
+      'cyber security': ['cyber security', 'cybersecurity', 'cyber security and forensics', 'cyber security & forensics', 'computer network and cyber security'],
+      'cloud computing': ['cloud computing', 'cloud computing and virtualization', 'cloud technology & virtualization'],
+      'iot': ['internet of things', 'iot', 'iot applications', 'internet of things and cyber security'],
+      'blockchain': ['block chain technology', 'blockchain', 'blockchain technology'],
+      'full stack': ['full stack development', 'full stack'],
+      'ar vr': ['augmented & virtual reality', 'augmented and virtual reality', 'ar/vr', 'arvr', 'augmented reality', 'virtual reality'],
+      'gaming': ['gaming technology', 'gaming'],
+      'drone': ['drone technology', 'drone'],
+      
+      // Electronics & Communication fields
+      'ece': ['electronics and communication engineering', 'electronics & communication engineering', 'electronics communication engineering', 'ece', 'electronics and communication', 'electronics & communication'],
+      'electronics computer': ['electronics and computer engineering', 'electronics & computer engineering', 'electronics computer engineering'],
+      'vlsi': ['vlsi design and technology', 'vlsi'],
+      
+      // Electrical fields
+      'ee': ['electrical engineering', 'electrical', 'ee'],
+      'electrical electronics': ['electrical and electronics engineering', 'electrical & electronics engineering'],
+      'renewable energy': ['renewable energy systems', 'renewable energy'],
+      'electric vehicle': ['electric vehicle', 'electric vehicle technology', 'e-vehicles', 'automotive electrical vehicles', 'electrical vehicles'],
+      
+      // Mechanical fields
+      'me': ['mechanical engineering', 'mechanical', 'me'],
+      'mechatronics': ['mechatronics engineering', 'mechatronics'],
+      'automobile': ['automobile engineering', 'automotive engineering', 'ame'],
+      'robotics': ['robotics and automation', 'robotics'],
+      'aerospace': ['aerospace engineering', 'ae', 'aerospace'],
+      
+      // Civil & Construction fields
+      'ce': ['civil engineering', 'civil', 'ce'],
+      'smart cities': ['smart cities', 'smart city'],
+      'green technology': ['green technology & sustainability', 'green technology and sustainability', 'green technology'],
+      
+      // Chemical & Materials fields
+      'chemical': ['chemical engineering', 'chemical', 'che'],
+      'food technology': ['food technology', 'ft', 'food tech'],
+      
+      // Biotechnology & Bioengineering fields
+      'biotechnology': ['biotechnology', 'biotech', 'bio technology'],
+      'genetic engineering': ['genetic engineering', 'genetic'],
+      'stem cell': ['stem cell & tissue engineering', 'stem cell and tissue engineering', 'stem cell'],
+      
+      // Other specialized fields
+      'gis': ['geographical information systems and remote sensing', 'gis', 'geographical information systems'],
+      'business analytics': ['business analytics and optimization', 'business analytics'],
+      'computer business': ['computer science & business system', 'computer science and business system']
+    }
+    
+    // Identify the selected program's engineering field
+    // IMPORTANT: Check fields in order - longer/more specific keywords first to prevent false matches
+    // This ensures "aerospace engineering" matches "aerospace" field, not "mechanical" field
+    let selectedField = null
+    const fieldEntries = Object.entries(engineeringFields)
+    
+    // Sort fields by their longest keyword length (more specific first)
+    const sortedFields = fieldEntries.map(([field, keywords]) => ({
+      field,
+      keywords,
+      maxLength: Math.max(...keywords.map(k => k.length))
+    })).sort((a, b) => b.maxLength - a.maxLength)
+    
+    // Check each field in order of specificity
+    for (const { field, keywords } of sortedFields) {
+      // Check if ANY keyword matches the normalized specialization
+      const matched = keywords.some(keyword => {
+        const keywordLower = keyword.toLowerCase().trim()
+        
+        // First check exact match
+        if (selectedNormSpec === keywordLower) return true
+        
+        // Check if specialization contains the keyword as a complete phrase
+        // For multi-word keywords, all words must be present
+        if (keyword.includes(' ')) {
+          const keywordWords = keywordLower.split(/\s+/).filter(w => w.length > 0)
+          // All words from keyword must be in specialization
+          const allWordsPresent = keywordWords.every(word => selectedNormSpec.includes(word))
+          if (!allWordsPresent) return false
+          
+          // Check if keyword appears as a phrase (words in order)
+          // Replace spaces with flexible whitespace matching
+          const keywordPattern = keywordWords.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+')
+          const phraseRegex = new RegExp(keywordPattern, 'i')
+          return phraseRegex.test(selectedNormSpec)
+        }
+        
+        // For single-word keywords, use word boundaries to prevent partial matches
+        // e.g., "me" should match "mechanical" only if it's "me" as a separate word/abbreviation
+        const regex = new RegExp(`\\b${keywordLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
+        if (regex.test(selectedNormSpec)) return true
+        
+        // Also check if specialization starts or ends with the keyword
+        // This handles cases like "aerospace engineering" matching "aerospace"
+        if (selectedNormSpec.startsWith(keywordLower + ' ') || 
+            selectedNormSpec.endsWith(' ' + keywordLower) ||
+            selectedNormSpec === keywordLower) {
+          return true
+        }
+        
+        return false
+      })
+      
+      if (matched) {
+        selectedField = field
+        break // Stop at first match (most specific)
+      }
+    }
+    
+    // CRITICAL: Filter by specialization group for ALL programs (not just engineering)
+    // This ensures Nutrition & Dietetics only matches Nutrition & Dietetics, not IT or Physics
+    let candidatesToMatch = sameDegreeDuration
+    
+    // First, check if it's an engineering field (B.Tech/B.E.)
+    if (selectedField) {
+      const fieldKeywords = engineeringFields[selectedField]
+      
+      // Filter programs to only those in the same engineering field
+      const fieldPrograms = sameDegreeDuration.filter(p => {
+        const pSpec = normalizeSpec(p.specialization)
+        
+        return fieldKeywords.some(keyword => {
+          const keywordLower = keyword.toLowerCase().trim()
+          
+          if (pSpec === keywordLower) return true
+          
+          if (keyword.includes(' ')) {
+            const keywordWords = keywordLower.split(/\s+/).filter(w => w.length > 0)
+            const allWordsPresent = keywordWords.every(word => pSpec.includes(word))
+            if (!allWordsPresent) return false
+            const keywordPattern = keywordWords.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+')
+            const phraseRegex = new RegExp(keywordPattern, 'i')
+            return phraseRegex.test(pSpec)
+          }
+          
+          const regex = new RegExp(`\\b${keywordLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
+          if (regex.test(pSpec)) return true
+          
+          if (pSpec.startsWith(keywordLower + ' ') || 
+              pSpec.endsWith(' ' + keywordLower) ||
+              pSpec === keywordLower) {
+            return true
+          }
+          
+          return false
+        })
+      })
+      
+      if (fieldPrograms.length === 0) {
+        return null
+      }
+      
+      candidatesToMatch = fieldPrograms
+    } else {
+      // For non-engineering programs (B.Sc., BBA, etc.), filter by specialization group
+      // Find which specialization group the selected program belongs to
+      let selectedGroup = null
+      const selectedNormSpecForGroup = normalizeSpec(selectedProgram.specialization)
+      
+      for (const [group, variations] of Object.entries(specGroups)) {
+        const inGroup = variations.some(v => {
+          const vNorm = v.toLowerCase().replace(/&/g, 'and').trim()
+          
+          // Exact match
+          if (selectedNormSpecForGroup === vNorm) return true
+          
+          // Check if all words from variation are present in specialization (strict)
+          if (vNorm.includes(' ')) {
+            const vWords = vNorm.split(/\s+/).filter(w => w.length >= 3)
+            // All words must be present and in order (as a phrase)
+            const vPattern = vWords.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+')
+            const regex = new RegExp(vPattern, 'i')
+            if (regex.test(selectedNormSpecForGroup)) {
+              // Verify all words are actually present
+              return vWords.every(word => selectedNormSpecForGroup.includes(word))
+            }
+          } else {
+            // Single word - must be a complete word (word boundary)
+            const regex = new RegExp(`\\b${vNorm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
+            if (regex.test(selectedNormSpecForGroup)) return true
+            // Or exact match at start/end
+            if (selectedNormSpecForGroup === vNorm || 
+                selectedNormSpecForGroup.startsWith(vNorm + ' ') ||
+                selectedNormSpecForGroup.endsWith(' ' + vNorm)) {
+              return true
+            }
+          }
+          
+          return false
+        })
+        
+        if (inGroup) {
+          selectedGroup = group
+          break
+        }
+      }
+      
+      // If selected program is in a specialization group, filter to only same-group programs
+      if (selectedGroup) {
+        const groupVariations = specGroups[selectedGroup]
+        const groupPrograms = sameDegreeDuration.filter(p => {
+          const pSpec = normalizeSpec(p.specialization)
+          
+          // Check if program is in the same group
+          return groupVariations.some(v => {
+            const vNorm = v.toLowerCase().replace(/&/g, 'and').trim()
+            
+            // Exact match
+            if (pSpec === vNorm) return true
+            
+            // Multi-word variation matching
+            if (vNorm.includes(' ')) {
+              const vWords = vNorm.split(/\s+/).filter(w => w.length >= 3)
+              const vPattern = vWords.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+')
+              const regex = new RegExp(vPattern, 'i')
+              if (regex.test(pSpec)) {
+                return vWords.every(word => pSpec.includes(word))
+              }
+            } else {
+              // Single word - word boundary check
+              const regex = new RegExp(`\\b${vNorm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
+              if (regex.test(pSpec)) return true
+              if (pSpec === vNorm || 
+                  pSpec.startsWith(vNorm + ' ') ||
+                  pSpec.endsWith(' ' + vNorm)) {
+                return true
+              }
+            }
+            
+            return false
+          })
+        })
+        
+        // CRITICAL: If no programs in the same specialization group exist, return null
+        if (groupPrograms.length === 0) {
+          return null
+        }
+        
+        candidatesToMatch = groupPrograms
+      }
+      // If no group found, continue with all sameDegreeDuration programs (fallback for unmatched specializations)
+    }
+
+    // Check if specializations match (exact or in same group)
+    const checkSpecMatch = (spec1, spec2) => {
+      const s1 = normalizeSpec(spec1)
+      const s2 = normalizeSpec(spec2)
+      
+      // Exact match after normalization
+      if (s1 === s2) return { match: true, score: 100 }
+      
+      // Check if one contains the other (after normalization)
+      // BUT: Be VERY strict - only match if BOTH are substantial and ALL significant words match
+      if (s1.includes(s2) || s2.includes(s1)) {
+        // Filter out common stopwords and require meaningful words
+        const stopwords = ['and', 'or', 'the', 'of', 'in', 'on', 'at', 'to', 'for', 'with', 'by']
+        const words1 = s1.split(/\s+/).filter(w => w.length >= 4 && !stopwords.includes(w.toLowerCase()))
+        const words2 = s2.split(/\s+/).filter(w => w.length >= 4 && !stopwords.includes(w.toLowerCase()))
+        
+        // Require at least 2 meaningful words
+        if (words1.length >= 2 && words2.length >= 2) {
+          // Check if ALL meaningful words match (not just some)
+          const allWords1Match = words1.every(w => words2.includes(w))
+          const allWords2Match = words2.every(w => words1.includes(w))
+          
+          if ((allWords1Match || allWords2Match) && words1.length === words2.length) {
+            return { match: true, score: 95 }
+          }
+          // If one is a subset but ALL words are present
+          const minWords = Math.min(words1.length, words2.length)
+          const commonWords = words1.filter(w => words2.includes(w))
+          if (commonWords.length === minWords && minWords >= 2 && commonWords.length === words1.length) {
+            return { match: true, score: 90 }
+          }
+        }
+        // Don't match if words don't fully align
+        return { match: false, score: 0 }
+      }
+      
+      // Check specialization groups
+      for (const [group, variations] of Object.entries(specGroups)) {
+        const s1InGroup = variations.some(v => {
+          const vNorm = v.toLowerCase().replace(/&/g, 'and').trim()
+          // Check if normalized spec contains the variation or vice versa
+          if (s1 === vNorm || vNorm === s1) return true
+          if (s1.includes(vNorm) || vNorm.includes(s1)) {
+            // Make sure it's not a partial word match
+            const s1Words = s1.split(/\s+/)
+            const vWords = vNorm.split(/\s+/)
+            // If both have multiple words, check if significant words match
+            if (s1Words.length >= 2 && vWords.length >= 2) {
+              const commonWords = s1Words.filter(w => vWords.includes(w) && w.length >= 4)
+              return commonWords.length > 0
+            }
+            return true
+          }
+          return false
+        })
+        const s2InGroup = variations.some(v => {
+          const vNorm = v.toLowerCase().replace(/&/g, 'and').trim()
+          if (s2 === vNorm || vNorm === s2) return true
+          if (s2.includes(vNorm) || vNorm.includes(s2)) {
+            const s2Words = s2.split(/\s+/)
+            const vWords = vNorm.split(/\s+/)
+            if (s2Words.length >= 2 && vWords.length >= 2) {
+              const commonWords = s2Words.filter(w => vWords.includes(w) && w.length >= 4)
+              return commonWords.length > 0
+            }
+            return true
+          }
+          return false
+        })
+        if (s1InGroup && s2InGroup) return { match: true, score: 85 }
+      }
+      
+      // Check for common significant words (minimum 4 characters, exclude stopwords)
+      // This is a fallback - should rarely match if groups are defined correctly
+      const stopwords = ['and', 'or', 'the', 'of', 'in', 'on', 'at', 'to', 'for', 'with', 'by', 'engineering']
+      const words1 = s1.split(/\s+/).filter(w => w.length >= 4 && !stopwords.includes(w.toLowerCase()))
+      const words2 = s2.split(/\s+/).filter(w => w.length >= 4 && !stopwords.includes(w.toLowerCase()))
+      
+      if (words1.length === 0 || words2.length === 0) return { match: false, score: 0 }
+      
+      const commonWords = words1.filter(w => words2.includes(w))
+      if (commonWords.length === 0) return { match: false, score: 0 }
+      
+      // Calculate similarity based on common words
+      // Require VERY high threshold (85%) and at least 2 common meaningful words
+      const similarity = (commonWords.length / Math.max(words1.length, words2.length)) * 70
+      if (commonWords.length >= 2 && similarity >= 85) {
+        return { match: true, score: similarity }
+      }
+      
+      // Don't match if threshold not met
+      return { match: false, score: similarity }
+    }
+
+    // Try exact specialization match first (score >= 95 for perfect match)
+    const exactMatch = candidatesToMatch.find(p => {
+      const match = checkSpecMatch(p.specialization, selectedProgram.specialization)
+      return match.match && match.score >= 95
+    })
+
+    if (exactMatch) {
+      return {
+        program: exactMatch,
+        quality: 'perfect',
+        reason: `Perfect match: ${selectedNormDegree} (${selectedDuration}y) - ${selectedProgram.specialization}`
       }
     }
 
-    // Priority 2: Strong match (same degree + highly similar specialization)
+    // Try strong match (same group)
     let bestMatch = null
     let bestScore = 0
-    
-    candidatePrograms.forEach(p => {
-      if (p.degree === selectedProgram.degree) {
-        const similarity = getSpecializationSimilarity(p.specialization, selectedProgram.specialization)
-        if (similarity > bestScore) {
-          bestScore = similarity
-          bestMatch = p
-        }
+
+    candidatesToMatch.forEach(p => {
+      const match = checkSpecMatch(p.specialization, selectedProgram.specialization)
+      if (match.match && match.score > bestScore) {
+        bestScore = match.score
+        bestMatch = p
       }
     })
 
-    // If we found a match with 60%+ similarity, return it as "good"
-    if (bestMatch && bestScore >= 60) {
-      return { 
-        program: bestMatch, 
-        quality: 'good', 
-        reason: `Strong match: Same degree (${selectedProgram.degree}) with similar specialization`
+    // Only accept matches from same specialization group (score >= 85) or very high similarity (>= 85)
+    if (bestMatch && bestScore >= 85) {
+      return {
+        program: bestMatch,
+        quality: bestScore >= 95 ? 'perfect' : 'good',
+        reason: bestScore >= 95 
+          ? `Perfect match: ${selectedNormDegree} (${selectedDuration}y) - ${selectedProgram.specialization}`
+          : `Strong match: ${selectedNormDegree} (${selectedDuration}y) with similar specialization`
       }
     }
 
-    // If we found a match with 30-59% similarity, return it as "approximate"
-    if (bestMatch && bestScore >= 30) {
-      return { 
-        program: bestMatch, 
-        quality: 'approximate', 
-        reason: `Related programs: Both ${selectedProgram.degree} but different specializations (${selectedProgram.specialization} vs ${bestMatch.specialization})`
-      }
-    }
-
-    // No match found with sufficient similarity (< 30%)
-    // Return null to trigger "No Match Available" message
+    // No match found - return null to show "Not Available"
     return null
   }
 
@@ -237,18 +741,29 @@ function App() {
       setSelectedChandigarhProgram(chandigarhMatch?.program || null)
       setSelectedGalgotiasProgram(galgotiasMatch?.program || null)
       
-      // Set match quality based on best available match
+      // Set match quality based on ALL matches - only show "Perfect Match" if ALL are perfect
       const matches = [shardaMatch, chandigarhMatch, galgotiasMatch].filter(m => m)
-      if (matches.length > 0) {
-        const bestMatch = matches.find(m => m.quality === 'perfect') || 
-                         matches.find(m => m.quality === 'good') || 
-                         matches[0]
-        setMatchQuality(bestMatch)
-      } else {
+      const perfectMatches = matches.filter(m => m.quality === 'perfect')
+      const goodMatches = matches.filter(m => m.quality === 'good')
+      
+      if (matches.length === 0) {
         setMatchQuality({
           quality: 'no-match',
           reason: `No comparable programs found at other universities for ${selectedProgram.name}`
         })
+      } else if (perfectMatches.length === matches.length && matches.length === 3) {
+        // Only show "Perfect Match" if ALL 3 universities have perfect matches
+        setMatchQuality({
+          quality: 'perfect',
+          reason: `Perfect match: ${selectedProgram.degree} (${selectedProgram.duration}y) - ${selectedProgram.specialization}`
+        })
+      } else if (perfectMatches.length > 0 || goodMatches.length > 0) {
+        // Show best available match quality
+        const bestMatch = perfectMatches[0] || goodMatches[0] || matches[0]
+        setMatchQuality(bestMatch)
+      } else {
+        // Mixed quality - show the best one
+        setMatchQuality(matches[0])
       }
       
       comparePrograms(selectedProgram, shardaMatch?.program || null, chandigarhMatch?.program || null, galgotiasMatch?.program || null)
@@ -265,18 +780,29 @@ function App() {
       setSelectedChandigarhProgram(chandigarhMatch?.program || null)
       setSelectedGalgotiasProgram(galgotiasMatch?.program || null)
       
-      // Set match quality
+      // Set match quality based on ALL matches - only show "Perfect Match" if ALL are perfect
       const matches = [niuMatch, chandigarhMatch, galgotiasMatch].filter(m => m)
-      if (matches.length > 0) {
-        const bestMatch = matches.find(m => m.quality === 'perfect') || 
-                         matches.find(m => m.quality === 'good') || 
-                         matches[0]
-        setMatchQuality(bestMatch)
-      } else {
+      const perfectMatches = matches.filter(m => m.quality === 'perfect')
+      const goodMatches = matches.filter(m => m.quality === 'good')
+      
+      if (matches.length === 0) {
         setMatchQuality({
           quality: 'no-match',
           reason: `No comparable programs found at other universities for ${selectedProgram.name}`
         })
+      } else if (perfectMatches.length === matches.length && matches.length === 3) {
+        // Only show "Perfect Match" if ALL 3 universities have perfect matches
+        setMatchQuality({
+          quality: 'perfect',
+          reason: `Perfect match: ${selectedProgram.degree} (${selectedProgram.duration}y) - ${selectedProgram.specialization}`
+        })
+      } else if (perfectMatches.length > 0 || goodMatches.length > 0) {
+        // Show best available match quality
+        const bestMatch = perfectMatches[0] || goodMatches[0] || matches[0]
+        setMatchQuality(bestMatch)
+      } else {
+        // Mixed quality - show the best one
+        setMatchQuality(matches[0])
       }
       
       comparePrograms(niuMatch?.program || null, selectedProgram, chandigarhMatch?.program || null, galgotiasMatch?.program || null)
@@ -293,18 +819,29 @@ function App() {
       setSelectedShardaProgram(shardaMatch?.program || null)
       setSelectedGalgotiasProgram(galgotiasMatch?.program || null)
       
-      // Set match quality
+      // Set match quality based on ALL matches - only show "Perfect Match" if ALL are perfect
       const matches = [niuMatch, shardaMatch, galgotiasMatch].filter(m => m)
-      if (matches.length > 0) {
-        const bestMatch = matches.find(m => m.quality === 'perfect') || 
-                         matches.find(m => m.quality === 'good') || 
-                         matches[0]
-        setMatchQuality(bestMatch)
-      } else {
+      const perfectMatches = matches.filter(m => m.quality === 'perfect')
+      const goodMatches = matches.filter(m => m.quality === 'good')
+      
+      if (matches.length === 0) {
         setMatchQuality({
           quality: 'no-match',
           reason: `No comparable programs found at other universities for ${selectedProgram.name}`
         })
+      } else if (perfectMatches.length === matches.length && matches.length === 3) {
+        // Only show "Perfect Match" if ALL 3 universities have perfect matches
+        setMatchQuality({
+          quality: 'perfect',
+          reason: `Perfect match: ${selectedProgram.degree} (${selectedProgram.duration}y) - ${selectedProgram.specialization}`
+        })
+      } else if (perfectMatches.length > 0 || goodMatches.length > 0) {
+        // Show best available match quality
+        const bestMatch = perfectMatches[0] || goodMatches[0] || matches[0]
+        setMatchQuality(bestMatch)
+      } else {
+        // Mixed quality - show the best one
+        setMatchQuality(matches[0])
       }
       
       comparePrograms(niuMatch?.program || null, shardaMatch?.program || null, selectedProgram, galgotiasMatch?.program || null)
@@ -322,18 +859,29 @@ function App() {
       setSelectedShardaProgram(shardaMatch?.program || null)
       setSelectedChandigarhProgram(chandigarhMatch?.program || null)
       
-      // Set match quality
+      // Set match quality based on ALL matches - only show "Perfect Match" if ALL are perfect
       const matches = [niuMatch, shardaMatch, chandigarhMatch].filter(m => m)
-      if (matches.length > 0) {
-        const bestMatch = matches.find(m => m.quality === 'perfect') || 
-                         matches.find(m => m.quality === 'good') || 
-                         matches[0]
-        setMatchQuality(bestMatch)
-      } else {
+      const perfectMatches = matches.filter(m => m.quality === 'perfect')
+      const goodMatches = matches.filter(m => m.quality === 'good')
+      
+      if (matches.length === 0) {
         setMatchQuality({
           quality: 'no-match',
           reason: `No comparable programs found at other universities for ${selectedProgram.name}`
         })
+      } else if (perfectMatches.length === matches.length && matches.length === 3) {
+        // Only show "Perfect Match" if ALL 3 universities have perfect matches
+        setMatchQuality({
+          quality: 'perfect',
+          reason: `Perfect match: ${selectedProgram.degree} (${selectedProgram.duration}y) - ${selectedProgram.specialization}`
+        })
+      } else if (perfectMatches.length > 0 || goodMatches.length > 0) {
+        // Show best available match quality
+        const bestMatch = perfectMatches[0] || goodMatches[0] || matches[0]
+        setMatchQuality(bestMatch)
+      } else {
+        // Mixed quality - show the best one
+        setMatchQuality(matches[0])
       }
       
       comparePrograms(niuMatch?.program || null, shardaMatch?.program || null, chandigarhMatch?.program || null, selectedProgram)
